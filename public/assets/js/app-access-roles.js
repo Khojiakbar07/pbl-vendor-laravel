@@ -13,7 +13,7 @@ $(function () {
       3: { title: 'Inactive', class: 'bg-label-secondary' }
     };
 
-  var userView = baseUrl + 'app/user/view/account';
+  var userView = 'app-user-view-account.html';
 
   // Users List datatable
   if (dtUserTable.length) {

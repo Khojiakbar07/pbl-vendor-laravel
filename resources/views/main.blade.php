@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href="{{ asset('asset/css/home.css') }}">
-    <script src="{{ asset('asset/js/home.js') }}" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="" type="text/javascript"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/home.css') }}">
+    <script src="{{ asset('assets/js/home.js') }}" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="" type="text/javascript"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

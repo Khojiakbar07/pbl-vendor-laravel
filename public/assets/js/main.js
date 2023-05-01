@@ -135,22 +135,63 @@ if (document.getElementById('layout-menu')) {
     });
   }
 
-  // change the flag and name of language when you change the language through laravel locale (Language Dropdown).
-  // -------------------------------------------------------------------------------------------------------------
-  let language = document.documentElement.getAttribute('lang');
-  let langDropdown = document.getElementsByClassName('dropdown-language');
-  if (language !== null && langDropdown.length) {
-    // getting selected flag's name and icon class
-    let selectedDropdownItem = document.querySelector('a[data-language=' + language + ']');
-    let selectedFlag = selectedDropdownItem.childNodes[1].className;
+  // Internationalization (Language Dropdown)
+  // ---------------------------------------
 
-    // add 'selected' class to current language's dropdown options
-    selectedDropdownItem.classList.add('selected');
+  if (typeof i18next !== 'undefined' && typeof i18NextHttpBackend !== 'undefined') {
+    i18next
+      .use(i18NextHttpBackend)
+      .init({
+        lng: 'en',
+        debug: false,
+        fallbackLng: 'en',
+        backend: {
+          loadPath: assetsPath + 'json/locales/{{lng}}.json'
+        },
+        returnObjects: true
+      })
+      .then(function (t) {
+        localize();
+      });
+  }
 
-    // set selected language's flag
-    let setLangFlag = (document.querySelector(
-      '.dropdown-language .dropdown-toggle'
-    ).childNodes[1].className = selectedFlag);
+  let languageDropdown = document.getElementsByClassName('dropdown-language');
+
+  if (languageDropdown.length) {
+    let dropdownItems = languageDropdown[0].querySelectorAll('.dropdown-item');
+
+    for (let i = 0; i < dropdownItems.length; i++) {
+      dropdownItems[i].addEventListener('click', function () {
+        let currentLanguage = this.getAttribute('data-language'),
+          selectedLangFlag = this.querySelector('.fi').getAttribute('class');
+
+        for (let sibling of this.parentNode.children) {
+          sibling.classList.remove('selected');
+        }
+        this.classList.add('selected');
+
+        languageDropdown[0].querySelector('.dropdown-toggle .fi').className = selectedLangFlag;
+
+        i18next.changeLanguage(currentLanguage, (err, t) => {
+          if (err) return console.log('something went wrong loading', err);
+          localize();
+        });
+      });
+    }
+  }
+
+  function localize() {
+    let i18nList = document.querySelectorAll('[data-i18n]');
+    // Set the current language in dd
+    let currentLanguageEle = document.querySelector('.dropdown-item[data-language="' + i18next.language + '"]');
+
+    if (currentLanguageEle) {
+      currentLanguageEle.click();
+    }
+
+    i18nList.forEach(function (item) {
+      item.innerHTML = i18next.t(item.dataset.i18n);
+    });
   }
 
   // Notification
@@ -398,7 +439,6 @@ if (typeof $ !== 'undefined') {
                 suggestion: function ({ url, icon, name }) {
                   return (
                     '<a href="' +
-                    baseUrl +
                     url +
                     '">' +
                     '<div>' +
@@ -469,9 +509,7 @@ if (typeof $ !== 'undefined') {
                 header: '<h6 class="suggestions-header text-primary mb-0 mx-3 mt-3 pb-2">Members</h6>',
                 suggestion: function ({ name, src, subtitle }) {
                   return (
-                    '<a href="' +
-                    baseUrl +
-                    'app/user/view/account">' +
+                    '<a href="app-user-view-account.html">' +
                     '<div class="d-flex align-items-center">' +
                     '<img class="rounded-circle me-3" src="' +
                     assetsPath +
@@ -507,8 +545,8 @@ if (typeof $ !== 'undefined') {
           // On typeahead select
           .bind('typeahead:select', function (ev, suggestion) {
             // Open selected page
-            if (suggestion.url !== 'javascript:;') {
-              window.location = baseUrl + suggestion.url;
+            if (suggestion.url) {
+              window.location = suggestion.url;
             }
           })
           // On typeahead close
