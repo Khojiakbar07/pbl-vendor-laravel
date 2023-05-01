@@ -20,6 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Ecommerce
     Route::get('order/terminal', [OrderController::class, 'terminal'])->name('order.terminal');
+
     Route::resource('order', OrderController::class);
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);

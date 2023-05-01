@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use http\Client\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Throwable;
 
 class ProductController extends Controller
@@ -16,7 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query()->paginate();
+        $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(20);
         return view('shop.product.index', compact('products'));
     }
 
@@ -33,7 +34,17 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $product = new Product();
+        $product->name = $request->name;
+        $product->slug = Str::slug($request->name);
+        $product->user_id = auth()->id();
+        $product->description = $request->description;
+        $product->short_description = $request->short_description;
+        $product->price = $request->price;
+        $product->save();
+
+        //return redirect()->route('product.index');
+        return redirect()->route('product.show', $product->id);
     }
 
     /**
@@ -57,7 +68,7 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $product->update($request->except(['_method', '_token']));
         return redirect()->route('product.index')->with('status', 'Product updated successfully');
     }
 

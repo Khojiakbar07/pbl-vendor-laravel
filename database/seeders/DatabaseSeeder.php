@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class
         ]);
 
-        User::factory(40)->create();
-        Product::factory(20)->create();
+        //User::factory(40)->create();
+        //Product::factory(50)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
