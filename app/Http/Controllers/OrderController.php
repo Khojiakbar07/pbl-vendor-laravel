@@ -17,7 +17,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::query()->orderByDesc('id')->paginate(20);
+        return view('shop.order.index', compact('orders'));
     }
 
     /**

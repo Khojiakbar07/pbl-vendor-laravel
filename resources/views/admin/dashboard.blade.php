@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('page_js')
+    <script src="{{ asset('assets/js/dashboards-analytics.js') }}"></script>
+@endsection
+
 @section('content')
     <div class="row">
         <!-- Website Analytics -->
