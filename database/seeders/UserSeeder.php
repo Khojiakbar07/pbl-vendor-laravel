@@ -16,10 +16,10 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             'id' => 1,
-            'name' => 'UzSoftic',
-            'email' => 'softuzb@gmail.com',
+            'name' => env('ADMIN_NAME', 'Admin'),
+            'email' => env('ADMIN_MAIL', 'admin@example.com'),
             'email_verified_at' => now(),
-            'password' => Hash::make('password'),
+            'password' => Hash::make(env('ADMIN_PASS', 'password')),
             'created_at' => now(),
             'updated_at' => now()
         ]);
