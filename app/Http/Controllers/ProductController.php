@@ -24,7 +24,7 @@ class ProductController extends Controller
         //$query = Product::query()->where('user_id', '1')->first();
         //dump($query->name);
         //dd($query);
-        $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(2);
+        $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(20);
         return view('shop.product.index', compact('products'));
     }
 
