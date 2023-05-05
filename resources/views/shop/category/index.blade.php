@@ -3,9 +3,9 @@
 @section('content')
     <!-- Hoverable Table rows -->
     <div class="card">
-        <h5 class="card-header">{{ __('Products') }}</h5>
+        <h5 class="card-header">{{ __('Categories') }}</h5>
         <div class="d-flex align-self-end px-5">
-            <a href="{{ route('product.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
+            <a href="{{ route('category.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
         </div>
         <div class="table-responsive text-nowrap">
             <table class="table table-hover">
@@ -20,25 +20,25 @@
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                @foreach($products as $product)
+                @foreach($categories as $category)
                 <tr>
                     <td>
-                        <strong>{{ $product->id }}</strong>
+                        <strong>{{ $category->id }}</strong>
                     </td>
-                    <td><a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a></td>
-                    <td>{{ $product->user->name }}</td>
+                    <td><a href="{{ route('product.show', $category->id) }}">{{ $category->name }}</a></td>
+                    <td>{{ $category->user->name }}</td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($product->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td>{{ \Carbon\Carbon::make($category->created_at)->diffInMinutes() }} minut oldin</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
+                                <a class="dropdown-item" href="{{ route('category.edit', $category->id) }}"
                                 ><i class="ti ti-pencil me-1"></i> Edit</a
                                 >
-                                <form method="POST" action="{{ route('product.destroy', $product->id) }}">
+                                <form method="POST" action="{{ route('category.destroy', $category->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
@@ -57,7 +57,7 @@
             </table>
 
             <div class="pagination text-center d-flex justify-content-center m-3">
-                {{ $products->links() }}
+                {{ $categories->links() }}
             </div>
 
         </div>

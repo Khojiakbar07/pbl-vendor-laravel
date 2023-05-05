@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use App\Models\User;
 use http\Client\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Throwable;
 
@@ -17,7 +19,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(20);
+        //$query = DB::query('SELECT * FROM products')->;
+        //$query = DB::select('select * from users');
+        //$query = Product::query()->where('user_id', '1')->first();
+        //dump($query->name);
+        //dd($query);
+        $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(2);
         return view('shop.product.index', compact('products'));
     }
 
@@ -43,8 +50,8 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->save();
 
-        //return redirect()->route('product.index');
-        return redirect()->route('product.show', $product->id);
+        return redirect()->route('product.index');
+        //return redirect()->route('product.show', $product->id);
     }
 
     /**

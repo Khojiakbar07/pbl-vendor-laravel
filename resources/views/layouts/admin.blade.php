@@ -64,6 +64,16 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{{ asset('assets/js/config.js') }}"></script>
+
+    <style>
+        .form-danger{
+            border-color: #ff7d7d;
+            box-shadow: red;
+            box-shadow: -1px 0px 23px 6px rgba(255,0,0,0.71);
+            -webkit-box-shadow: 0px 0px 10px 1px rgba(255,0,0,0.5);
+            -moz-box-shadow: -1px 0px 23px 6px rgba(255,0,0,0.71);
+        }
+    </style>
 </head>
 
 <body>
