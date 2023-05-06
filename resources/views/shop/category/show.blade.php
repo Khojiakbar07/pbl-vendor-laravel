@@ -18,35 +18,19 @@
                     <tbody>
                     <tr>
                         <th scope="row">Name</th>
-                        <td>{{ $product->name }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Author</th>
-                        <td>{{ $product->user->name }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">description</th>
-                        <td>{{ $product->description }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">short_description</th>
-                        <td>{{ $product->short_description }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">price</th>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $category->name }}</td>
                     </tr>
                     <tr>
                         <th scope="row">created_at</th>
-                        <td>{{ $product->created_at }}</td>
+                        <td>{{ $category->created_at }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ $product->updated_at->format('d.m.Y H:i') }}</td>
+                        <td>{{ $category->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ \Carbon\Carbon::make($product->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
+                        <td>{{ \Carbon\Carbon::make($category->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
                     </tr>
 
                     </tbody>

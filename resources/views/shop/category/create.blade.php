@@ -15,23 +15,8 @@
                         @endif
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Product Name</label>
-                            <input type="text" class="form-control @error('name') form-danger @enderror" placeholder="Product Name" name="name" value="{{ old('name') }}">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Product Price</label>
-                            <input type="number" class="form-control" @error('price') form-danger @enderror placeholder="Product Price" name="price" value="{{ old('price') }}">
-                        </div>
-
-                        <div>
-                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="description">{{ old('description') }}</textarea>
-                        </div>
-
-                        <div>
-                            <label for="exampleFormControlTextarea1" class="form-label">Short Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="short_description">{{ old('short_description') }}</textarea>
+                            <label for="exampleFormControlInput1" class="form-label">Category Name</label>
+                            <input type="text" class="form-control @error('name') form-danger @enderror" placeholder="Category Name" name="name" value="{{ old('name') }}">
                         </div>
 
                         <div>
