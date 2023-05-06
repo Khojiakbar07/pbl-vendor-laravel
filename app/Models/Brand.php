@@ -17,4 +17,5 @@ class Brand extends Model
         return $this->belongsTo(User::class);
     }
 
+
 }
