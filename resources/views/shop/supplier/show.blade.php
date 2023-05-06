@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Show brand</h5>
+                <h5 class="card-header">Show supplier</h5>
 
 
                 <table class="table">
@@ -17,29 +17,28 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Image</th>
-                        <td>{{ $brand->image }}</td>
-                    </tr>
-                    <tr>
                         <th scope="row">Name</th>
-                        <td>{{ $brand->name }}</td>
+                        <td>{{ $supplier->name }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Author</th>
-                        <td>{{ $brand->user->name }}</td>
+                        <th scope="row">Phone</th>
+                        <td>{{ $supplier->phone }}</td>
                     </tr>
-
+                    <tr>
+                        <th scope="row">Compone</th>
+                        <td>{{ $supplier->comone }}</td>
+                    </tr>
                     <tr>
                         <th scope="row">created_at</th>
-                        <td>{{ $brand->created_at }}</td>
+                        <td>{{ $supplier->created_at }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ $brand->updated_at->format('d.m.Y H:i') }}</td>
+                        <td>{{ $supplier->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ \Carbon\Carbon::make($brand->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
+                        <td>{{ \Carbon\Carbon::make($supplier->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
                     </tr>
 
                     </tbody>

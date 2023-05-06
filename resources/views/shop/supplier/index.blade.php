@@ -3,44 +3,43 @@
 @section('content')
     <!-- Hoverable Table rows -->
     <div class="card">
-        <h5 class="card-header">{{ __('brand') }}</h5>
+        <h5 class="card-header">{{ __('supplier') }}</h5>
         <div class="d-flex align-self-end px-5">
-            <a href="{{ route('brand.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
+            <a href="{{ route('supplier.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
         </div>
         <div class="table-responsive text-nowrap">
             <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Image</th>
-                    <th>Brand</th>
-                    <th>Author</th>
+                    <thsupplier</th>
+                    <th>Phone</th>
+                    <th>Compone</th>
                     <th>Status</th>
                     <th>Created at</th    >
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                @foreach($brands as $brand)
+                @foreach $suppliers as $supplier)
                 <tr>
                     <td>
-                        <strong>{{ $brand->id }}</strong>
+                        <strong>{{ $supplier->id }}</strong>
                     </td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->image }}</a></td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
-                    <td>{{ $brand->user->name }}</td>
+                    <td><a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a></td>
+                    <td>{{ $supplier->user->name }}</td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($brand->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td>{{ \Carbon\Carbon::make($supplier->created_at)->diffInMinutes() }} minut oldin</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('brand.edit', $brand->id) }}"
+                                <a class="dropdown-item" href="{{ route('supplier.edit', $supplier->id) }}"
                                 ><i class="ti ti-pencil me-1"></i> Edit</a
                                 >
-                                <form method="POST" action="{{ route('brand.destroy', $brand->id) }}">
+                                <form method="POST" action="{{ route('supplier.destroy', $supplier->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
@@ -59,7 +58,7 @@
             </table>
 
             <div class="pagination text-center d-flex justify-content-center m-3">
-                {{ $brands->links() }}
+                {{$suppliers->links() }}
             </div>
 
         </div>

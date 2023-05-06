@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Supplier;
+use App\Models\supplier;
 use App\Http\Requests\StoreSupplierRequest;
 use App\Http\Requests\UpdateSupplierRequest;
+use Illuminate\Support\Str;
 
 class SupplierController extends Controller
 {
@@ -13,7 +14,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+
+        $suppliers = supplier::query()->orderByDesc('id')->with(['user'])->paginate(20);
+        return view('shop.supplier.index', compact('suppliers'));
     }
 
     /**
@@ -21,7 +24,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        return view('shop.supplier.create');
     }
 
     /**
@@ -29,7 +32,15 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $request)
     {
-        //
+        $supplier = new Supplier();
+        $supplier->name = $request->name;
+        $supplier->phone =$request->phone;
+        $supplier->slug = Str::slug($request->name);
+        $supplier->user_id = auth()->id();
+        $supplier->compone = $request->compone;
+        $supplier->save();
+
+        return redirect()->route('supplier.index');
     }
 
     /**
@@ -37,7 +48,7 @@ class SupplierController extends Controller
      */
     public function show(Supplier $supplier)
     {
-        //
+        return view('shop.supplier.show', compact('supplier'));
     }
 
     /**
@@ -45,7 +56,7 @@ class SupplierController extends Controller
      */
     public function edit(Supplier $supplier)
     {
-        //
+        return view('shop.supplier.edit', compact('supplier'));
     }
 
     /**
@@ -53,7 +64,8 @@ class SupplierController extends Controller
      */
     public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
-        //
+        $supplier->update($request->except(['_method', '_token']));
+        return redirect()->route('supplier.index')->with('status', 'supplier updated successfully');
     }
 
     /**
@@ -61,6 +73,7 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        //
+        $supplier->deleteOrFail();
+        return redirect()->route('supplier.index')->with('status', 'supplier deleted successfully');
     }
 }
