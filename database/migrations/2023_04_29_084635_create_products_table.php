@@ -19,6 +19,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->text('short_description')->nullable();
             $table->double('price', 64);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

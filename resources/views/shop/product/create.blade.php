@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <h5 class="card-header">Create Product</h5>
-                <form method="POST" action="{{ route('product.store') }}">
+                <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
 
@@ -22,6 +22,11 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Product Price</label>
                             <input type="number" class="form-control" placeholder="Product Price" name="price" value="{{ old('price') }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="image" name="image" />
                         </div>
 
                         {{--

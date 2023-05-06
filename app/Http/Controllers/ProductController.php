@@ -9,6 +9,7 @@ use App\Models\User;
 use http\Client\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Throwable;
 
@@ -48,7 +49,22 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->short_description = $request->short_description;
         $product->price = $request->price;
+
+        if($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/products/images', Str::random('32').'.'.$request->file('image')->extension()
+            );
+
+            $product->image = str_replace('public/', 'storage/', $image);
+
+            //$product->image = $request->file('image')->store('public/products/images');
+
+            //$product->image = Storage::disk('public')->putFile('products', $request->file('image'));
+
+
+        }
         $product->save();
+
 
         return redirect()->route('product.index');
         //return redirect()->route('product.show', $product->id);

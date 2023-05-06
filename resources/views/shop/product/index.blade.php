@@ -12,6 +12,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Image</th>
                     <th>Product</th>
                     <th>Author</th>
                     <th>Status</th>
@@ -24,6 +25,9 @@
                 <tr>
                     <td>
                         <strong>{{ $product->id }}</strong>
+                    </td>
+                    <td>
+                        <img src="{{ asset($product->image) }}" class="img-fluid">
                     </td>
                     <td><a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a></td>
                     <td>{{ $product->user->name }}</td>
