@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\supplier;
+use App\Models\Supplier;
 use App\Http\Requests\StoreSupplierRequest;
 use App\Http\Requests\UpdateSupplierRequest;
 use Illuminate\Support\Str;
@@ -15,7 +15,7 @@ class SupplierController extends Controller
     public function index()
     {
 
-        $suppliers = supplier::query()->orderByDesc('id')->with(['user'])->paginate(20);
+        $suppliers = Supplier::query()->orderByDesc('id')->with(['user'])->paginate(20);
         return view('shop.supplier.index', compact('suppliers'));
     }
 

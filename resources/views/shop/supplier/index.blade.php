@@ -16,12 +16,12 @@
                     <th>Phone</th>
                     <th>Compone</th>
                     <th>Status</th>
-                    <th>Created at</th    >
+                    <th>Created at</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
-                @foreach $suppliers as $supplier)
+                @foreach($suppliers as $supplier)
                 <tr>
                     <td>
                         <strong>{{ $supplier->id }}</strong>
