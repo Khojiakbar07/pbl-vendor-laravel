@@ -18,6 +18,10 @@
                             <label for="formFile" class="form-label">Default file input example</label>
                             <input class="form-control" type="file" id="formFile" />
                         </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Brand Image</label>
+                            <input type="text" class="form-control" placeholder="Brand image" name="image" value="{{$brand->image }}">
+                        </div>
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Brand Name</label>
