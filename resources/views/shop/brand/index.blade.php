@@ -23,9 +23,9 @@
                 @foreach($brands as $brand)
                 <tr>
                     <td>
-                        <strong>{{ $product->id }}</strong>
+                        <strong>{{ $brand->id }}</strong>
                     </td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $product->name }}</a></td>
+                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
                     <td>{{ $brand->user->name }}</td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>
                     <td>{{ \Carbon\Carbon::make($brand->created_at)->diffInMinutes() }} minut oldin</td>
@@ -35,10 +35,10 @@
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('brand.edit', $brnad->id) }}"
+                                <a class="dropdown-item" href="{{ route('brand.edit', $brand->id) }}"
                                 ><i class="ti ti-pencil me-1"></i> Edit</a
                                 >
-                                <form method="POST" action="{{ route('brand .destroy', $brnad->id) }}">
+                                <form method="POST" action="{{ route('brand.destroy', $brand->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
