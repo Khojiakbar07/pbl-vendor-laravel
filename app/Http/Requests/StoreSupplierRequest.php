@@ -22,10 +22,10 @@ class StoreSupplierRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-
-
-
+            'name' => 'required',
+            'phone' => 'required',
+            'company' => 'required',
+            'note' => 'required',
         ];
     }
 }

@@ -14,7 +14,7 @@
                     <th>ID</th>
                     <thsupplier</th>
                     <th>Phone</th>
-                    <th>Compone</th>
+                    <th>Company</th>
                     <th>Status</th>
                     <th>Created at</th>
                     <th>Actions</th>
@@ -27,7 +27,7 @@
                         <strong>{{ $supplier->id }}</strong>
                     </td>
                     <td><a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a></td>
-                    <td>{{ $supplier->user->name }}</td>
+                    <td>{{ $supplier->company }}</td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>
                     <td>{{ \Carbon\Carbon::make($supplier->created_at)->diffInMinutes() }} minut oldin</td>
                     <td>

@@ -25,8 +25,12 @@
                         <td>{{ $supplier->phone }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Compone</th>
-                        <td>{{ $supplier->comone }}</td>
+                        <th scope="row">Company</th>
+                        <td>{{ $supplier->company }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Note</th>
+                        <td>{{ $supplier->note}}</td>
                     </tr>
                     <tr>
                         <th scope="row">created_at</th>

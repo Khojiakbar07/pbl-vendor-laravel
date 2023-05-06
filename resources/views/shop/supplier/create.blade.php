@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <h5 class="card-header">Create Supplier</h5>
-                <form method="POST" action="{{ route('Supplier.store') }}">
+                <form method="POST" action="{{ route('supplier.store') }}">
                     @csrf
                     <div class="card-body">
 
@@ -23,8 +23,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Supplier compone</label>
-                            <input type="text" class="form-control" placeholder="Supplier phone" name="compone" value="{{ old('compone') }}">
+                            <label for="exampleFormControlInput1" class="form-label">Supplier company</label>
+                            <input type="text" class="form-control" placeholder="Supplier phone" name="company" value="{{ old('company') }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="note">{{ old('note') }}</textarea>
                         </div>
 
                         <div>
