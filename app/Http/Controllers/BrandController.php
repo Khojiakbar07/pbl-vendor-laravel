@@ -6,6 +6,8 @@ use App\Models\Brand;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
 use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Support\Str;
 
 class BrandController extends Controller
 {
@@ -23,7 +25,6 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
        return view('shop.brand.create');
     }
 
@@ -32,7 +33,14 @@ class BrandController extends Controller
      */
     public function store(StoreBrandRequest $request)
     {
-        //
+        $brand = new Brand();
+        $brand->name = $request->name;
+        $brand->slug = Str::slug($request->name);
+        $brand->user_id = auth()->id();
+        $brand->description = $request->description;
+        $brand->save();
+
+        return redirect()->route('brand.index');
     }
 
     /**
@@ -40,8 +48,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
-    }
+        return view('shop.product.show', compact('brand'));    }
 
     /**
      * Show the form for editing the specified resource.

@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Show Product</h5>
+                <h5 class="card-header">Show brand</h5>
 
 
                 <table class="table">
@@ -18,35 +18,35 @@
                     <tbody>
                     <tr>
                         <th scope="row">Name</th>
-                        <td>{{ $product->name }}</td>
+                        <td>{{ $brand->name }}</td>
                     </tr>
                     <tr>
                         <th scope="row">Author</th>
-                        <td>{{ $product->user->name }}</td>
+                        <td>{{ $brand->user->name }}</td>
                     </tr>
                     <tr>
                         <th scope="row">description</th>
-                        <td>{{ $product->description }}</td>
+                        <td>{{ $brand->description }}</td>
                     </tr>
                     <tr>
                         <th scope="row">short_description</th>
-                        <td>{{ $product->short_description }}</td>
+                        <td>{{ $brand->short_description }}</td>
                     </tr>
                     <tr>
                         <th scope="row">price</th>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $brand->price }}</td>
                     </tr>
                     <tr>
                         <th scope="row">created_at</th>
-                        <td>{{ $product->created_at }}</td>
+                        <td>{{ $brand->created_at }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ $product->updated_at->format('d.m.Y H:i') }}</td>
+                        <td>{{ $brand->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
                     <tr>
                         <th scope="row">updated_at</th>
-                        <td>{{ \Carbon\Carbon::make($product->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
+                        <td>{{ \Carbon\Carbon::make($brand->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
                     </tr>
 
                     </tbody>
