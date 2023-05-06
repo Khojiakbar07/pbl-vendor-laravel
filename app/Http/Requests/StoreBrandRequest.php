@@ -22,6 +22,10 @@ class StoreBrandRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required',
+            'slag' => 'required',
+            'image' => 'required',
+            'status' => 'required',
             //
         ];
     }

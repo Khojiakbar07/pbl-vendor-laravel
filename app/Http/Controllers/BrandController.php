@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
+use App\Models\Category;
 
 class BrandController extends Controller
 {
@@ -13,7 +14,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::query()->orderByDesc('id')->with(['user'])->paginate(20);
+        return view('shop.brand.index', compact('brands'));
     }
 
     /**
@@ -22,6 +24,7 @@ class BrandController extends Controller
     public function create()
     {
         //
+        view('shop.brand.create');
     }
 
     /**
