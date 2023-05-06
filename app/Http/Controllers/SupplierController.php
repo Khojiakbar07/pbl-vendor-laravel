@@ -15,7 +15,7 @@ class SupplierController extends Controller
     public function index()
     {
 
-        $suppliers = Supplier::query()->orderByDesc('id')->with(['user'])->paginate(20);
+        $suppliers = Supplier::query()->orderByDesc('id')->paginate(20);
         return view('shop.supplier.index', compact('suppliers'));
     }
 
@@ -34,10 +34,11 @@ class SupplierController extends Controller
     {
         $supplier = new Supplier();
         $supplier->name = $request->name;
-        $supplier->phone =$request->phone;
-        $supplier->slug = Str::slug($request->name);
-        $supplier->user_id = auth()->id();
-        $supplier->compone = $request->compone;
+        $supplier->phone = $request->phone;
+        $supplier->company = $request->company;
+        $supplier->note = $request->note;
+
+
         $supplier->save();
 
         return redirect()->route('supplier.index');
