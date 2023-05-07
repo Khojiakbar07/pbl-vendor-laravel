@@ -24,6 +24,10 @@
                             <label for="exampleFormControlInput1" class="form-label">Product Price</label>
                             <input type="number" class="form-control" placeholder="Product Price" name="price" value="{{ $product->price }}">
                         </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Import image</label>
+                            <input class="form-control" type="file" id="image" name="image" />
+                        </div>
 
                         {{--
                         <div class="mb-3">

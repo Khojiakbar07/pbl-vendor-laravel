@@ -32,10 +32,23 @@ class BrandController extends Controller
     public function store(StoreBrandRequest $request)
     {
         $brand = new Brand();
-        $brand->image=$request->image;
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
         $brand->user_id = auth()->id();
+
+        if($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
+            );
+
+            $brand->image = str_replace('public/', 'storage/', $image);
+
+            //$brand->image = $request->file('image')->store('public/products/images');
+
+            //$brand->image = Storage::disk('public')->putFile('products', $request->file('image'));
+
+
+        }
         $brand->save();
 
         return redirect()->route('brand.index');

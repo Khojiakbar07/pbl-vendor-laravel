@@ -18,7 +18,9 @@
                     <tbody>
                     <tr>
                         <th scope="row">Image</th>
-                        <td>{{ $brand->image }}</td>
+                        <td>
+                            <img src="{{ asset($brand->image) }}" class="img-fluid">
+                        </td>
                     </tr>
                     <tr>
                         <th scope="row">Name</th>

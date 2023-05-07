@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Show Product</h5>
+                <h5 class="card-header">Show Category</h5>
 
 
                 <table class="table">
@@ -16,6 +16,15 @@
                     </tr>
                     </thead>
                     <tbody>
+
+                    <tr>
+                        <th scope="row">Image</th>
+                        <td>{{ $category->image }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Icon</th>
+                        <td>{{ $category->icon }}</td>
+                    </tr>
                     <tr>
                         <th scope="row">Name</th>
                         <td>{{ $category->name }}</td>

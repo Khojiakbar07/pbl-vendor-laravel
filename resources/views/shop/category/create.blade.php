@@ -13,11 +13,18 @@
                         @if($errors->any())
                             {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
                         @endif
-
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Category Name</label>
                             <input type="text" class="form-control @error('name') form-danger @enderror" placeholder="Category Name" name="name" value="{{ old('name') }}">
                         </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Import image</label>
+                                <input class="form-control" type="file" id="image" name="image" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Import image</label>
+                                <input class="form-control" type="file" id="icon" name="icon" />
+                            </div>
 
                         <div>
                             <button type="submit" class="btn btn-lg btn-success my-3">Submit</button>

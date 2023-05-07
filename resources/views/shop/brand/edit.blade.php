@@ -15,10 +15,6 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">Default file input example</label>
-                            <input class="form-control" type="file" id="formFile" />
-                        </div>
-                        <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Brand Image</label>
                             <input type="text" class="form-control" placeholder="Brand image" name="image" value="{{$brand->image }}">
                         </div>
@@ -26,6 +22,10 @@
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Brand Name</label>
                             <input type="text" class="form-control" placeholder="Brand Name" name="name" value="{{ $brand->name }}">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Import image</label>
+                            <input class="form-control" type="file" id="image" name="image" />
                         </div>
 
                         <div>

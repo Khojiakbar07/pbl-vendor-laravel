@@ -20,6 +20,11 @@
                         <th scope="row">Name</th>
                         <td>{{ $product->name }}</td>
                     </tr>
+                    <th scope="row">Image</th>
+                    <td>
+                        <img src="{{ asset($product->image) }}" class="img-fluid">
+                    </td>
+
                     <tr>
                         <th scope="row">Author</th>
                         <td>{{ $product->user->name }}</td>

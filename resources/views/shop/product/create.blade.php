@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="image" class="form-label">Default file input example</label>
+                            <label for="image" class="form-label">Import image</label>
                             <input class="form-control" type="file" id="image" name="image" />
                         </div>
 

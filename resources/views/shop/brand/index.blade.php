@@ -26,7 +26,9 @@
                     <td>
                         <strong>{{ $brand->id }}</strong>
                     </td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->image }}</a></td>
+                    <td>
+                        <img src="{{ asset($brand->image) }}" class="img-fluid">
+                    </td>
                     <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
                     <td>{{ $brand->user->name }}</td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>

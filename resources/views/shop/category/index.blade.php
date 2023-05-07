@@ -12,8 +12,9 @@
                 <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Image</th>
+                    <th>Icon</th>
                     <th>Category</th>
-                    <th>Author</th>
                     <th>Status</th>
                     <th>Created at</th>
                     <th>Actions</th>
@@ -25,8 +26,13 @@
                     <td>
                         <strong>{{ $category->id }}</strong>
                     </td>
-                    <td><a href="{{ route('product.show', $category->id) }}">{{ $category->name }}</a></td>
-                    <td>{{ $category->user->name }}</td>
+                    <td>
+                        <img src="{{ asset($brand->image) }}" class="img-fluid">
+                    </td>
+                    <td>
+                        <img src="{{ asset($brand->icon) }}" class="img-fluid">
+                    </td>
+                    <td><a href="{{ route('category.show', $category->id) }}">{{ $category->name }}</a></td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>
                     <td>{{ \Carbon\Carbon::make($category->created_at)->diffInMinutes() }} minut oldin</td>
                     <td>
