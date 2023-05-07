@@ -31,8 +31,9 @@ class CategoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreCategoryRequest $request)
-    {   $category = new Category();
 
+    {
+        $category = new Category();
         if($request->has('image')){
             $image = $request->file('image')->storeAs(
                 'public/category/images', Str::random('32').'.'.$request->file('image')->extension()
@@ -48,7 +49,7 @@ class CategoryController extends Controller
         }
         if($request->has('icon')){
             $icon = $request->file('icon')->storeAs(
-                'public/category/images', Str::random('32').'.'.$request->file('icon')->extension()
+                'public/category/icons', Str::random('32').'.'.$request->file('icon')->extension()
             );
 
             $category->icon = str_replace('public/', 'storage/', $icon);
