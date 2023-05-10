@@ -4,6 +4,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderItemController;
+use App\Http\Controllers\OrderNoteController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
@@ -26,6 +28,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('category', CategoryController::class);
     Route::resource('brand', BrandController::class);
     Route::resource('supplier', SupplierController::class);
+
+    Route::resource('order_note', OrderNoteController::class);
+    Route::resource('order_item', OrderItemController::class);
 
     // User and Members
     Route::resource('role', RoleController::class);
