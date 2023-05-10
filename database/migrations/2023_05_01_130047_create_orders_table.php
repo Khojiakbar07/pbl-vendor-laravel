@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('customer_id')->nullable();
+            $table->string('coupon_code')->nullable();
+            $table->double('price')->default('0');
+            $table->double('price_vat')->default('0');
+            $table->double('price_delivery')->default('0');
+            $table->double('price_discount')->default('0');
+            $table->double('total_price')->default('0');
+            $table->float('status')->default(true);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }
