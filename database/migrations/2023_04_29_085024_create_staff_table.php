@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('role_id');
-            $table->timestamp('last_active')->nullable();
             $table->string('last_ip', 120)->nullable();
+            $table->timestamp('last_active')->default(now());
             $table->timestamps();
         });
     }

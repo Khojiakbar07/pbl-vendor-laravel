@@ -22,10 +22,10 @@ class StoreBrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image'=> 'required',
-            'name' => 'required',
-
-            //
+            'order_id'=> 'required|integer|max:100',
+            'reply_id'=> 'required|integer|max:100',
+            'note'=> 'nullable|string',
+            'deleted'=> 'boolean',
         ];
     }
 }
