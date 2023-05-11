@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <h5 class="card-header">Create Brand</h5>
-                <form method="POST" action="{{ route('brand.store') }}">
+                <form method="POST" action="{{ route('brand.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
 

@@ -46,6 +46,7 @@
                 <li class="nav-item"><a href="{{ route('register') }}" class="nav-link"><span>{{ __('Register') }}</span></a></li>
             @endif
             </ul>
+
 	      </div>
 	    </div>
 	  </nav>
