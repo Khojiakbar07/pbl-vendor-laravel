@@ -30,6 +30,22 @@
         rel="stylesheet"
     />
 
+    @auth
+        Dashboard
+        Logout
+    @else
+        Login
+        Register
+    @endauth
+
+    @if (auth()->check())
+        Dashboard
+        Logout   
+    @else 
+        Login
+        Register
+    @endif
+
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/tabler-icons.css') }}" />
