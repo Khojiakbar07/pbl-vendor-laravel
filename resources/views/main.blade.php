@@ -4,7 +4,7 @@
     <title>Author - Free Bootstrap 4 Template by Colorlib</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -12,28 +12,17 @@
 
 
     <link rel="stylesheet" href="{{ asset('landing/css/animate.css')}}">
-    
+
     <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css') }}">
-    
+
     <link rel="stylesheet" href="{{ asset('landing/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{ asset('landing/css/style.css')}}">
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    @auth
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="hover:rg">{{ __('Log Out') }}</a>
-    </form>
-    <a href="{{ route('dashboard') }}" class="de hh inline-bd lk mh re tc-lg ya">Dashboard</a>
-    @else
-    <a href="{{ route('login') }}" class="hover:rg">Login</a>
-    <a href="{{ route('register') }}" class="de hh inline-bd lk mh re tc-lg ya">Get started</a>
-    @endif
-	  
-	  
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
 	      <a class="navbar-brand" href="index.html">Vendor<span>.</span></a>
@@ -49,11 +38,21 @@
 	          <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Izohlar</span></a></li>
 	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Bizning mijozlar</span></a></li>
 	          <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><span>Login</span></a></li>
+                @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="hover:rg">{{ __('Log Out') }}</a>
+                    </form>
+                    <a href="{{ route('dashboard') }}" class="de hh inline-bd lk mh re tc-lg ya">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}" class="hover:rg">Login</a>
+                    <a href="{{ route('register') }}" class="de hh inline-bd lk mh re tc-lg ya">Get started</a>
+                @endif
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
-      
+
 
 	  <section class="hero-wrap js-fullheight">
       <div class="overlay"></div>
@@ -420,7 +419,7 @@
         </div>
 
 
-		
+
 
     <footer class="ftco-footer ftco-section">
       <div class="container">
@@ -481,8 +480,8 @@
         </div>
       </div>
     </footer>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -501,9 +500,9 @@
   <script src="{{ asset('landing/js/scrollax.min.js')}}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{{ asset('landing/js/google-map.js')}}"></script>
-  
+
   <script src="{{ asset('landing/js/main.js')}}"></script>
-    
+
   </body>
 </html>
 
