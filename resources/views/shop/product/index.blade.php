@@ -27,7 +27,8 @@
                         <strong>{{ $product->id }}</strong>
                     </td>
                     <td>
-                        <img src="{{ asset($product->image) }}" class="img-fluid">
+                        <img src="{{ asset($product->image) }}" class="img-fluid"ull origin main
+                        >
                     </td>
                     <td><a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a></td>
                     <td>{{ $product->user->name }}</td>
