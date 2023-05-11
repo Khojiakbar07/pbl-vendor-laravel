@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('code');
+            $table->boolean('status')->default(1);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

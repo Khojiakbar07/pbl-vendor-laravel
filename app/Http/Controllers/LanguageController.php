@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Language;
 use App\Http\Requests\StoreLanguageRequest;
 use App\Http\Requests\UpdateLanguageRequest;
+use Illuminate\Http\Request;
 
 class LanguageController extends Controller
 {
+    public function change(Request $request){
+        return json_encode($request->all());
+    }
     /**
      * Display a listing of the resource.
      */

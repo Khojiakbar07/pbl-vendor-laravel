@@ -1,3 +1,6 @@
+@php
+    $languages = \App\Models\Language::where('deleted', '0')->where('status', '1')->get();
+@endphp
 <nav
     class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
     id="layout-navbar"
@@ -24,33 +27,17 @@
             <!-- Language -->
             <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <i class="fi fi-us fis rounded-circle me-1 fs-3"></i>
+                    <i class="fi fi-{{ app()->currentLocale() == 'en' ? 'us' : app()->currentLocale() }} fis rounded-circle me-1 fs-3"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="en">
-                            <i class="fi fi-us fis rounded-circle me-1 fs-3"></i>
-                            <span class="align-middle">English</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="fr">
-                            <i class="fi fi-fr fis rounded-circle me-1 fs-3"></i>
-                            <span class="align-middle">French</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="de">
-                            <i class="fi fi-de fis rounded-circle me-1 fs-3"></i>
-                            <span class="align-middle">German</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="javascript:void(0);" data-language="pt">
-                            <i class="fi fi-pt fis rounded-circle me-1 fs-3"></i>
-                            <span class="align-middle">Portuguese</span>
-                        </a>
-                    </li>
+                    @foreach($languages as $language)
+                        <li>
+                            <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('{{ $language->code }}')" data-language="{{ $language->code }}">
+                                <i class="fi fi-{{ $language->code == 'en' ? 'us' : $language->code }} fis rounded-circle me-1 fs-3"></i>
+                                <span class="align-middle">{{ $language->name }}</span>
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </li>
             <!--/ Language -->
@@ -421,7 +408,7 @@
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <span class="fw-semibold d-block">John Doe</span>
+                                    <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
                                     <small class="text-muted">Admin</small>
                                 </div>
                             </div>
@@ -478,7 +465,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('profile.logout') }}" target="_blank">
+                        <a class="dropdown-item" href="{{ route('profile.logout') }}">
                             <i class="ti ti-logout me-2 ti-sm"></i>
                             <span class="align-middle">{{ __('Log Out') }}</span>
                         </a>
