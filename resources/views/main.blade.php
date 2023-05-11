@@ -21,6 +21,17 @@
     <link rel="stylesheet" href="{{ asset('landing/css/style.css')}}">
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+    @auth
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="hover:rg">{{ __('Log Out') }}</a>
+    </form>
+    <a href="{{ route('dashboard') }}" class="de hh inline-bd lk mh re tc-lg ya">Dashboard</a>
+    @else
+    <a href="{{ route('login') }}" class="hover:rg">Login</a>
+    <a href="{{ route('register') }}" class="de hh inline-bd lk mh re tc-lg ya">Get started</a>
+    @endif
 	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -37,11 +48,12 @@
 	          <li class="nav-item"><a href="#chapter-section" class="nav-link"><span>Chapter</span></a></li>
 	          <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Izohlar</span></a></li>
 	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Bizning mijozlar</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	          <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><span>Login</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
+      
 
 	  <section class="hero-wrap js-fullheight">
       <div class="overlay"></div>
