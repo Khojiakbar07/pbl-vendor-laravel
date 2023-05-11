@@ -27,10 +27,10 @@
                         <strong>{{ $category->id }}</strong>
                     </td>
                     <td>
-                        <img src="{{ asset($brand->image) }}" class="img-fluid">
+                        <img src="{{ asset($category->image) }}" class="img-fluid">
                     </td>
                     <td>
-                        <img src="{{ asset($brand->icon) }}" class="img-fluid">
+                        <img src="{{ asset($category->icon) }}" class="img-fluid">
                     </td>
                     <td><a href="{{ route('category.show', $category->id) }}">{{ $category->name }}</a></td>
                     <td><span class="badge bg-label-primary me-1">Active</span></td>

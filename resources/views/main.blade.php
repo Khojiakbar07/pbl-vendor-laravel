@@ -37,17 +37,18 @@
 	          <li class="nav-item"><a href="#chapter-section" class="nav-link"><span>Chapter</span></a></li>
 	          <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Izohlar</span></a></li>
 	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Bizning mijozlar</span></a></li>
-	          <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><span>Login</span></a></li>
+{{--	          <li class="nav-item"><a href="{{route('login')}}" class="nav-link"><span>Login</span></a></li>--}}
                 @auth
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="hover:rg">{{ __('Log Out') }}</a>
+                        <li class="nav-item"><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();" class="hover:rg">{{ __('Log Out') }}</a> <li/>
                     </form>
-                    <a href="{{ route('dashboard') }}" class="de hh inline-bd lk mh re tc-lg ya">Dashboard</a>
+                    <li class="nav-item"><a href="{{ route('dashboard') }}" class="de hh inline-bd lk mh re tc-lg ya">Dashboard</a> <li/>
                 @else
-                    <a href="{{ route('login') }}" class="hover:rg">Login</a>
-                    <a href="{{ route('register') }}" class="de hh inline-bd lk mh re tc-lg ya">Get started</a>
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link"><span>Login</span></a></li>
+                    <li class="nav-item"><a href="{{ route('register') }}" class="nav-link"><span>Register</span></a> <li/>
                 @endif
+                <li/>
 	        </ul>
 	      </div>
 	    </div>
