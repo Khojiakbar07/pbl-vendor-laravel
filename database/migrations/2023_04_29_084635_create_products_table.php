@@ -27,7 +27,7 @@ return new class extends Migration
             $table->double('price_additional', 64);
             $table->double('discount', 64)->default(0);
             $table->string('discount_type')->default('sum');
-            $table->double('tax')->default(0);
+            $table->double('tax', 64)->default(0);
             $table->string('tax_type')->default('sum');
             $table->string('image')->nullable();
             $table->text('gallery')->nullable();
