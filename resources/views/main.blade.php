@@ -141,7 +141,7 @@
           <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
             <div class="block-18 bg-light">
               <div class="text">
-                <strong class="number" data-number="12000">1</strong>
+                <strong class="number" data-number="12000">0</strong>
                 <span>Buyurtmalar</span>
               </div>
             </div>
