@@ -25,6 +25,47 @@
                         </div>
 
                         <div class="mb-3">
+                            <label for="exampleFormControlSelect1" class="form-label">Brand</label>
+                            <select class="form-select" name="brand_id" id="exampleFormControlSelect1" aria-label="Default select example">
+                                @foreach($brands as $brand)
+                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="col-md-6 mb-4">
+                                <label for="selectpickerLiveSearch" class="form-label">{{ __('Brand') }}</label>
+                                <select
+                                    id="selectpickerLiveSearch"
+                                    class="selectpicker w-100"
+                                    data-style="btn-default"
+                                    data-live-search="true"
+                                >
+                                    @foreach($brands as $brand)
+                                    <option data-tokens="{{ $brand->name }}" value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="col-md-6 mb-4">
+                                <label for="selectpickerLiveSearch" class="form-label">Live Search</label>
+                                <select
+                                    id="selectpickerLiveSearch"
+                                    class="selectpicker w-100"
+                                    data-style="btn-default"
+                                    data-live-search="true"
+                                >
+                                    <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                                    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
                             <label for="image" class="form-label">Import image</label>
                             <input class="form-control" type="file" id="image" name="image" />
                         </div>

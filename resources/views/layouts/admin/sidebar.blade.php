@@ -25,7 +25,8 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
         <a href="{{ route('home') }}" class="app-brand-link">
-              <span class="app-brand-logo demo">
+            <image class="app-brand-logo" style="height: 30px;" src="{{ asset('images/logo/logo.png') }}" alt="{{ env('APP_NAME') }}"></image>
+              {{--<span class="app-brand-logo demo">
                 <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                       fill-rule="evenodd"
@@ -55,7 +56,8 @@
                   />
                 </svg>
               </span>
-            <span class="app-brand-text demo menu-text fw-bold">{{ env('APP_NAME') }}</span>
+            <span class="app-brand-text demo menu-text fw-bold">{{ env('APP_NAME') }}</span>--}}
+
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">

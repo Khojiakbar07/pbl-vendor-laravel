@@ -25,7 +25,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Vendor<span>.</span></a>
+	      <a class="navbar-brand" href="{{ route('home') }}">
+              <img class="img-fluid" src="{{ asset('images/logo/logo.png')}}" style="max-width: 160px;" alt="{{ env('APP_NAME') }}">
+          </a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -55,16 +57,24 @@
 	  <section class="hero-wrap js-fullheight">
       <div class="overlay"></div>
       <div class="container-fluid px-0">
-      	<div class="row d-md-flex no-gutters slider-text align-items-center js-fullheight justify-content-end">
-	      	<img class="mt-6 one-third js-fullheight align-self-end order-md-last img-fluid " src="{{ asset('landing/img/pos1.png')}}" alt="">
-	        <div class="one-forth d-flex align-items-center ftco-animate js-fullheight">
-	        	<div class="text mt-5">
-	        		<span class="subheading">Biz barcha turdagi do`konlarni avtomatlashtramiz</span>
-		  				<h1 style="font-size: 50px;">Biz bilan foydangizni 25% foyizgachan o`string</h1>
-		  				<p>Qog`oz bozlikdan vos keching</p>
-	          </div>
-	        </div>
-	    	</div>
+      	<div class="row d-md-flex no-gutters align-items-center js-fullheight justify-content-end">
+
+	        <div class="col-md-5">
+                <div class="">
+                    <div class="text mt-5">
+                        <span class="subheading">Biz barcha turdagi do`konlarni avtomatlashtramiz</span>
+                        <h1 style="font-size: 50px;">Biz bilan onlayn savdo qiling</h1>
+                        <p>Barcha savdo jarayonini avtomatlashitiring va statistikalarni kuzatib boring.</p>
+                    </div>
+                </div>
+            </div>
+
+	      	<div class="col-md-7">
+                <img class="mt-6 img-fluid"
+                     src="{{ asset('landing/img/pos1.png')}}" alt="">
+            </div>
+
+        </div>
       </div>
     </section>
 
