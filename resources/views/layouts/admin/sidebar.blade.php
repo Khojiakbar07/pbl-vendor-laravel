@@ -5,22 +5,22 @@
 
         ['type' => 'divider', 'name' => 'Ecommerce'],
         ['type' => 'route', 'name' => 'POS Terminal', 'route' => 'order.terminal', 'icon' => 'fa-light fa-cash-register'],
-        ['type' => 'route', 'name' => 'Orders', 'route' => ['order.index', 'order.edit', 'order.create', 'order.edit'], 'icon' => 'fa-light fa-envelope-open-dollar', 'child' => [
+        ['type' => 'route', 'name' => 'Orders', 'route' => ['order.index', 'order.edit', 'order.create', 'order.show'], 'icon' => 'fa-light fa-envelope-open-dollar', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'order.index'],
         ]],
-        ['type' => 'route', 'name' => 'Products', 'route' => ['product.index', 'product.edit', 'product.create', 'product.edit'], 'icon' => 'fa-light fa-boxes-stacked', 'child' => [
+        ['type' => 'route', 'name' => 'Products', 'route' => ['product.index', 'product.edit', 'product.create', 'product.show'], 'icon' => 'fa-light fa-boxes-stacked', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'product.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'product.create'],
         ]],
-        ['type' => 'route', 'name' => 'Categories', 'route' => ['category.index', 'category.edit', 'category.create', 'category.edit'], 'icon' => 'fa-light fa-rectangle-history', 'child' => [
+        ['type' => 'route', 'name' => 'Categories', 'route' => ['category.index', 'category.edit', 'category.create', 'category.show'], 'icon' => 'fa-light fa-rectangle-history', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'category.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'category.create'],
         ]],
-        ['type' => 'route', 'name' => 'Brands', 'route' => ['brand.index', 'brand.edit', 'brand.create', 'brand.edit'], 'icon' => 'fa-light fa-copyright', 'child' => [
+        ['type' => 'route', 'name' => 'Brands', 'route' => ['brand.index', 'brand.edit', 'brand.create', 'brand.show'], 'icon' => 'fa-light fa-copyright', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'brand.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
         ]],
-        ['type' => 'route', 'name' => 'Suppliers', 'route' => ['supplier.index', 'supplier.edit', 'supplier.create', 'supplier.edit'], 'icon' => 'fa-light fa-truck-field-un', 'child' => [
+        ['type' => 'route', 'name' => 'Suppliers', 'route' => ['supplier.index', 'supplier.edit', 'supplier.create', 'supplier.show'], 'icon' => 'fa-light fa-truck-field-un', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'brand.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
         ]],
