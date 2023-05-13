@@ -42,7 +42,7 @@ Set .env database variables
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=pbl-vendor
+DB_DATABASE=pbl-vendor-laravel
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -52,7 +52,7 @@ php artisan optimize:clear
 ```
 
 ```shell
-php artisan migrate --seed
+php artisan migrate:fresh --seed
 ```
 
 Run Laravel server
@@ -67,7 +67,7 @@ npm run dev
 
 ## Database Diagram:
 ![Database](.github/images/database.png)
-- https://dbdiagram.io/d/63f460ce296d97641d827b4d
+- https://dbdiagram.io/d/63f70bb7296d97641d831ebd
 
 ## Screenshots
 ![Login Page](.github/images/login.png)
@@ -85,7 +85,7 @@ npm run dev
 ## Support
 > If there are any problems, please leave a issue
 >
-[ > Click on the link to write a issue](https://github.com/KIUT-Projects/pbl-vendor/issues)
+[ > Click on the link to write a issue](https://github.com/KIUT-Projects/pbl-vendor-laravel/issues)
 
 ## Authors
 - ISE-51U - Umarov Kamoliddin ([@UzSoftic](https://github.com/uzsoftic))
