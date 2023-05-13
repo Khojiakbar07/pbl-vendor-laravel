@@ -26,9 +26,9 @@
         ]],
 
         ['type' => 'divider', 'name' => 'Members'],
-        ['type' => 'route', 'name' => 'Customers', 'route' => 'user.index', 'icon' => 'fa-light fa-users-line', 'child' => [
-            ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
-            ['type' => 'route', 'name' => 'Create', 'route' => 'user.index'],
+        ['type' => 'route', 'name' => 'Customers', 'route' => ['customer.index', 'customer.edit', 'customer.create', 'customer.show'], 'icon' => 'fa-light fa-users-line', 'child' => [
+            ['type' => 'route', 'name' => 'All', 'route' => 'customer.index'],
+            ['type' => 'route', 'name' => 'Create', 'route' => 'customer.create'],
         ]],
         ['type' => 'route', 'name' => 'Users', 'route' => 'user.index', 'icon' => 'fa-light fa-user-pilot-tie', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
