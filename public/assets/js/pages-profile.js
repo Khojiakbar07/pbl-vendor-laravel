@@ -47,7 +47,7 @@ $(function () {
           }
         },
         {
-          // Avatar image/badge, Name and post
+          // Avatar images/badge, Name and post
           targets: 2,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
@@ -55,7 +55,7 @@ $(function () {
               $name = full['project_name'],
               $date = full['date'];
             if ($user_img) {
-              // For Avatar image
+              // For Avatar images
               var $output =
                 '<img src="' + assetsPath + 'img/icons/brands/' + $user_img + '" alt="Avatar" class="rounded-circle">';
             } else {

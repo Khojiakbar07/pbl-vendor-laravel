@@ -23,7 +23,7 @@
     iconWarning = document.querySelector('#type-warning'),
     iconError = document.querySelector('#type-error'),
     iconQuestion = document.querySelector('#type-question'),
-    customImage = document.querySelector('#custom-image'),
+    customImage = document.querySelector('#custom-images'),
     autoClose = document.querySelector('#auto-close'),
     outsideClick = document.querySelector('#outside-click'),
     progressSteps = document.querySelector('#progress-steps'),
@@ -343,10 +343,10 @@
     customImage.onclick = function () {
       Swal.fire({
         title: 'Sweet!',
-        text: 'Modal with a custom image.',
+        text: 'Modal with a custom images.',
         imageUrl: assetsPath + 'img/backgrounds/5.jpg',
         imageWidth: 400,
-        imageAlt: 'Custom image',
+        imageAlt: 'Custom images',
         customClass: {
           confirmButton: 'btn btn-primary'
         },

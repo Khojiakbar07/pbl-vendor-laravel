@@ -50,7 +50,7 @@ $(function () {
               $email = full['email'],
               $image = full['avatar'];
             if ($image) {
-              // For Avatar image
+              // For Avatar images
               var $output =
                 '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
             } else {

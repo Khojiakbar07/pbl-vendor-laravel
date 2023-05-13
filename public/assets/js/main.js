@@ -126,7 +126,7 @@ if (document.getElementById('layout-menu')) {
     styleSwitcherToggleEl.parentElement.remove();
   }
 
-  // Update light/dark image based on current style
+  // Update light/dark images based on current style
   function switchImage(style) {
     const switchImagesList = [].slice.call(document.querySelectorAll('[data-app-' + style + '-img]'));
     switchImagesList.map(function (imageEl) {

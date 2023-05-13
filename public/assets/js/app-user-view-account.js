@@ -42,7 +42,7 @@ $(function () {
               $framework = full['framework'],
               $image = full['project_image'];
             if ($image) {
-              // For Avatar image
+              // For Avatar images
               var $output =
                 '<img src="' +
                 assetsPath +

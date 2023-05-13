@@ -241,7 +241,7 @@ button::-moz-focus-inner {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
     background: #000; }
 
-/* Main image in popup */
+/* Main images in popup */
 img.mfp-img {
   width: auto;
   max-width: 100%;
@@ -252,7 +252,7 @@ img.mfp-img {
   padding: 40px 0 40px;
   margin: 0 auto; }
 
-/* The shadow behind the image */
+/* The shadow behind the images */
 .mfp-figure {
   line-height: 0; }
   .mfp-figure:after {
@@ -299,7 +299,7 @@ img.mfp-img {
 
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
   /**
-       * Remove all paddings around the image on small screen
+       * Remove all paddings around the images on small screen
        */
   .mfp-img-mobile .mfp-image-holder {
     padding-left: 0;

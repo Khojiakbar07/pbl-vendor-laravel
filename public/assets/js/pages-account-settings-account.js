@@ -153,10 +153,10 @@ document.addEventListener('DOMContentLoaded', function (e) {
       });
     }
 
-    // Update/reset user image of account page
+    // Update/reset user images of account page
     let accountUserImage = document.getElementById('uploadedAvatar');
     const fileInput = document.querySelector('.account-file-input'),
-      resetFileInput = document.querySelector('.account-image-reset');
+      resetFileInput = document.querySelector('.account-images-reset');
 
     if (accountUserImage) {
       const resetImage = accountUserImage.src;

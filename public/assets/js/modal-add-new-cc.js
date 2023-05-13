@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
                 assetsPath +
                 'img/icons/payments/' +
                 type +
-                '-cc.png" class="cc-icon-image" height="28"/>';
+                '-cc.png" class="cc-icon-images" height="28"/>';
             } else {
               document.querySelector('.card-type').innerHTML = '';
             }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     }
 
-    // Init cleave on show modal (To fix the cc image issue)
+    // Init cleave on show modal (To fix the cc images issue)
     let addNewCCModal = document.getElementById('addNewCCModal');
     addNewCCModal.addEventListener('show.bs.modal', function (event) {
       initCleave();
@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
       }
     });
 
-    // reset card image on click of cancel
+    // reset card images on click of cancel
     btnReset.addEventListener('click', function (e) {
-      // blank '.card-type' innerHTML to remove image
+      // blank '.card-type' innerHTML to remove images
       document.querySelector('.card-type').innerHTML = '';
       // destroy cleave and init again on modal open
       cleave.destroy();

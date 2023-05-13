@@ -297,12 +297,12 @@
     kanbanItem.forEach(function (el) {
       const element = "<span class='kanban-text'>" + el.textContent + '</span>';
       let img = '';
-      if (el.getAttribute('data-image') !== null) {
+      if (el.getAttribute('data-images') !== null) {
         img =
           "<img class='img-fluid rounded mb-2' src='" +
           assetsPath +
           'img/elements/' +
-          el.getAttribute('data-image') +
+          el.getAttribute('data-images') +
           "'>";
       }
       el.textContent = '';

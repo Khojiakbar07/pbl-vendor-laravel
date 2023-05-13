@@ -122,14 +122,14 @@ $(function () {
           visible: false
         },
         {
-          // Avatar image/badge, Name and post
+          // Avatar images/badge, Name and post
           targets: 3,
           render: function (data, type, full, meta) {
             var $user_img = full['avatar'],
               $name = full['full_name'],
               $post = full['post'];
             if ($user_img) {
-              // For Avatar image
+              // For Avatar images
               var $output =
                 '<img src="' + assetsPath + 'img/avatars/' + $user_img + '" alt="Avatar" class="rounded-circle">';
             } else {

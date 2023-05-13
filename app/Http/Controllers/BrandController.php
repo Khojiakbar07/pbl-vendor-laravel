@@ -36,13 +36,13 @@ class BrandController extends Controller
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
 
-        if($request->has('image')){
-            $image = $request->file('image')->storeAs(
-                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
+        if($request->has('images')){
+            $image = $request->file('images')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('images')->extension()
             );
             $brand->image = str_replace('public/', 'storage/', $image);
-            //$brand->image = $request->file('image')->store('public/products/images');
-            //$brand->image = Storage::disk('public')->putFile('products', $request->file('image'));
+            //$brand->images = $request->file('images')->store('public/products/images');
+            //$brand->images = Storage::disk('public')->putFile('products', $request->file('images'));
         }
         $brand->save();
 
@@ -74,9 +74,9 @@ class BrandController extends Controller
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->slug);
 
-        if ($request->has('image')){
-            $image = $request->file('image')->storeAs(
-                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
+        if ($request->has('images')){
+            $image = $request->file('images')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('images')->extension()
             );
             $brand->image = str_replace('public/', 'storage/', $image);
         }

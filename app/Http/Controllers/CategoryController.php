@@ -34,16 +34,16 @@ class CategoryController extends Controller
 
     {
         $category = new Category();
-        if($request->has('image')){
-            $image = $request->file('image')->storeAs(
-                'public/category/images', Str::random('32').'.'.$request->file('image')->extension()
+        if($request->has('images')){
+            $image = $request->file('images')->storeAs(
+                'public/category/images', Str::random('32').'.'.$request->file('images')->extension()
             );
 
             $category->image = str_replace('public/', 'storage/', $image);
 
-            //$category->image = $request->file('image')->store('public/products/images');
+            //$category->images = $request->file('images')->store('public/products/images');
 
-            //$category->image = Storage::disk('public')->putFile('products', $request->file('image'));
+            //$category->images = Storage::disk('public')->putFile('products', $request->file('images'));
 
 
         }
@@ -54,9 +54,9 @@ class CategoryController extends Controller
 
             $category->icon = str_replace('public/', 'storage/', $icon);
 
-            //$category->image = $request->file('image')->store('public/products/images');
+            //$category->images = $request->file('images')->store('public/products/images');
 
-            //$category->image = Storage::disk('public')->putFile('products', $request->file('image'));
+            //$category->images = Storage::disk('public')->putFile('products', $request->file('images'));
 
 
         }

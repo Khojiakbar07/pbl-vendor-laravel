@@ -23,7 +23,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'order_id' => 'required|integer|max:100',
-            'image' => 'nullable|image|max:255',
+            'images' => 'nullable|images|max:255',
             'icon' => 'nullable|string|max:255',
             'name' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255',

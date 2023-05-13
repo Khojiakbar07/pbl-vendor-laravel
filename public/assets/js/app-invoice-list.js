@@ -88,7 +88,7 @@ $(function () {
               $rand_num = Math.floor(Math.random() * 11) + 1,
               $user_img = $rand_num + '.png';
             if ($image === true) {
-              // For Avatar image
+              // For Avatar images
               var $output =
                 '<img src="' + assetsPath + 'img/avatars/' + $user_img + '" alt="Avatar" class="rounded-circle">';
             } else {

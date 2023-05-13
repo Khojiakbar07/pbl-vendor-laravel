@@ -670,7 +670,7 @@
 <body class="ae">
 <div id="a">
     <div>
-        <header class="dk hc jh ka lg:lh lg:uh oh ri" style="background-image:linear-gradient(170deg,#fff 63%,#dcfce7 0,#dcfce7 123%)">
+        <header class="dk hc jh ka lg:lh lg:uh oh ri" style="background-images:linear-gradient(170deg,#fff 63%,#dcfce7 0,#dcfce7 123%)">
             <div class="cd cf jg ld ri ud" x-data="{ mobileMenu: false}">
                 <a href="{{ route('home') }}">
                     <img class="he" src="{{ asset('images/home/logo.svg') }}">

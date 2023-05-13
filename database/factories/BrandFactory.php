@@ -24,7 +24,7 @@ class BrandFactory extends Factory
             'user_id' => User::all()->random()->id,
             'name' => $name,
             'slug' => Str::slug($name, '-'),
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Brand', false, 'jpg'),
+            'images' => $this->faker->imageUrl(500, 500, null, true, 'Brand', false, 'jpg'),
         ];
     }
 }

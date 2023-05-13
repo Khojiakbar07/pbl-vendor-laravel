@@ -47,7 +47,7 @@
   const brandNameBtn = document.querySelector('.brand-menu-toggle'),
     logoNameBtn = document.querySelector('.brand-logo-toggle'),
     logoNameTextBtn = document.querySelector('.logo-name-toggle'),
-    brandImageBtn = document.querySelector('.brand-image-toggle');
+    brandImageBtn = document.querySelector('.brand-images-toggle');
   if (brandNameBtn) {
     brandNameBtn.onclick = function () {
       if (layoutMenu1) {
