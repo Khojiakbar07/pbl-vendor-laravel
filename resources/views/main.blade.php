@@ -171,12 +171,12 @@
 				    <nav id="navi">
 					    <ul>
 					      <li><a href="#page-1">Dastur haqida</a></li>
-					      <li><a href="#page-2">Dastur siga nima beradi</a></li>
+					      <li><a href="#page-2">Dastur sizga nima beradi</a></li>
 					      <li><a href="#page-3">Boshlash</a></li>
 					      <li><a href="#page-4">1 qadam</a></li>
 					      <li><a href="#page-5">2 qadam</a></li>
 					      <li><a href="#page-6">3 qadam</a></li>
-					      <li><a href="#page-7">qonun qoidalarf</a></li>
+					      <li><a href="#page-7">Qonun qoidalar</a></li>
 					      <li><a href="#page-8">Tariflar</a></li>
 					    </ul>
 					  </nav>
