@@ -3,7 +3,7 @@
 @section('content')
     <!-- Hoverable Table rows -->
     <div class="card">
-        <h5 class="card-header">{{ __('brand') }}</h5>
+        <h5 class="card-header">{{ __('Brands') }}</h5>
         <div class="d-flex align-self-end px-5">
             <a href="{{ route('brand.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
         </div>
@@ -16,7 +16,7 @@
                     <th>Brand</th>
                     <th>Author</th>
                     <th>Status</th>
-                    <th>Created at</th    >
+                    <th>Created at</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -46,9 +46,7 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn-light delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
-                                    </div>
+                                    <button type="submit" class="dropdown-item delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
                                 </form>
 
                             </div>

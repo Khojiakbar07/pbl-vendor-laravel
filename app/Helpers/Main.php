@@ -21,6 +21,10 @@ if(!function_exists('is_guest')){
 }
 if(!function_exists('is_route_active')){
     function is_route_active($route, $value = "active"):string{
-        return (request()->route()->getName() == $route) ? $value : '';
+        if (is_array($route)){
+            return (in_array(request()->route()->getName(), $route)) ? $value : '';
+        }else{
+            return (request()->route()->getName() == $route) ? $value : '';
+        }
     }
 }
