@@ -9,24 +9,21 @@
                 <script>
                     document.write(new Date().getFullYear());
                 </script>
-                , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="fw-semibold">Pixinvent</a>
+                , made by <a href="#" class="fw-semibold">KIUT Students</a>
             </div>
             <div>
-                <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank"
-                >License</a
-                >
-                <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4"
-                >More Themes</a
+                <a href="https://github.com/KIUT-Projects/pbl-vendor-laravel" target="_blank" class="footer-link me-4"
+                >Github</a
                 >
 
                 <a
-                    href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/"
+                    href="https://github.com/KIUT-Projects/pbl-vendor-laravel/blob/main/README.md"
                     target="_blank"
                     class="footer-link me-4"
                 >Documentation</a
                 >
 
-                <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block"
+                <a href="https://t.me/uzsoftic" target="_blank" class="footer-link d-none d-sm-inline-block"
                 >Support</a
                 >
             </div>

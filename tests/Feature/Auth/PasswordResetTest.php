@@ -21,7 +21,7 @@ test('reset password link can be requested', function () {
 });
 
 test('reset password screen can be rendered', function () {
-    /*Notification::fake();
+    Notification::fake();
 
     $user = User::factory()->create();
 
@@ -33,9 +33,9 @@ test('reset password screen can be rendered', function () {
         $response->assertStatus(200);
 
         return true;
-    });*/
+    });
     //$this->assert(true);
-    return true;
+    //return true;
 
 });
 

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Product;
+use App\Models\Supplier;
 use App\Models\User;
 use http\Client\Response;
 use Illuminate\Http\Request;
@@ -34,7 +37,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('shop.product.create');
+        $brands = Brand::query()->where('deleted', '0')->get();
+        $suppliers = Supplier::query()->where('deleted', '0')->get();
+        $categories = Category::query()->where('deleted', '0')->get();
+
+        return view('shop.product.create', compact('brands', 'suppliers', 'categories'));
     }
 
     /**

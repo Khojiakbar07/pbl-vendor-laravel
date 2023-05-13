@@ -32,9 +32,9 @@ class BrandController extends Controller
     public function store(StoreBrandRequest $request)
     {
         $brand = new Brand();
+        $brand->user_id = auth()->id();
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
-        $brand->user_id = auth()->id();
 
         if($request->has('image')){
             $image = $request->file('image')->storeAs(
