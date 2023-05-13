@@ -40,14 +40,9 @@ class BrandController extends Controller
             $image = $request->file('image')->storeAs(
                 'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
             );
-
             $brand->image = str_replace('public/', 'storage/', $image);
-
             //$brand->image = $request->file('image')->store('public/products/images');
-
             //$brand->image = Storage::disk('public')->putFile('products', $request->file('image'));
-
-
         }
         $brand->save();
 
@@ -75,8 +70,19 @@ class BrandController extends Controller
      */
     public function update(UpdateBrandRequest $request, Brand $brand)
     {
-        $brand->update($request->except(['_method', '_token']));
-        return redirect()->route('brand.index')->with('status', 'brand updated successfully');
+        //$brand->update($request->except(['_method', '_token']));
+        $brand->name = $request->name;
+        $brand->slug = Str::slug($request->slug);
+
+        if ($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
+            );
+            $brand->image = str_replace('public/', 'storage/', $image);
+        }
+
+        $brand->save();
+        return redirect()->route('brand.index')->with('status', 'Brand updated successfully');
     }
 
     /**

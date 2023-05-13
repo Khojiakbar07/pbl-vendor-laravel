@@ -11,13 +11,13 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Image</th>
-                    <th>Brand</th>
-                    <th>Author</th>
-                    <th>Status</th>
-                    <th>Created at</th>
-                    <th>Actions</th>
+                    <th>{{ __('ID') }}</th>
+                    <th>{{ __('Image') }}</th>
+                    <th>{{ __('Brand') }}</th>
+                    <th>{{ __('Author') }}</th>
+                    <th>{{ __('Status') }}</th>
+                    <th>{{ __('Created at') }}</th>
+                    <th>{{ __('Actions') }}</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -31,22 +31,30 @@
                     </td>
                     <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
                     <td>{{ $brand->user->name }}</td>
-                    <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($brand->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td><span class="badge bg-label-primary me-1">{{ __('Active') }}</span></td>
+                    <td>{{ \Carbon\Carbon::make($brand->created_at)->format('d.m.Y H:i') }}</td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('brand.edit', $brand->id) }}"
-                                ><i class="ti ti-pencil me-1"></i> Edit</a
-                                >
+                                <a class="dropdown-item" href="{{ route('brand.show', $brand->id) }}">
+                                    <i class="ti ti-eye me-1"></i>
+                                    {{ __('Show') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('brand.edit', $brand->id) }}">
+                                    <i class="ti ti-pencil me-1"></i>
+                                    {{ __('Edit') }}
+                                </a>
                                 <form method="POST" action="{{ route('brand.destroy', $brand->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="dropdown-item delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
+                                    <button type="submit" class="dropdown-item delete-user">
+                                        <i class="ti ti-trash me-1"></i>
+                                        {{ __('Delete') }}
+                                    </button>
                                 </form>
 
                             </div>
