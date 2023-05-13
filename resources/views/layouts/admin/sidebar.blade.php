@@ -21,8 +21,8 @@
             ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
         ]],
         ['type' => 'route', 'name' => 'Suppliers', 'route' => ['supplier.index', 'supplier.edit', 'supplier.create', 'supplier.show'], 'icon' => 'fa-light fa-truck-field-un', 'child' => [
-            ['type' => 'route', 'name' => 'All', 'route' => 'brand.index'],
-            ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
+            ['type' => 'route', 'name' => 'All', 'route' => 'supplier.index'],
+            ['type' => 'route', 'name' => 'Create', 'route' => 'supplier.create'],
         ]],
 
         ['type' => 'divider', 'name' => 'Members'],
