@@ -27,7 +27,7 @@
                         <strong>{{ $brand->id }}</strong>
                     </td>
                     <td>
-                        <img src="{{ asset($brand->image) }}" class="img-fluid">
+                        <img src="{{ asset($brand->image) }}" class="img-fluid" style="width: 5rem;">
                     </td>
                     <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
                     <td>{{ $brand->user->name }}</td>

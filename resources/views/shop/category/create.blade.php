@@ -10,9 +10,8 @@
                     @csrf
                     <div class="card-body">
 
-                        @if($errors->any())
-                            {!! implode('', $errors->all('<div class="alert alert-danger">:message</div>')) !!}
-                        @endif
+                        @include('layouts.admin.inc.form_error')
+
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Category Name</label>
                             <input type="text" class="form-control @error('name') form-danger @enderror" placeholder="Category Name" name="name" value="{{ old('name') }}">

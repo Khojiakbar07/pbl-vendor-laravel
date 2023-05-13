@@ -15,12 +15,19 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Dashboard - Analytics | Vuexy - Bootstrap Admin Template</title>
+    <title>{{ __(env('APP_NAME')) }}</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/faicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/faicon/favicon.ico') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#b920f0">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +38,8 @@
     />
 
     <!-- Icons -->
-    <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />
+    {{--<link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />--}}
+    <link rel="stylesheet" href="{{ asset('libs/fontawesome/v6.4.0/css/all.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/tabler-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/flag-icons.css') }}" />
 
@@ -73,6 +81,9 @@
             box-shadow: -1px 0px 23px 6px rgba(255,0,0,0.71);
             -webkit-box-shadow: 0px 0px 10px 1px rgba(255,0,0,0.5);
             -moz-box-shadow: -1px 0px 23px 6px rgba(255,0,0,0.71);
+        }
+        .menu-icon {
+            font-size: 1.1rem;
         }
     </style>
 </head>
