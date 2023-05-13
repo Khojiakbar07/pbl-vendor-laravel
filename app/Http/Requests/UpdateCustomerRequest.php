@@ -21,7 +21,7 @@ class UpdateCustomerRequest
             'fullname'=> 'required|string|max:255',
             'birthday'=> 'required|string|max:255',
             'phone'=> 'required|string|max:255',
-            'image'=> 'nullable|images'
+            'image'=> 'nullable|image'
 
         ];
     }

@@ -38,9 +38,9 @@ class CustomerController extends Controller
         $customer->phone =$request->phone;
         $customer->address =$request->address;
 
-        if ($request->has('images')) {
-            $image = $request->file('images')->storeAs(
-                'public/customer/images', Str::random('32') . '.' . $request->file('images')->extension()
+        if ($request->has('image')) {
+            $image = $request->file('image')->storeAs(
+                'public/customer/images', Str::random('32') . '.' . $request->file('image')->extension()
             );
             $customer->image = str_replace('public/', 'storage/', $image);
             //$customer->images = $request->file('images')->store('public/products/images');
@@ -81,9 +81,9 @@ class CustomerController extends Controller
         $customer->age =$request->age;
         $customer->phone =$request->phone;
         $customer->address =$request->address;
-        if ($request->has('images')) {
-            $image = $request->file('images')->storeAs(
-                'public/customer/images', Str::random('32') . '.' . $request->file('images')->extension()
+        if ($request->has('image')) {
+            $image = $request->file('image')->storeAs(
+                'public/customer/images', Str::random('32') . '.' . $request->file('image')->extension()
             );
             $customer->image = str_replace('public/', 'storage/', $image);
         }

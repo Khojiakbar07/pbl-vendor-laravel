@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('discount_type')->default('sum');
             $table->double('tax', 64)->default(0);
             $table->string('tax_type')->default('sum');
-            $table->string('images')->nullable();
+            $table->string('image')->nullable();
             $table->text('gallery')->nullable();
             $table->text('tags')->nullable();
             $table->longText('attributes')->nullable();

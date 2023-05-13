@@ -57,9 +57,9 @@ class ProductController extends Controller
         $product->short_description = $request->short_description;
         $product->price = $request->price;
 
-        if($request->has('images')){
-            $image = $request->file('images')->storeAs(
-                'public/products/images', Str::random('32').'.'.$request->file('images')->extension()
+        if($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/products/images', Str::random('32').'.'.$request->file('image')->extension()
             );
 
             $product->image = str_replace('public/', 'storage/', $image);

@@ -18,7 +18,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">{{ __('Image') }}</label>
-                            <input class="form-control" type="file" id="image" name="image" value="{{ old('images') }}" required />
+                            <input class="form-control" type="file" id="image" name="image" value="{{ old('image') }}" required />
                         </div>
 
                         <div>

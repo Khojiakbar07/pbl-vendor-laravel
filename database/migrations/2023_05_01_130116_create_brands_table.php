@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('images')->nullable();
+            $table->string('image')->nullable();
             $table->boolean('deleted')->default(0);
             $table->timestamps();
         });

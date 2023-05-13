@@ -23,7 +23,7 @@ class StoreBrandRequest extends FormRequest
     {
         return [
             'name'=> 'required|string|max:255',
-            'images'=> 'nullable|images'
+            'image'=> 'nullable|image'
         ];
     }
 }

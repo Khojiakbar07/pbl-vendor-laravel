@@ -36,9 +36,9 @@ class BrandController extends Controller
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->name);
 
-        if($request->has('images')){
-            $image = $request->file('images')->storeAs(
-                'public/brand/images', Str::random('32').'.'.$request->file('images')->extension()
+        if($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
             );
             $brand->image = str_replace('public/', 'storage/', $image);
             //$brand->images = $request->file('images')->store('public/products/images');
@@ -74,9 +74,9 @@ class BrandController extends Controller
         $brand->name = $request->name;
         $brand->slug = Str::slug($request->slug);
 
-        if ($request->has('images')){
-            $image = $request->file('images')->storeAs(
-                'public/brand/images', Str::random('32').'.'.$request->file('images')->extension()
+        if ($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/brand/images', Str::random('32').'.'.$request->file('image')->extension()
             );
             $brand->image = str_replace('public/', 'storage/', $image);
         }

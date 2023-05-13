@@ -28,13 +28,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('brand', BrandController::class);
-    Route::resource('customer', CustomerController::class);
     Route::resource('supplier', SupplierController::class);
 
     Route::resource('order_note', OrderNoteController::class);
     Route::resource('order_item', OrderItemController::class);
 
     // User and Members
+    Route::resource('customer', CustomerController::class);
     Route::resource('role', RoleController::class);
     Route::resource('staff', StaffController::class);
     Route::resource('user', UserController::class);
