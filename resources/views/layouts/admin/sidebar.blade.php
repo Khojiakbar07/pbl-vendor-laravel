@@ -1,37 +1,40 @@
 @php
     $categories = [
         ['type' => 'divider', 'name' => 'Main'],
-        ['type' => 'route', 'name' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'ti ti-smart-home'],
+        ['type' => 'route', 'name' => 'Dashboard', 'route' => 'dashboard', 'icon' => 'fa-light fa-house'],
 
         ['type' => 'divider', 'name' => 'Ecommerce'],
-        //['type' => 'route', 'name' => 'POS Terminal', 'route' => 'order.terminal', 'icon' => 'ti ti-basket'],
-        ['type' => 'route', 'name' => 'Orders', 'route' => ['order.index', 'order.edit', 'order.create'], 'icon' => 'ti ti-report-money', 'child' => [
+        ['type' => 'route', 'name' => 'POS Terminal', 'route' => 'order.terminal', 'icon' => 'fa-light fa-cash-register'],
+        ['type' => 'route', 'name' => 'Orders', 'route' => ['order.index', 'order.edit', 'order.create', 'order.edit'], 'icon' => 'fa-light fa-envelope-open-dollar', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'order.index'],
         ]],
-        ['type' => 'route', 'name' => 'Products', 'route' => ['product.index', 'product.edit', 'product.create'], 'icon' => 'ti ti-layout-kanban', 'child' => [
+        ['type' => 'route', 'name' => 'Products', 'route' => ['product.index', 'product.edit', 'product.create', 'product.edit'], 'icon' => 'fa-light fa-boxes-stacked', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'product.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'product.create'],
         ]],
-        ['type' => 'route', 'name' => 'Categories', 'route' => ['category.index', 'category.edit', 'category.create'], 'icon' => 'ti ti-category', 'child' => [
+        ['type' => 'route', 'name' => 'Categories', 'route' => ['category.index', 'category.edit', 'category.create', 'category.edit'], 'icon' => 'fa-light fa-rectangle-history', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'category.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'category.create'],
         ]],
-        ['type' => 'route', 'name' => 'Brands', 'route' => ['brand.index', 'brand.edit', 'brand.create'], 'icon' => 'ti ti-brand-apple', 'child' => [
+        ['type' => 'route', 'name' => 'Brands', 'route' => ['brand.index', 'brand.edit', 'brand.create', 'brand.edit'], 'icon' => 'fa-light fa-copyright', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'brand.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
         ]],
-        ['type' => 'route', 'name' => 'Suppliers', 'route' => ['supplier.index', 'supplier.edit', 'supplier.create'], 'icon' => 'ti ti-truck-return', 'child' => [
+        ['type' => 'route', 'name' => 'Suppliers', 'route' => ['supplier.index', 'supplier.edit', 'supplier.create', 'supplier.edit'], 'icon' => 'fa-light fa-truck-field-un', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'brand.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'brand.create'],
         ]],
 
         ['type' => 'divider', 'name' => 'Members'],
-        ['type' => 'route', 'name' => 'Users', 'route' => 'user.index', 'icon' => 'ti ti-users', 'child' => [
+        ['type' => 'route', 'name' => 'Customers', 'route' => 'user.index', 'icon' => 'fa-light fa-users-line', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'user.index'],
         ]],
-        ['type' => 'route', 'name' => 'Staffs', 'route' => 'staff.index', 'icon' => 'ti ti-user-star'],
-        ['type' => 'route', 'name' => 'Roles', 'route' => 'role.index', 'icon' => 'ti ti-user-shield'],
+        ['type' => 'route', 'name' => 'Users', 'route' => 'user.index', 'icon' => 'fa-light fa-user-pilot-tie', 'child' => [
+            ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
+            ['type' => 'route', 'name' => 'Create', 'route' => 'user.index'],
+        ]],
+        ['type' => 'route', 'name' => 'Roles', 'route' => 'role.index', 'icon' => 'fa-light fa-person-military-rifle'],
 
         //['type' => 'divider', 'name' => 'Others'],
         //['type' => 'route', 'name' => 'Support', 'route' => 'dashboard', 'icon' => 'fas fa-life-ring'],
@@ -62,7 +65,7 @@
                 @if(!empty($category['child']))
                 <li class="menu-item {{ is_route_active($category['route'], "active open") }}">
                     <a href="javascript:void(0);" class="menu-link @if(!empty($category['child'])) menu-toggle @endif ">
-                        <i class="menu-icon tf-icons {{ $category['icon'] }}"></i>
+                        <i class="menu-icon {{ $category['icon'] }}"></i>
                         <div>{{ __($category['name']) }}</div>
                     </a>
                     <ul class="menu-sub">
@@ -78,7 +81,7 @@
                 @else
                     <li class="menu-item {{ is_route_active($category['route'], "active") }}">
                         <a href="{{ route($category['route']) }}" class="menu-link">
-                            <i class="menu-icon tf-icons {{ $category['icon'] }}"></i>
+                            <i class="menu-icon {{ $category['icon'] }}"></i>
                             <div>{{ __($category['name']) }}</div>
                         </a>
                     </li>

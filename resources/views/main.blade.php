@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Author - Free Bootstrap 4 Template by Colorlib</title>
+<head>
+    <title>{{ env('APP_NAME') }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/faicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/faicon/favicon.ico') }}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('safari-pinned-tab.svg') }}" color="#b920f0">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
     <link rel="stylesheet" href="{{ asset('landing/css/animate.css')}}">
@@ -19,163 +31,140 @@
 
     <link rel="stylesheet" href="{{ asset('landing/css/flaticon.css')}}">
     <link rel="stylesheet" href="{{ asset('landing/css/style.css')}}">
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+</head>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="{{ route('home') }}">
-              <img class="img-fluid" src="{{ asset('images/logo/logo.png')}}" style="max-width: 160px;" alt="{{ env('APP_NAME') }}">
-          </a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img class="img-fluid" src="{{ asset('images/logo/logo.png')}}" style="max-width: 160px;"
+                 alt="{{ env('APP_NAME') }}">
+        </a>
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav nav ml-auto">
                 <li class="nav-item"><a href="#home-section" class="nav-link"><span>Bosh sahifa</span></a></li>
                 <li class="nav-item"><a href="#about-section" class="nav-link"><span>Dastur haqida</span></a></li>
-                <li class="nav-item"><a href="#chapter-section" class="nav-link"><span>Chapter</span></a></li>
+                <li class="nav-item"><a href="#instruction-section" class="nav-link"><span>Qo'llanma</span></a></li>
                 <li class="nav-item"><a href="#testimonial-section" class="nav-link"><span>Izohlar</span></a></li>
-                <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Bizning mijozlar</span></a></li>
 
-            @auth
-                <li class="nav-item"><a href="{{ route('profile.logout') }}" class="nav-link"><span>{{ __('Log Out') }}</span></a></li>
-                <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link"><span>{{ __('Dashboard') }}</span></a></li>
-            @else
-                <li class="nav-item"><a href="{{ route('login') }}" class="nav-link"><span>{{ __('Login') }}</span></a></li>
-                <li class="nav-item"><a href="{{ route('register') }}" class="nav-link"><span>{{ __('Register') }}</span></a></li>
-            @endif
+                @auth
+                    <li class="nav-item"><a href="{{ route('profile.logout') }}"
+                                            class="nav-link"><span>{{ __('Log Out') }}</span></a></li>
+                    <li class="nav-item"><a href="{{ route('dashboard') }}"
+                                            class="nav-link"><span>{{ __('Dashboard') }}</span></a></li>
+                @else
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link"><span>{{ __('Login') }}</span></a>
+                    </li>
+                    <li class="nav-item"><a href="{{ route('register') }}"
+                                            class="nav-link"><span>{{ __('Register') }}</span></a></li>
+                @endif
             </ul>
 
-	      </div>
-	    </div>
-	  </nav>
+        </div>
+    </div>
+</nav>
 
 
-	  <section class="hero-wrap js-fullheight">
-      <div class="overlay"></div>
-      <div class="container-fluid px-0">
-      	<div class="row d-md-flex no-gutters align-items-center js-fullheight justify-content-end">
-
-	        <div class="col-md-5">
+<section class="hero-wrap js-fullheight" id="home-section">
+    <div class="container-fluid px-0">
+        <div class="row d-md-flex no-gutters align-items-center js-fullheight justify-content-end">
+            <div class="d-none d-md-block col-md-5">
                 <div class="">
-                    <div class="text mt-5">
-                        <span class="subheading">Biz barcha turdagi do`konlarni avtomatlashtramiz</span>
+                    <div class="text mt-5" style="display: flex;flex-direction: column;align-items: flex-end;padding-left: 12rem;">
                         <h1 style="font-size: 50px;">Biz bilan onlayn savdo qiling</h1>
                         <p>Barcha savdo jarayonini avtomatlashitiring va statistikalarni kuzatib boring.</p>
                     </div>
                 </div>
             </div>
 
-	      	<div class="col-md-7">
-                <img class="mt-6 img-fluid"
-                     src="{{ asset('landing/img/pos1.png')}}" alt="">
+            <div class="d-none d-md-block col-md-7">
+                <img class="mt-6 img-fluid" src="{{ asset('landing/img/pos1.png')}}" alt="">
+            </div>
+
+            <div class="d-block d-md-none col-12">
+                <div class="text mt-5" style="display: flex;flex-direction: column;align-items: center;">
+                    <h1 style="font-size: 50px;text-align: center;">Biz bilan onlayn savdo qiling</h1>
+                    <p>Barcha savdo jarayonini avtomatlashitiring va statistikalarni kuzatib boring.</p>
+                </div>
+                <img class="mt-6 img-fluid" src="{{ asset('landing/img/pos1.png')}}" alt="">
             </div>
 
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="ftco-section ftco-no-pb ftco-partner">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-md-12 col-lg ftco-animate">
-    				<a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo1.png')}}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-md-12 col-lg ftco-animate">
-    				<a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo2.png')}}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-md-12 col-lg ftco-animate">
-    				<a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo3.jpg')}}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-md-12 col-lg ftco-animate">
-    				<a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo5.svg')}}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-md-12 col-lg ftco-animate">
-    				<a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo4.png')}}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    		</div>
-    	</div>
-    </section>
-
-    <section class="ftco-about img ftco-section" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url({{ asset('landing/img/16220569-seller-at-home-improvement-store.webp')}});">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-6 pl-md-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		            <h2 class="mb-4">Dastur haqida</h2>
-		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		            <div class="text-about">
-		            	<h4>Bu qanday ishlaydi</h4>
-			            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-			            <h4>Takliflar</h4>
-			            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-			            <h4>Qoidalar</h4>
-			            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
+<section class="ftco-section ftco-no-pb ftco-partner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg ftco-animate">
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo1.png')}}"
+                                                                               class="img-fluid"
+                                                                               alt="Colorlib Template"></a>
+            </div>
+            <div class="col-md-12 col-lg ftco-animate">
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo2.png')}}"
+                                                                               class="img-fluid"
+                                                                               alt="Colorlib Template"></a>
+            </div>
+            <div class="col-md-12 col-lg ftco-animate">
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo3.jpg')}}"
+                                                                               class="img-fluid"
+                                                                               alt="Colorlib Template"></a>
+            </div>
+            <div class="col-md-12 col-lg ftco-animate">
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo5.svg')}}"
+                                                                               class="img-fluid"
+                                                                               alt="Colorlib Template"></a>
+            </div>
+            <div class="col-md-12 col-lg ftco-animate">
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo4.png')}}"
+                                                                               class="img-fluid"
+                                                                               alt="Colorlib Template"></a>
+            </div>
         </div>
-    	</div>
-    </section>
+    </div>
+</section>
 
-    <section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-    	<div class="container">
-				<div class="row d-md-flex align-items-center align-items-stretch">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="11001">0</strong>
-                <span>Foydalanuvchilar</span>
-              </div>
+<section class="ftco-about img ftco-section" id="about-section">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+            <div class="col-md-6 col-lg-6 d-flex">
+                <div class="img-about img d-flex align-items-stretch">
+                    <div class="overlay"></div>
+                    <div class="img d-flex align-self-stretch align-items-center"
+                         style="background-image:url({{ asset('landing/img/16220569-seller-at-home-improvement-store.webp')}});">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="1200">0</strong>
-                <span>Do`konlar</span>
-              </div>
+            <div class="col-md-6 col-lg-6 pl-md-5">
+                <div class="row justify-content-start pb-3">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <h2 class="mb-4">Dastur haqida</h2>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                            It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <div class="text-about">
+                            <h4>Bu qanday ishlaydi</h4>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                                the Semantics, a large language ocean.</p>
+                            <h4>Takliflar</h4>
+                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
+                                language ocean.</p>
+                            <h4>Qoidalar</h4>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="340">0</strong>
-                <span>mijozlar</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18 bg-light">
-              <div class="text">
-                <strong class="number" data-number="12000">0</strong>
-                <span>Buyurtmalar</span>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="ftco-section ftco-no-pb ftco-no-pt" id="chapter-section">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Dakumenttatsiya</h2>
-          </div>
-        </div>
+<<<<<<< HEAD
     		<div class="row">
     			<div class="col-md-3 mb-4">
 				    <nav id="navi">
@@ -228,290 +217,439 @@
 			  </div>
     	</div>
     </section>
+=======
+    </div>
+</section>
+>>>>>>> 77b986c9efc80629f3139361be118ffc8c36d4e7
 
-    <section class="ftco-section ftco-no-pt">
-    	<div class="container">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-5 heading-section text-center ftco-animate">
-          	<span class="subheading">Xizmat</span>
-            <h2 class="mb-4">Xizmatlar</h2>
-          </div>
+<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img">
+    <div class="container">
+        <div class="row d-md-flex align-items-center align-items-stretch">
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 bg-light">
+                    <div class="text">
+                        <strong class="number" data-number="11001">0</strong>
+                        <span>Foydalanuvchilar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 bg-light">
+                    <div class="text">
+                        <strong class="number" data-number="1200">0</strong>
+                        <span>Do`konlar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 bg-light">
+                    <div class="text">
+                        <strong class="number" data-number="340">0</strong>
+                        <span>mijozlar</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18 bg-light">
+                    <div class="text">
+                        <strong class="number" data-number="12000">0</strong>
+                        <span>Buyurtmalar</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt" id="instruction-section">
+    <div class="container">
+        <div class="row justify-content-center py-5 mt-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Dakumenttatsiya</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <nav id="navi">
+                    <ul>
+                        <li><a href="#page-1">Dastur haqida</a></li>
+                        <li><a href="#page-2">Dastur siga nima beradi</a></li>
+                        <li><a href="#page-3">Boshlash</a></li>
+                        <li><a href="#page-4">1 qadam</a></li>
+                        <li><a href="#page-5">2 qadam</a></li>
+                        <li><a href="#page-6">3 qadam</a></li>
+                        <li><a href="#page-7">qonun qoidalarf</a></li>
+                        <li><a href="#page-8">Tariflar</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                <div id="page-1" class="page bg-light one">
+                    <h2 class="heading">Dastur haqida</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-2" class="page bg-light two">
+                    <h2 class="heading">Dastur sizga nima beradi</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-3" class="page bg-light three">
+                    <h2 class="heading">Boshlash</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-4" class="page bg-light four">
+                    <h2 class="heading">1 qadam</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-5" class="page bg-light five">
+                    <h2 class="heading">2 qadam</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-6" class="page bg-light six">
+                    <h2 class="heading">3 qadam</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-7" class="page bg-light seven">
+                    <h2 class="heading">Qonun qoidalar</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+                <div id="page-8" class="page bg-light eight">
+                    <h2 class="heading">Tariflar</h2>
+                    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it
+                        would have been rewritten a thousand times and everything that was left from its origin would be
+                        the word "and" and the Little Blind Text should turn around and return to its own, safe country.
+                        But nothing the copy said could convince her and so it didn’t take long until a few insidious
+                        Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their
+                        agency, where they abused her for their.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt">
+    <div class="container">
+        <div class="row justify-content-center py-5 mt-5">
+            <div class="col-md-5 heading-section text-center ftco-animate">
+                <span class="subheading">Xizmat</span>
+                <h2 class="mb-4">Xizmatlar</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 text-center d-flex ftco-animate">
+                <div class="services-1 bg-light">
 							<span class="icon">
 								<i class="flaticon-user-experience"></i>
 							</span>
-							<div class="desc">
-								<h3 class="mb-5">Do`koni aftamatlashr</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
+                    <div class="desc">
+                        <h3 class="mb-5">Do`koni aftamatlashr</h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex ftco-animate">
+                <div class="services-1 bg-light">
 							<span class="icon">
 								<i class="flaticon-network"></i>
 							</span>
-							<div class="desc">
-								<h3 class="mb-5">Mijozlarga indiyuduval xizmat</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<div class="services-1 bg-light">
+                    <div class="desc">
+                        <h3 class="mb-5">Mijozlarga indiyuduval xizmat</h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 text-center d-flex ftco-animate">
+                <div class="services-1 bg-light">
 							<span class="icon">
 								<i class="flaticon-innovation"></i>
 							</span>
-							<div class="desc">
-								<h3 class="mb-5">Statistik malumotlar</h3>
-								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-    	</div>
-    </section>
+                    <div class="desc">
+                        <h3 class="mb-5">Statistik malumotlar</h3>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section class="ftco-section testimony-section ftco-no-pb" id="testimonial-section">
-    	<div class="img img-bg border" style="background-image: url(images/bg_4.jpg);"></div>
-    	<div class="overlay"></div>
-      <div class="container">
+<section class="ftco-section testimony-section ftco-no-pb" id="testimonial-section">
+    <div class="img img-bg border" style="background-image: url(images/bg_4.jpg);"></div>
+    <div class="overlay"></div>
+    <div class="container">
         <div class="row justify-content-center mb-5">
-          <div class="col-md-12 text-center heading-section heading-section-white ftco-animate">
-          	<span class="subheading">Mijozlar</span>
-            <h2 class="mb-3">Mijozlarimiz fikrlari</h2>
-          </div>
+            <div class="col-md-12 text-center heading-section heading-section-white ftco-animate">
+                <span class="subheading">Mijozlar</span>
+                <h2 class="mb-3">Mijozlarimiz fikrlari</h2>
+            </div>
         </div>
         <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl">
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-left"></div>
+                            <div class="text">
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-left"></div>
+                            <div class="text">
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-left"></div>
+                            <div class="text">
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-left"></div>
+                            <div class="text">
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-left"></div>
+                            <div class="text">
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
+                                    and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap py-4">
-                	<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                  <div class="text">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <div class="d-flex align-items-center">
-                    	<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-                    	<div class="pl-3">
-		                    <p class="name">Roger Scott</p>
-		                    <span class="position">Marketing Manager</span>
-		                  </div>
-	                  </div>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
 
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
+<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Contact Me</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            </div>
         </div>
 
         <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 bg-light">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fa fa-map-marker"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Address</h3>
-		            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 bg-light">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fa fa-phone"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Contact Number</h3>
-		            <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
-	            </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 bg-light">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fa fa-paper-plane"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Email Address</h3>
-		            <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
-		          </div>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box text-center p-4 bg-light">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="fa fa-globe"></span>
-          		</div>
-          		<div>
-	          		<h3 class="mb-4">Website</h3>
-		            <p><a href="#">yoursite.com</a></p>
-	            </div>
-	          </div>
-          </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 bg-light">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-map-marker"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Address</h3>
+                        <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 bg-light">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-phone"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Contact Number</h3>
+                        <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 bg-light">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-paper-plane"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Email Address</h3>
+                        <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+                <div class="align-self-stretch box text-center p-4 bg-light">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-globe"></span>
+                    </div>
+                    <div>
+                        <h3 class="mb-4">Website</h3>
+                        <p><a href="#">yoursite.com</a></p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
 
-
-
-
-    <footer class="ftco-footer ftco-section">
-      <div class="container">
+<footer class="ftco-footer ftco-section">
+    <div class="container">
         <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-	              <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-	              <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-              </ul>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">About</h2>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                        there live the blind texts.</p>
+                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                        <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                        <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"></span>Home</a></li>
-                <li><a href="#"></span>About</a></li>
-                <li><a href="#"></span>Chapter</a></li>
-                <li><a href="#"></span>Reviews</a></li>
-                <li><a href="#"></span>Contact</a></li>
-              </ul>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4 ml-md-4">
+                    <h2 class="ftco-heading-2">Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#"></span>Home</a></li>
+                        <li><a href="#"></span>About</a></li>
+                        <li><a href="#"></span>Chapter</a></li>
+                        <li><a href="#"></span>Reviews</a></li>
+                        <li><a href="#"></span>Contact</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Services</h2>
-              <ul class="list-unstyled">
-                <li><a href="#"></span>Experience</a></li>
-                <li><a href="#"></span>Marketing Goals</a></li>
-                <li><a href="#"></span>Targetting Vission</a></li>
-              </ul>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Services</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#"></span>Experience</a></li>
+                        <li><a href="#"></span>Marketing Goals</a></li>
+                        <li><a href="#"></span>Targetting Vission</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon fa fa-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
+            <div class="col-md">
+                <div class="ftco-footer-widget mb-4">
+                    <h2 class="ftco-heading-2">Have a Questions?</h2>
+                    <div class="block-23 mb-3">
+                        <ul>
+                            <li><span class="icon fa fa-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span>
+                            </li>
+                            <li><a href="#"><span class="icon fa fa-phone"></span><span
+                                        class="text">+2 392 3929 210</span></a>
+                            </li>
+                            <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
 
+<script src="{{ asset('landing/js/jquery.min.js')}}"></script>
+<script src="{{ asset('landing/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{ asset('landing/js/popper.min.js')}}"></script>
+<script src="{{ asset('landing/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('landing/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{ asset('landing/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ asset('landing/js/jquery.stellar.min.js')}}"></script>
+<script src="{{ asset('landing/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('landing/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('landing/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{ asset('landing/js/scrollax.min.js')}}"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{{ asset('landing/js/google-map.js')}}"></script>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+<script src="{{ asset('landing/js/main.js')}}"></script>
 
-
-  <script src="{{ asset('landing/js/jquery.min.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{ asset('landing/js/popper.min.js')}}"></script>
-  <script src="{{ asset('landing/js/bootstrap.min.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery.waypoints.min.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery.stellar.min.js')}}"></script>
-  <script src="{{ asset('landing/js/owl.carousel.min.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{ asset('landing/js/jquery.animateNumber.min.js')}}"></script>
-  <script src="{{ asset('landing/js/scrollax.min.js')}}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{{ asset('landing/js/google-map.js')}}"></script>
-
-  <script src="{{ asset('landing/js/main.js')}}"></script>
-
-  </body>
+</body>
 </html>
 
 

@@ -10,9 +10,7 @@
                     @csrf
                     <div class="card-body">
 
-                        @error('title')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                        @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">Product Name</label>
