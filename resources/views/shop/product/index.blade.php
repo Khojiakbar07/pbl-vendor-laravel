@@ -27,28 +27,35 @@
                         <strong>{{ $product->id }}</strong>
                     </td>
                     <td>
-                        <img src="{{ asset($product->image) }}" class="img-fluid"
-                        >
+                        <img src="{{ asset($product->image) }}" class="img-fluid">
                     </td>
-                    <td><a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a></td>
-                    <td>{{ $product->user->name }}</td>
-                    <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($product->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td>
+                        <a href="{{ route('product.show', $product->id) }}">{{ $product->name }}</a>
+                    </td>
+                    <td>
+                        {{ $product->user->name }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($customer->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}"
-                                ><i class="ti ti-pencil me-1"></i> Edit</a
-                                >
+                                <a class="dropdown-item" href="{{ route('product.edit', $product->id) }}">
+                                    <i class="ti ti-pencil me-1"></i> {{ __('Edit') }}
+                                </a>
                                 <form method="POST" action="{{ route('product.destroy', $product->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn-light delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
+                                        <button type="submit" class="btn-light delete-user"><i class="ti ti-trash me-1"></i> {{ __('Delete') }}</button>
                                     </div>
                                 </form>
 
@@ -68,14 +75,4 @@
         </div>
     </div>
     <!--/ Hoverable Table rows -->
-
-    <script>
-        $('.delete-user').click(function(e){
-            e.preventDefault() // Don't post the form, unless confirmed
-            if (confirm('Are you sure?')) {
-                // Post the form
-                $(e.target).closest('form').submit() // Post the surrounding form
-            }
-        });
-    </script>
 @endsection

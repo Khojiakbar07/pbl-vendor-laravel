@@ -47,16 +47,22 @@
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('supplier.edit', $supplier->id) }}"
-                                ><i class="ti ti-pencil me-1"></i> Edit</a
-                                >
+                                <a class="dropdown-item" href="{{ route('supplier.show', $supplier->id) }}">
+                                    <i class="ti ti-eye me-1"></i>
+                                    {{ __('Show') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('supplier.edit', $supplier->id) }}">
+                                    <i class="ti ti-pencil me-1"></i>
+                                    {{ __('Edit') }}
+                                </a>
                                 <form method="POST" action="{{ route('supplier.destroy', $supplier->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn-light delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
-                                    </div>
+                                    <button type="submit" class="dropdown-item delete-user">
+                                        <i class="ti ti-trash me-1"></i>
+                                        {{ __('Delete') }}
+                                    </button>
                                 </form>
 
                             </div>

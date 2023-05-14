@@ -30,15 +30,21 @@
                     <td>
                         <img src="{{ asset($category->image) }}" class="img-fluid" style="width: 5rem;">
                     </td>
-                    <td><a href="{{ route('category.show', $category->id) }}">{{ $category->name }}</a></td>
                     <td>
-                        {{ ($category->level) }}
+                        <a href="{{ route('category.show', $category->id) }}">{{ $category->name }}</a>
                     </td>
                     <td>
-                        {{ ($category->icon) }}
+                        {{ $category->level }}
                     </td>
-                    <td><span class="badge bg-label-primary me-1">{{ __('Active') }}</span></td>
-                    <td>{{ \Carbon\Carbon::make($category->created_at)->format('d.m.Y H:i') }}</td>
+                    <td>
+                        {{ $category->icon }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($category->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

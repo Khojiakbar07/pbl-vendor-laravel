@@ -32,11 +32,18 @@
                     <td>
                         <img src="{{ asset($customer->image) }}" class="img-fluid" style="width: 5rem;">
                     </td>
-                    <td><a href="{{ route('customer.show', $customer->id) }}">{{ $customer->name }}</a></td>
-                    <td>{{ $customer->phone }}</td>
-                    <td>{{ $customer->address }}</td>
-                    <td>{{ $customer->birthday }}</td>
-
+                    <td>
+                        <a href="{{ route('customer.show', $customer->id) }}">{{ $customer->name }}</a>
+                    </td>
+                    <td>
+                        {{ $customer->phone }}
+                    </td>
+                    <td>
+                        {{ $customer->address }}
+                    </td>
+                    <td>
+                        {{ $customer->birthday }}
+                    </td>
                     <td>
                         <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
                     </td>
@@ -49,14 +56,22 @@
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('customer.edit', $customer->id) }}"
-                                ><i class="ti ti-pencil me-1"></i> Edit</a
-                                >
+                                <a class="dropdown-item" href="{{ route('customer.show', $customer->id) }}">
+                                    <i class="ti ti-eye me-1"></i>
+                                    {{ __('Show') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('customer.edit', $customer->id) }}">
+                                    <i class="ti ti-pencil me-1"></i>
+                                    {{ __('Edit') }}
+                                </a>
                                 <form method="POST" action="{{ route('customer.destroy', $customer->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="dropdown-item delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
+                                    <button type="submit" class="dropdown-item delete-user">
+                                        <i class="ti ti-trash me-1"></i>
+                                        {{ __('Delete') }}
+                                    </button>
                                 </form>
 
                             </div>
@@ -75,14 +90,4 @@
         </div>
     </div>
     <!--/ Hoverable Table rows -->
-
-    <script>
-        $('.delete-user').click(function(e){
-            e.preventDefault() // Don't post the form, unless confirmed
-            if (confirm('Are you sure?')) {
-                // Post the form
-                $(e.target).closest('form').submit() // Post the surrounding form
-            }
-        });
-    </script>
 @endsection

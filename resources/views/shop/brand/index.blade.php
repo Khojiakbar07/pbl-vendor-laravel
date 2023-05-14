@@ -29,10 +29,18 @@
                     <td>
                         <img src="{{ asset($brand->image) }}" class="img-fluid" style="width: 5rem;">
                     </td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
-                    <td>{{ $brand->user->name }}</td>
-                    <td><span class="badge bg-label-primary me-1">{{ __('Active') }}</span></td>
-                    <td>{{ \Carbon\Carbon::make($brand->created_at)->format('d.m.Y H:i') }}</td>
+                    <td>
+                        <a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a>
+                    </td>
+                    <td>
+                        {{ $brand->user->name }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($brand->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
