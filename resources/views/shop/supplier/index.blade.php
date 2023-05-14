@@ -1,9 +1,46 @@
 @extends('layouts.admin')
 
 @section('content')
+    <div class="row g-4 mb-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div class="content-left">
+                            <span>{{ __('All Suppliers') }}</span>
+                            <div class="d-flex align-items-center my-1">
+                                <h4 class="mb-0 me-2">{{ $suppliers->total() }}</h4>
+                            </div>
+                        </div>
+                        <span class="badge bg-label-primary rounded p-2">
+                          <i class="ti ti-user ti-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div class="content-left">
+                            <span>{{ __('Active Suppliers') }}</span>
+                            <div class="d-flex align-items-center my-1">
+                                <h4 class="mb-0 me-2">{{ $suppliers->total() }}</h4>
+                            </div>
+                        </div>
+                        <span class="badge bg-label-danger rounded p-2">
+                          <i class="ti ti-user-plus ti-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Hoverable Table rows -->
     <div class="card">
-        <h5 class="card-header">{{ __('supplier') }}</h5>
+        <h5 class="card-header">{{ __('Suppliers') }}</h5>
         <div class="d-flex align-self-end px-5">
             <a href="{{ route('supplier.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
         </div>
@@ -11,13 +48,13 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <thsupplier</th>
-                    <th>Phone</th>
-                    <th>Company</th>
-                    <th>Status</th>
-                    <th>Created at</th>
-                    <th>Actions</th>
+                    <th>{{ __('ID') }}</th>
+                    <th>{{ __('Supplier') }}</th>
+                    <th>{{ __('Phone') }}</th>
+                    <th>{{ __('Company') }}</th>
+                    <th>{{ __('Status') }}</th>
+                    <th>{{ __('Created at') }}</th>
+                    <th>{{ __('Actions') }}</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -26,26 +63,43 @@
                     <td>
                         <strong>{{ $supplier->id }}</strong>
                     </td>
-                    <td><a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a></td>
-                    <td>{{ $supplier->company }}</td>
-                    <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($supplier->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td>
+                        <a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a>
+                    </td>
+                    <td>
+                        {{ $supplier->phone }}
+                    </td>
+                    <td>
+                        {{ $supplier->company }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($supplier->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                                 <i class="ti ti-dots-vertical"></i>
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('supplier.edit', $supplier->id) }}"
-                                ><i class="ti ti-pencil me-1"></i> Edit</a
-                                >
+                                <a class="dropdown-item" href="{{ route('supplier.show', $supplier->id) }}">
+                                    <i class="ti ti-eye me-1"></i>
+                                    {{ __('Show') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('supplier.edit', $supplier->id) }}">
+                                    <i class="ti ti-pencil me-1"></i>
+                                    {{ __('Edit') }}
+                                </a>
                                 <form method="POST" action="{{ route('supplier.destroy', $supplier->id) }}">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <div class="form-group">
-                                        <button type="submit" class="btn-light delete-user"><i class="ti ti-trash me-1"></i> Delete</button>
-                                    </div>
+                                    <button type="submit" class="dropdown-item delete-user">
+                                        <i class="ti ti-trash me-1"></i>
+                                        {{ __('Delete') }}
+                                    </button>
                                 </form>
 
                             </div>
@@ -58,20 +112,10 @@
             </table>
 
             <div class="pagination text-center d-flex justify-content-center m-3">
-                {{$suppliers->links() }}
+                {{ $suppliers->links() }}
             </div>
 
         </div>
     </div>
     <!--/ Hoverable Table rows -->
-
-    <script>
-        $('.delete-user').click(function(e){
-            e.preventDefault() // Don't post the form, unless confirmed
-            if (confirm('Are you sure?')) {
-                // Post the form
-                $(e.target).closest('form').submit() // Post the surrounding form
-            }
-        });
-    </script>
 @endsection

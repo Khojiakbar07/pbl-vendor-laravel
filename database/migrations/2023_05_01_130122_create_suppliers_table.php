@@ -17,7 +17,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('company')->nullable();
+            $table->string('address')->nullable();
             $table->mediumText('note')->nullable();
+            $table->boolean('status')->default(1);
             $table->boolean('deleted')->default(0);
             $table->timestamps();
         });

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->integer('level')->default('1');
             $table->integer('parent_id')->default('0');
+            $table->boolean('status')->default(1);
             $table->boolean('deleted')->default(0);
             $table->timestamps();
         });

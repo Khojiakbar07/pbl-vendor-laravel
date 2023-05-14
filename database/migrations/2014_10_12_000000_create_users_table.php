@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('user_type', 24)->default('staff');
             $table->string('avatar', 256)->nullable();
+            $table->boolean('deleted')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

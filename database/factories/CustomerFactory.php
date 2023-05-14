@@ -9,7 +9,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class CategoryFactory extends Factory
+class CustomerFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,14 +18,14 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        $name = "Category ".$this->faker->sentence(2);
+        $name = "Customer ".$this->faker->sentence(2);
         $date = $this->faker->dateTimeThisMonth();
         return [
-            'user_id' => User::all()->random()->id,
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
-            'icon' => $this->faker->sentence(2),
             'name' => $name,
-            'slug' => Str::slug($name),
+            'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
+            'phone' => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
+            'birthday' => $this->faker->dateTimeInInterval('-30 years', '-16 years'),
             'updated_at' => $date,
             'created_at' => $date,
         ];

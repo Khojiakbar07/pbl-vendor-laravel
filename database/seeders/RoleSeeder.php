@@ -15,8 +15,8 @@ class RoleSeeder extends Seeder
     {
         DB::table('roles')->insert([
             'id' => 1,
-            'string' => 'Admin',
-            'permissions' => `["1000"]`,
+            'name' => 'Admin',
+            'permissions' => '["1000"]',
             'status' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -24,8 +24,8 @@ class RoleSeeder extends Seeder
 
         DB::table('roles')->insert([
             'id' => 2,
-            'string' => 'Staff',
-            'permissions' => `["1000"]`,
+            'name' => 'Staff',
+            'permissions' => '["1000"]',
             'status' => true,
             'created_at' => now(),
             'updated_at' => now()
@@ -33,8 +33,8 @@ class RoleSeeder extends Seeder
 
         DB::table('roles')->insert([
             'id' => 3,
-            'string' => 'Disabled',
-            'permissions' => `[]`,
+            'name' => 'Disabled',
+            'permissions' => '[]',
             'status' => true,
             'created_at' => now(),
             'updated_at' => now()

@@ -21,8 +21,8 @@ return new class extends Migration
             $table->double('price_delivery')->default('0');
             $table->double('price_discount')->default('0');
             $table->double('total_price')->default('0');
-            $table->float('status')->default(true);
-            $table->boolean('deleted')->default(false);
+            $table->boolean('status')->default(1);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

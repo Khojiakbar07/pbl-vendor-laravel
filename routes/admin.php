@@ -8,14 +8,11 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\OrderNoteController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
-
 
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -24,15 +21,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Ecommerce
     Route::get('order/terminal', [OrderController::class, 'terminal'])->name('order.terminal');
     Route::get('order/terminal/tailwind', [OrderController::class, 'terminal2'])->name('order.terminal.tailwind');
-
     Route::resource('order', OrderController::class);
+    Route::resource('order_note', OrderNoteController::class);
+    Route::resource('order_item', OrderItemController::class);
+
     Route::resource('product', ProductController::class);
     Route::resource('category', CategoryController::class);
     Route::resource('brand', BrandController::class);
     Route::resource('supplier', SupplierController::class);
-
-    Route::resource('order_note', OrderNoteController::class);
-    Route::resource('order_item', OrderItemController::class);
 
     // User and Members
     Route::resource('customer', CustomerController::class);

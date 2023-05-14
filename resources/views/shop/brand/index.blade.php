@@ -1,6 +1,43 @@
 @extends('layouts.admin')
 
 @section('content')
+    <div class="row g-4 mb-4">
+        <div class="col-sm-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div class="content-left">
+                            <span>{{ __('All Brands') }}</span>
+                            <div class="d-flex align-items-center my-1">
+                                <h4 class="mb-0 me-2">{{ $brands->total() }}</h4>
+                            </div>
+                        </div>
+                        <span class="badge bg-label-primary rounded p-2">
+                          <i class="ti ti-user ti-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <div class="content-left">
+                            <span>{{ __('Active Brands') }}</span>
+                            <div class="d-flex align-items-center my-1">
+                                <h4 class="mb-0 me-2">{{ $brands->total() }}</h4>
+                            </div>
+                        </div>
+                        <span class="badge bg-label-danger rounded p-2">
+                          <i class="ti ti-user-plus ti-sm"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Hoverable Table rows -->
     <div class="card">
         <h5 class="card-header">{{ __('Brands') }}</h5>
@@ -29,10 +66,18 @@
                     <td>
                         <img src="{{ asset($brand->image) }}" class="img-fluid" style="width: 5rem;">
                     </td>
-                    <td><a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a></td>
-                    <td>{{ $brand->user->name }}</td>
-                    <td><span class="badge bg-label-primary me-1">{{ __('Active') }}</span></td>
-                    <td>{{ \Carbon\Carbon::make($brand->created_at)->format('d.m.Y H:i') }}</td>
+                    <td>
+                        <a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a>
+                    </td>
+                    <td>
+                        {{ $brand->user->name }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($brand->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -73,14 +118,4 @@
         </div>
     </div>
     <!--/ Hoverable Table rows -->
-
-    <script>
-        $('.delete-user').click(function(e){
-            e.preventDefault() // Don't post the form, unless confirmed
-            if (confirm('Are you sure?')) {
-                // Post the form
-                $(e.target).closest('form').submit() // Post the surrounding form
-            }
-        });
-    </script>
 @endsection
