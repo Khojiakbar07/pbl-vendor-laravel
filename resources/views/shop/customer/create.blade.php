@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6">
                         <label class="form-label" for="multicol-birthdate">{{__('Birth Date')}}</label>
-                        <input type="text" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="th{{old('birth')}}" placeholder="YYYY-MM-DD" readonly="readonly">
+                        <input type="text" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="{{old('birth')}}" placeholder="YYYY-MM-DD" readonly="readonly">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="basic-icon-default-phone">{{__('Phone')}}Phone</label>
