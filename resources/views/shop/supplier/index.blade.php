@@ -3,7 +3,7 @@
 @section('content')
     <!-- Hoverable Table rows -->
     <div class="card">
-        <h5 class="card-header">{{ __('supplier') }}</h5>
+        <h5 class="card-header">{{ __('Suppliers') }}</h5>
         <div class="d-flex align-self-end px-5">
             <a href="{{ route('supplier.create') }}" class="btn btn-primary">{{ __('Create') }}</a>
         </div>
@@ -11,13 +11,13 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <thsupplier</th>
-                    <th>Phone</th>
-                    <th>Company</th>
-                    <th>Status</th>
-                    <th>Created at</th>
-                    <th>Actions</th>
+                    <th>{{ __('ID') }}</th>
+                    <th>{{ __('Supplier') }}</th>
+                    <th>{{ __('Phone') }}</th>
+                    <th>{{ __('Company') }}</th>
+                    <th>{{ __('Status') }}</th>
+                    <th>{{ __('Created at') }}</th>
+                    <th>{{ __('Actions') }}</th>
                 </tr>
                 </thead>
                 <tbody class="table-border-bottom-0">
@@ -26,10 +26,21 @@
                     <td>
                         <strong>{{ $supplier->id }}</strong>
                     </td>
-                    <td><a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a></td>
-                    <td>{{ $supplier->company }}</td>
-                    <td><span class="badge bg-label-primary me-1">Active</span></td>
-                    <td>{{ \Carbon\Carbon::make($supplier->created_at)->diffInMinutes() }} minut oldin</td>
+                    <td>
+                        <a href="{{ route('supplier.show', $supplier->id) }}">{{ $supplier->name }}</a>
+                    </td>
+                    <td>
+                        {{ $supplier->phone }}
+                    </td>
+                    <td>
+                        {{ $supplier->company }}
+                    </td>
+                    <td>
+                        <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                    </td>
+                    <td>
+                        {{ \Carbon\Carbon::make($supplier->created_at)->format('d.m.Y H:i') }}
+                    </td>
                     <td>
                         <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
@@ -58,20 +69,10 @@
             </table>
 
             <div class="pagination text-center d-flex justify-content-center m-3">
-                {{$suppliers->links() }}
+                {{ $suppliers->links() }}
             </div>
 
         </div>
     </div>
     <!--/ Hoverable Table rows -->
-
-    <script>
-        $('.delete-user').click(function(e){
-            e.preventDefault() // Don't post the form, unless confirmed
-            if (confirm('Are you sure?')) {
-                // Post the form
-                $(e.target).closest('form').submit() // Post the surrounding form
-            }
-        });
-    </script>
 @endsection
