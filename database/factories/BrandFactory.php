@@ -18,7 +18,7 @@ class BrandFactory extends Factory
      */
     public function definition(): array
     {
-        $name = "Brand ".$this->faker->sentence(3);
+        $name = "Brand ".$this->faker->sentence(2);
         $folder = storage_path('app' . DIRECTORY_SEPARATOR . 'public/images/brand');
         return [
             'user_id' => User::all()->random()->id,
