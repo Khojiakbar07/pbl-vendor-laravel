@@ -33,6 +33,8 @@ return new class extends Migration
             $table->text('gallery')->nullable();
             $table->text('tags')->nullable();
             $table->longText('attributes')->nullable();
+            $table->boolean('status')->default(1);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }

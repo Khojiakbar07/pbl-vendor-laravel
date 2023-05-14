@@ -16,7 +16,7 @@ const router = createRouter({
       component: Registration
     },*/
     {
-      path: '//admin/order/terminal',
+      path: '/admin/order/terminal',
       name: 'menu',
       component: MainViwe
     }
