@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
 
     public function terminal(){
-        //
+        return view('layouts.vue');
     }
     /**
      * Display a listing of the resource.
