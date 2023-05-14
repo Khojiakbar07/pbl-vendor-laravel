@@ -31,9 +31,9 @@
             ['type' => 'route', 'name' => 'All', 'route' => 'customer.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'customer.create'],
         ]],
-        ['type' => 'route', 'name' => 'Users', 'route' => 'user.index', 'icon' => 'fa-light fa-user-pilot-tie', 'child' => [
+        ['type' => 'route', 'name' => 'Users', 'route' => ['user.index', 'user.edit', 'user.create', 'user.show'], 'icon' => 'fa-light fa-user-pilot-tie', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
-            ['type' => 'route', 'name' => 'Create', 'route' => 'user.index'],
+            ['type' => 'route', 'name' => 'Create', 'route' => 'user.create'],
         ]],
         ['type' => 'route', 'name' => 'Roles', 'route' => 'role.index', 'icon' => 'fa-light fa-person-military-rifle'],
 

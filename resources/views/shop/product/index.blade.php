@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row g-4 mb-4">
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-6">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start justify-content-between">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
+        <div class="col-sm-6 col-xl-6">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start justify-content-between">
@@ -76,7 +76,7 @@
                         <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
                     </td>
                     <td>
-                        {{ \Carbon\Carbon::make($customer->created_at)->format('d.m.Y H:i') }}
+                        {{ \Carbon\Carbon::make($product->created_at)->format('d.m.Y H:i') }}
                     </td>
                     <td>
                         <div class="dropdown">
