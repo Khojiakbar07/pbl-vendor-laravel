@@ -5,6 +5,7 @@
 
         ['type' => 'divider', 'name' => 'Ecommerce'],
         ['type' => 'route', 'name' => 'POS Terminal', 'route' => 'order.terminal', 'icon' => 'fa-light fa-cash-register'],
+        ['type' => 'route', 'name' => 'POS Terminal Tailwind', 'route' => 'order.terminal.tailwind', 'icon' => 'fa-light fa-cash-register'],
         ['type' => 'route', 'name' => 'Orders', 'route' => ['order.index', 'order.edit', 'order.create', 'order.show'], 'icon' => 'fa-light fa-envelope-open-dollar', 'child' => [
             ['type' => 'route', 'name' => 'All', 'route' => 'order.index'],
         ]],
