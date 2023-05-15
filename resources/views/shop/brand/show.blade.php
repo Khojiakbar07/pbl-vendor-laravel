@@ -35,11 +35,11 @@
                         <td>{{ $brand->created_at }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">updated_at</th>
+                        <th scope="row">{{ __('updated_at') }}</th>
                         <td>{{ $brand->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">updated_at</th>
+                        <th scope="row">{{ __('updated_at') }}</th>
                         <td>{{ \Carbon\Carbon::make($brand->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
                     </tr>
 
