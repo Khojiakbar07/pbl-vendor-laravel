@@ -27,7 +27,7 @@
             <!-- Language -->
             <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <i class="fi fi-{{ app()->currentLocale() == 'en' ? 'us' : app()->currentLocale() }} fis rounded-circle me-1 fs-3"></i>
+                    <i class="fi fi-{{ env('APP_LOCALE', app()->currentLocale()) == 'en' ? 'us' : env('APP_LOCALE', app()->currentLocale()) }} fis rounded-circle me-1 fs-3"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     @foreach($languages as $language)
