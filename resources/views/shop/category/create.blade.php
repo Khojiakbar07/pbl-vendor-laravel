@@ -5,7 +5,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Create Category</h5>
+<<<<<<< HEAD
+                <h5 class="card-header">{{ __('Create Category') }}</h5>
+=======
+                <h5 class="card-header">{{ __('Create') }}</h5>
+>>>>>>> 4b01e5ba81eb2091d801f71b73f27a29b2d37489
                 <form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
@@ -13,20 +17,20 @@
                         @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Category Name</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{ __('Category Name') }}</label>
                             <input type="text" class="form-control @error('name') form-danger @enderror" placeholder="Category Name" name="name" value="{{ old('name') }}">
                         </div>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Import image</label>
+                                <label for="image" class="form-label">{{ __('Import image') }}</label>
                                 <input class="form-control" type="file" id="image" name="image" />
                             </div>
                             <div class="mb-3">
-                                <label for="image" class="form-label">Import image</label>
+                                <label for="image" class="form-label">{{ __('Import image') }}</label>
                                 <input class="form-control" type="file" id="icon" name="icon" />
                             </div>
 
                         <div>
-                            <button type="submit" class="btn btn-lg btn-success my-3">Submit</button>
+                            <button type="submit" class="btn btn-lg btn-success my-3">{{ __('Submit') }}</button>
                         </div>
                     </div>
                 </form>

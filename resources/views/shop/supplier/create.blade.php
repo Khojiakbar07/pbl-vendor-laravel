@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Create Supplier</h5>
+                <h5 class="card-header">{{ __('Create') }}</h5>
                 <form method="POST" action="{{ route('supplier.store') }}">
                     @csrf
                     <div class="card-body">
