@@ -64,7 +64,7 @@
                         <strong>{{ $user->id }}</strong>
                     </td>
                     <td>
-                        <img src="{{ asset($user->image) }}" class="img-fluid" style="width: 5rem;">
+                        <img src="{{ asset($user->avatar) }}" class="img-fluid" style="width: 5rem;">
                     </td>
                     <td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
                     <td>{{ $user->email }}</td>

@@ -70,7 +70,7 @@
                         <a href="{{ route('brand.show', $brand->id) }}">{{ $brand->name }}</a>
                     </td>
                     <td>
-                        {{ $brand->user->name }}
+                        {{ $brand->user?->name ?? __('Empty') }}
                     </td>
                     <td>
                         <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>

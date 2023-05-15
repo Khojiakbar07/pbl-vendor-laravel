@@ -42,12 +42,14 @@
                                 <div class="form-password-toggle">
                                     <label class="form-label" for="formtabs-confirm-password">{{ __('Confirm Password') }}</label>
                                     <div class="input-group input-group-merge">
-                                        <input type="password" id="formtabs-confirm-password" class="form-control" placeholder="············" aria-describedby="formtabs-confirm-password2" name="password2" value="{{ old('password2') }}" required>
+                                        <input type="password" id="formtabs-confirm-password" class="form-control" placeholder="············" aria-describedby="formtabs-confirm-password2" name="password_confirmation" value="{{ old('password2') }}" required>
                                         <span class="input-group-text cursor-pointer" id="formtabs-confirm-password2"><i class="ti ti-eye-off"></i></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <input type="hidden" name="user_type" value="staff">
 
                         <div>
                             <button type="submit" class="btn btn-lg btn-success my-3">{{ __('Submit') }}</button>
