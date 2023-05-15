@@ -11,57 +11,57 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Column</th>
-                        <th scope="col">Value</th>
+                        <th scope="col">{{ __('Column') }}</th>
+                        <th scope="col">{{ __('Value') }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Image</th>
+                    <th scope="row">{{ __('Image') }}</th>
                         <td>
                             <img src="{{ asset($customer->image) }}" class="img-fluid">
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Name</th>
+                    <th scope="row">{{ __('Name') }}</th>
                         <td>{{ $customer->name }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Fullname</th>
+                    <th scope="row">{{ __('Fullname') }}</th>
                         <td>{{ $customer->fullname }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Birthday</th>
+                    <th scope="row">{{ __('birthday') }}</th>
                         <td>{{ $customer->birthday }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Age</th>
+                    <th scope="row">{{ __('Age') }}</th>
                         <td>{{ $customer->age }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Phone</th>
+                        <th scope="row">{{ __('Phone') }}</th>
                         <td>{{ $customer->phone }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Address</th>
+                        <th scope="row">{{__('Address')}}</th>
                         <td>{{ $customer->address }}</td>
                     </tr>
                     <tr>
 
-                        <th scope="row">Author</th>
+                        <th scope="row">{{ __('Author') }}</th>
                         <td>{{ $customer->user->name }}</td>
                     </tr>
 
                     <tr>
-                        <th scope="row">created_at</th>
+                        <th scope="row">{{ __('created_at') }}</th>
                         <td>{{ $customer->created_at }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">updated_at</th>
+                        <th scope="row">{{ __('updated_at') }}</th>
                         <td>{{ $customer->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">updated_at</th>
+                        <th scope="row">{{ __('updated_at') }}</th>
                         <td>{{ \Carbon\Carbon::make($customer->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
                     </tr>
 

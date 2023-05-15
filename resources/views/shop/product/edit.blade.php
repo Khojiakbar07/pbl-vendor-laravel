@@ -14,26 +14,26 @@
                         @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Product Name</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{ __('Product Name') }}</label>
                             <input type="text" class="form-control" placeholder="Product Name" name="name" value="{{ $product->name }}">
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Product Price</label>
+                            <label for="exampleFormControlInput1" class="form-label">{{ __('Product Price') }}</label>
                             <input type="number" class="form-control" placeholder="Product Price" name="price" value="{{ $product->price }}">
                         </div>
                         <div class="mb-3">
-                            <label for="image" class="form-label">Import image</label>
+                            <label for="image" class="form-label">{{ __('Import image') }}</label>
                             <input class="form-control" type="file" id="image" name="image" />
                         </div>
 
                         {{--
                         <div class="mb-3">
-                            <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">Read plain</label>
+                            <label for="exampleFormControlReadOnlyInputPlain1" class="form-label">{{__('Read plain')}}</label>
                             <input type="text" readonly="" class="form-control-plaintext" id="exampleFormControlReadOnlyInputPlain1" value="email@example.com">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlSelect1" class="form-label">Example select</label>
+                            <label for="exampleFormControlSelect1" class="form-label">{{__('Example select')}}</label>
                             <select class="form-select" id="exampleFormControlSelect1" aria-label="Default select example">
                                 <option selected="">Open this select menu</option>
                                 <option value="1">One</option>
@@ -42,7 +42,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleDataList" class="form-label">Datalist example</label>
+                            <label for="exampleDataList" class="form-label">{{__('Datalist example')}}</label>
                             <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
                             <datalist id="datalistOptions">
                                 <option value="San Francisco"></option>
@@ -53,7 +53,7 @@
                             </datalist>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleFormControlSelect2" class="form-label">Example multiple select</label>
+                            <label for="exampleFormControlSelect2" class="form-label">{{__('Example multiple select')}}</label>
                             <select multiple="" class="form-select" id="exampleFormControlSelect2" aria-label="Multiple select example">
                                 <option selected="">Open this select menu</option>
                                 <option value="1">One</option>
@@ -64,17 +64,17 @@
                         --}}
 
                         <div>
-                            <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="description">{{ $product->description }}</textarea>
+                            <label for="exampleFormControlTextarea1" class="form-label">{{__('Description')}}</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="description">{{ old('description') }}</textarea>
                         </div>
 
                         <div>
-                            <label for="exampleFormControlTextarea1" class="form-label">Short Description</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="short_description">{{ $product->short_description }}</textarea>
+                            <label for="exampleFormControlTextarea1" class="form-label">{{__('Short Description')}}</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="short_description">{{ old('short_description') }}</textarea>
                         </div>
 
                         <div>
-                            <button type="submit" class="btn btn-lg btn-success my-3">Submit</button>
+                            <button type="submit" class="btn btn-lg btn-success my-3">{{__('Submit')}}</button>
                         </div>
                     </div>
                 </form>
