@@ -17,7 +17,7 @@
             <div class="nav-item navbar-search-wrapper mb-0">
                 <a class="nav-item nav-link search-toggler d-flex align-items-center px-0" href="javascript:void(0);">
                     <i class="ti ti-search ti-md me-2"></i>
-                    <span class="d-none d-md-inline-block text-muted">Search (Ctrl+/)</span>
+                    <span class="d-none d-md-inline-block text-muted">{{ __('Search') }}... (Ctrl+/)</span>
                 </a>
             </div>
         </div>
@@ -32,10 +32,14 @@
                 <ul class="dropdown-menu dropdown-menu-end">
                     @foreach($languages as $language)
                         <li>
-                            <a class="dropdown-item" href="javascript:void(0);" onclick="changeLanguage('{{ $language->code }}')" data-language="{{ $language->code }}">
-                                <i class="fi fi-{{ $language->code == 'en' ? 'us' : $language->code }} fis rounded-circle me-1 fs-3"></i>
-                                <span class="align-middle">{{ $language->name }}</span>
-                            </a>
+                            <form method="POST" action="{{ route('language.change') }}">
+                                @csrf
+                                <input type="hidden" name="language" value="{{ $language->code }}">
+                                <button class="dropdown-item" href="javascript:void(0);" type="submit">
+                                    <i class="fi fi-{{ $language->code == 'en' ? 'us' : $language->code }} fis rounded-circle me-1 fs-3"></i>
+                                    <span class="align-middle">{{ $language->name }}</span>
+                                </a>
+                            </form> 
                         </li>
                     @endforeach
                 </ul>
@@ -50,6 +54,7 @@
             </li>
             <!--/ Style Switcher -->
 
+            {{--
             <!-- Quick links  -->
             <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
                 <a
@@ -389,7 +394,8 @@
                     </li>
                 </ul>
             </li>
-            <!--/ Notification -->
+            <!--/ Notification -->    
+            --}}
 
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">

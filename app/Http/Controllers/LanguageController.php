@@ -6,11 +6,21 @@ use App\Models\Language;
 use App\Http\Requests\StoreLanguageRequest;
 use App\Http\Requests\UpdateLanguageRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 class LanguageController extends Controller
 {
     public function change(Request $request){
-        return json_encode($request->all());
+        //return json_encode($request->all());
+        $request->validate([
+            'language' => 'required|max:2'
+        ]);
+        Session::put('locale', $request->language);
+
+        App::setLocale(Session::get('locale'));
+
+        return redirect()->back();
     }
     /**
      * Display a listing of the resource.

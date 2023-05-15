@@ -32,10 +32,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
     <!-- Icons -->
     {{--<link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />--}}
@@ -130,6 +127,7 @@
 </div>
 <!-- / Layout wrapper -->
 
+
 <!-- Core JS -->
 <!-- build:js assets/vendor/js/core.js -->
 <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
@@ -163,35 +161,29 @@
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
 <script>
-
-
-            function changeLanguage(locale) {
-                $.ajax({
-                    url: {{ route('language.change') }},
-                    method: 'POST',
-                    data: {
-                        language: locale
-                    },
-                    dataType: 'JSON',
-                    contentType: false,
-                    cache: false,
-                    processData: false,
-                    success:function(response)
-                    {
-                        //$(form).trigger("reset");
-                        console.log(response)
-                        alert(response.success)
-                    },
-                    error: function(response) {
-                    }
-                });
+    function changeLocalLanguage(locale) {
+        alert(locale);
+        $.ajax({
+            url: {{ route('language.change') }},
+            method: 'POST',
+            data: {
+                language: locale
+            },
+            dataType: 'JSON',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function(response)
+            {
+                //$(form).trigger("reset");
+                console.log(response)
+                alert(response.success)
+            },
+            error: function(response) {
             }
-
-        } else {
-            // jQuery is not loaded
-            alert("Doesn't Work");
-
-</script>
+        });
+    }
+    </script>
 
 <!-- Page JS -->
 @yield('page_js')
