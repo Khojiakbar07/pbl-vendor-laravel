@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
-                <h5 class="card-header">Show Product</h5>
+                <h5 class="card-header">{{ __('Show') }}</h5>
 
 
                 <table class="table">

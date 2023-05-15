@@ -5,7 +5,11 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
+<<<<<<< HEAD
                 <h5 class="card-header">{{ __('Create Category') }}</h5>
+=======
+                <h5 class="card-header">{{ __('Create') }}</h5>
+>>>>>>> 4b01e5ba81eb2091d801f71b73f27a29b2d37489
                 <form method="POST" action="{{ route('category.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">

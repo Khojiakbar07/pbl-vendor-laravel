@@ -27,7 +27,7 @@
             <!-- Language -->
             <li class="nav-item dropdown-language dropdown me-2 me-xl-0">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <i class="fi fi-{{ app()->currentLocale() == 'en' ? 'us' : app()->currentLocale() }} fis rounded-circle me-1 fs-3"></i>
+                    <i class="fi fi-{{ env('APP_LOCALE', app()->currentLocale()) == 'en' ? 'us' : env('APP_LOCALE', app()->currentLocale()) }} fis rounded-circle me-1 fs-3"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     @foreach($languages as $language)
@@ -37,9 +37,9 @@
                                 <input type="hidden" name="language" value="{{ $language->code }}">
                                 <button class="dropdown-item" href="javascript:void(0);" type="submit">
                                     <i class="fi fi-{{ $language->code == 'en' ? 'us' : $language->code }} fis rounded-circle me-1 fs-3"></i>
-                                    <span class="align-middle">{{ $language->name }}</span>
+                                    <span class="align-middle">{{ __($language->name) }}</span>
                                 </a>
-                            </form> 
+                            </form>
                         </li>
                     @endforeach
                 </ul>
@@ -394,7 +394,7 @@
                     </li>
                 </ul>
             </li>
-            <!--/ Notification -->    
+            <!--/ Notification -->
             --}}
 
             <!-- User -->
@@ -406,7 +406,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <a class="dropdown-item" href="#">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
@@ -415,7 +415,7 @@
                                 </div>
                                 <div class="flex-grow-1">
                                     <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
-                                    <small class="text-muted">Admin</small>
+                                    <small class="text-muted">{{ __('Admin') }}</small>
                                 </div>
                             </div>
                         </a>
@@ -424,47 +424,36 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-profile-user.html">
+                        <a class="dropdown-item" href="#">
                             <i class="ti ti-user-check me-2 ti-sm"></i>
-                            <span class="align-middle">My Profile</span>
+                            <span class="align-middle">{{ __('My Profile') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-account-settings-account.html">
+                        <a class="dropdown-item" href="#">
                             <i class="ti ti-settings me-2 ti-sm"></i>
-                            <span class="align-middle">Settings</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="pages-account-settings-billing.html">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 ti ti-credit-card me-2 ti-sm"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-label-danger w-px-20 h-px-20"
-                          >2</span
-                          >
-                        </span>
+                            <span class="align-middle">{{ __('Settings') }}</span>
                         </a>
                     </li>
                     <li>
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-help-center-landing.html">
+                        <a class="dropdown-item" href="#">
                             <i class="ti ti-lifebuoy me-2 ti-sm"></i>
-                            <span class="align-middle">Help</span>
+                            <span class="align-middle">{{ __('Help') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-faq.html">
+                        <a class="dropdown-item" href="#">
                             <i class="ti ti-help me-2 ti-sm"></i>
-                            <span class="align-middle">FAQ</span>
+                            <span class="align-middle">{{ __('FAQ') }}</span>
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="pages-pricing.html">
+                        <a class="dropdown-item" href="#">
                             <i class="ti ti-currency-dollar me-2 ti-sm"></i>
-                            <span class="align-middle">Pricing</span>
+                            <span class="align-middle">{{ __('Pricing') }}</span>
                         </a>
                     </li>
                     <li>
@@ -487,8 +476,8 @@
         <input
             type="text"
             class="form-control search-input container-xxl border-0"
-            placeholder="Search..."
-            aria-label="Search..."
+            placeholder="{{ __('Search') }}..."
+            aria-label="{{ __('Search') }}..."
         />
         <i class="ti ti-x ti-sm search-toggler cursor-pointer"></i>
     </div>
