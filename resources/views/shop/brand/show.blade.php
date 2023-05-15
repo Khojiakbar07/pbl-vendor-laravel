@@ -10,28 +10,28 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th scope="col">Column</th>
-                        <th scope="col">Value</th>
+                        <th scope="col">{{ __('Column') }}</th>
+                        <th scope="col">{{ __('Value') }}</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">Image</th>
+                        <th scope="row">{{ __('Image') }}</th>
                         <td>
                             <img src="{{ asset($brand->image) }}" class="img-fluid">
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">Name</th>
+                        <th scope="row">{{ __('Name') }}</th>
                         <td>{{ $brand->name }}</td>
                     </tr>
                     <tr>
-                        <th scope="row">Author</th>
+                        <th scope="row">{{ __('Author') }}</th>
                         <td>{{ $brand->user->name }}</td>
                     </tr>
 
                     <tr>
-                        <th scope="row">created_at</th>
+                        <th scope="row">{{ __('Created_at') }}</th>
                         <td>{{ $brand->created_at }}</td>
                     </tr>
                     <tr>
