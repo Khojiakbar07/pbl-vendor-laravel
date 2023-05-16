@@ -45,14 +45,14 @@
             <!-- payment info -->
             <div class="select-none h-auto w-full text-center pt-3 pb-4 px-4">
                 <div class="flex mb-3 text-lg font-semibold text-blue-gray-700">
-                    <div>TOTAL</div>
-                    <div class="text-right w-full" x-text="priceFormat(getTotalPrice())">Rp. 0</div>
+                    <div>Umumiy</div>
+                    <div class="text-right w-full">0 UZS</div>
                 </div>
                 <div class="mb-3 text-blue-gray-700 px-3 pt-2 pb-3 rounded-lg bg-blue-gray-50">
                     <div class="flex text-lg font-semibold">
-                        <div class="flex-grow text-left">CASH</div>
+                        <div class="flex-grow text-left">Tolov</div>
                         <div class="flex text-right">
-                            <div class="mr-2">Rp</div>
+                            <div class="mr-2">UZS</div>
                             <input type="text" class="w-28 text-right bg-white shadow rounded-lg focus:bg-white focus:shadow-lg px-2 focus:outline-none">
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                     </svg>
                 </div>
                 <button class="text-white rounded-2xl text-lg w-full py-3 focus:outline-none bg-blue-gray-200" disabled="disabled">
-                    SUBMIT
+                    BUYURTMA
                 </button>
             </div>
             <!-- end of payment info -->
