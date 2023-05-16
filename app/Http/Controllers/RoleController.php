@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\role;
+use App\Models\Role;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use Illuminate\Support\Str;
@@ -42,14 +42,14 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(role $role)
+    public function show(Role $role)
     {
         return view('shop.role.show', compact('role'));    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(role $role)
+    public function edit(Role $role)
     {
         //
         return view('shop.role.edit', compact('role'));
@@ -58,7 +58,7 @@ class RoleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoleRequest $request, role $role)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
         //$role->update($request->except(['_method', '_token']));
         $role->name = $request->name;
@@ -71,7 +71,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(role $role)
+    public function destroy(Role $role)
     {
         $role->deleteOrFail();
         return redirect()->route('role.index')->with('status', 'role deleted successfully');

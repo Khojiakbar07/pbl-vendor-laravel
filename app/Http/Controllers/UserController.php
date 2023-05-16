@@ -51,14 +51,14 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(user $user)
+    public function show(User $user)
     {
         return view('shop.user.show', compact('user'));    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(user $user)
+    public function edit(User $user)
     {
         //
         return view('shop.user.edit', compact('user'));
@@ -67,7 +67,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserRequest $request, user $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //$user->update($request->except(['_method', '_token']));
         $user->name = $request->name;
@@ -89,7 +89,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(user $user)
+    public function destroy(User $user)
     {
         $user->deleteOrFail();
         return redirect()->route('user.index')->with('status', 'user deleted successfully');

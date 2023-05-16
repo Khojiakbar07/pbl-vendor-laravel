@@ -54,7 +54,7 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(customer $customer)
+    public function show(Customer $customer)
     {
         return view('shop.customer.show', compact('customer'));
     }
@@ -62,7 +62,7 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(customer $customer)
+    public function edit(Customer $customer)
     {
         //
         return view('shop.customer.edit', compact('customer'));
@@ -94,7 +94,7 @@ class CustomerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(customer $customer)
+    public function destroy(Customer $customer)
     {
         $customer->deleteOrFail();
         return redirect()->route('customer.index')->with('status', 'customer deleted successfully');
