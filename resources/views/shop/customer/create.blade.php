@@ -13,7 +13,7 @@
                         @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
-                            <label for="formFile" class="form-label">{{__('Import image ')}}</label>
+                            <label for="formFile" class="form-label">{{__('Import image')}}</label>
                             <input class="form-control" type="file" id="image" name="image" />
                         </div>
 
