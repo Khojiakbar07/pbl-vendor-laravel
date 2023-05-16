@@ -18,7 +18,6 @@ class UpdateCustomerRequest
     {
         return [
             'name'=> 'required|string|max:255',
-            'fullname'=> 'required|string|max:255',
             'birthday'=> 'required|string|max:255',
             'phone'=> 'required|string|max:255',
             'image'=> 'nullable|image'

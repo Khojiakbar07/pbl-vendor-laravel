@@ -19,11 +19,7 @@
 
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">{{__('Customer Name')}}</label>
-                            <input type="text" class="form-control" placeholder="Customer Name" name="name" value="{{ old('name') }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">{{__('Customer Fullname')}}</label>
-                            <input type="text" class="form-control" placeholder="Full name" name="fullname" value="{{ old('fullanme') }}">
+                            <input type="text" class="form-control" placeholder="{{ __('Customer Name') }}" name="name" value="{{ old('name') }}">
                         </div>
                         <div class="col-md-6">
                         <label class="form-label" for="multicol-birthdate">{{__('Birth Date')}}</label>
@@ -40,7 +36,7 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-message">{{__('Address')}}</label>
-                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="Addreass" value="{{old('address')}}"></textarea>
+                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="{{__('Address')}}" value="{{old('address')}}"></textarea>
                         </div>
 
                             <div>

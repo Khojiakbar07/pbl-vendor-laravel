@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class StoreCustomerRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class StoreCustomerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,10 +23,9 @@ class StoreCustomerRequest
     {
         return [
             'name'=> 'required|string|max:255',
-            'fullname'=> 'required|string|max:255',
-            'birthday'=> 'required|string|max:255',
+            'birthday'=> 'required|date|max:255',
             'phone'=> 'required|string|max:255',
-            'image'=> 'nullable|images'
+            'image'=> 'nullable|image'
 
         ];
     }

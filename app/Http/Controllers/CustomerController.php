@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
 use App\Models\Customer;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class CustomerController extends Controller
@@ -28,16 +29,15 @@ class CustomerController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCustomerRequest $request)
+    public function store(StoreCustomerRequest $request) //StoreCustomerRequest
     {
+        //dd($request->all());
         $customer = new Customer();
         $customer->user_id = auth()->id();
         $customer->name = $request->name;
-        $customer->fullname =$request->fullname;
-        $customer->age =$request->age;
-
-        $customer->phone =$request->phone;
-        $customer->address =$request->address;
+        $customer->birthday = $request->birthday;
+        $customer->phone = $request->phone;
+        $customer->address = $request->address;
 
         if ($request->has('image')) {
             $image = $request->file('image')->storeAs(
@@ -78,8 +78,7 @@ class CustomerController extends Controller
         $customer = new Customer();
         $customer->user_id = auth()->id();
         $customer->name = $request->name;
-        $customer->fullname =$request->fullname;
-        $customer->age =$request->age;
+        $customer->birthday=$request->birthday;
         $customer->phone =$request->phone;
         $customer->address =$request->address;
         if ($request->has('image')) {
