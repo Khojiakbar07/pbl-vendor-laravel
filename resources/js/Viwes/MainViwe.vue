@@ -8,28 +8,28 @@
           </div>
           <div class="right" id="right">
             <Right_for_page :discount="overSumDiscount" :whichOneBtnForAddAndReturn="whichOneBtnForAddAndReturn" :price="this.totalPrice" :Pay="Pay" :ClearProductList="ClearProductList" :SaveFirstProducts="SaveFirstProducts" :ReturnFirsProductList="ReturnFirsProductList"/>
-  
+
           </div>
         </div>
         <div class="footer" >
-        
-  
+
+
         </div>
       </div>
     </div>
-       
+
   </template>
-  
+
   <style scoped>
-  
-  
-  
+
+
+
   .container{
     position: relative;
     width: 100%;
     height: 100vh;
   }
-  
+
   .top{
     width: 100%;
     height: 100%;
@@ -43,30 +43,30 @@
     left: 130px;
     top: 0;
   }
-  
-  
+
+
   .hiddn{
     position: absolute;
     display: none;
   }
-  
+
   .main{
     width: 75%;
   }
-  
+
   .right{
     width: 25%;
   }
   </style>
-  
+
   <script>
-  
-  import Menu_products from '../components/Menu/Menu_products.vue';
-  import Main_page from '../components/Main_page/Main_page.vue';
-  import Right_for_page from '../components/Right_page/Right_for_page.vue';
+
+  import Menu_products from '../Viwes/Menu/Menu_products.vue';
+  import Main_page from '../Viwes/Main_page/Main_page.vue';
+  import Right_for_page from '../Viwes/Right_page/Right_for_page.vue';
   import Registration from '../Viwes/Registration.vue';
   var today = new Date();
-  export default{ 
+  export default{
     components:{
       Menu_products,
       Main_page,
@@ -100,13 +100,13 @@
             tyupe: 'ichimliklar',
             maxOfqulaty: 12,
           }
-          
+
         ],
         products2:[
 
         ],
         ProducListForSell:[
-          
+
         ],
         card: false,
         saved: "first",
@@ -122,29 +122,29 @@
         if (this.saved == str) {
           this.card = !this.card;
         }else if(this.saved == "first"){
-          this.card = true; 
+          this.card = true;
           if(str == 'All')
            this.products2 = this.products
           else
            this.products2 = this.products.filter(e=> e.tyupe == str);
         } else{
            if(this.card == true){
-            if(str == 'All'){ 
+            if(str == 'All'){
             this.products2 = this.products
             }
-            else{ 
+            else{
             this.products2 = this.products.filter(e=> e.tyupe == str);
             }
            }else{
-            if(str == 'All'){ 
+            if(str == 'All'){
             this.products2 = this.products
             this.card = true;
             }
             else{
             this.products2 = this.products.filter(e=> e.tyupe == str);
             this.card = true;
-            }   
-           }        
+            }
+           }
         }
         this.saved = str;
       },
@@ -182,7 +182,7 @@
             element.quality+=1;
           });
          }
-        
+
       },
 
 
@@ -246,7 +246,7 @@
 
 
        SaveFirstProducts(){
-        if(this.oldSaver.length == 0){ 
+        if(this.oldSaver.length == 0){
         this.oldSaver.push(this.ProducListForSell);
         this.ProducListForSell=[];
         }
@@ -262,7 +262,7 @@
         else
         console.log("Stackda malumot yo`q");
        },
-    }, 
+    },
 
 
     updated() {
@@ -271,4 +271,3 @@
     },
   }
   </script>
-  
