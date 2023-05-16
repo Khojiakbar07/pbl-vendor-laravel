@@ -14,7 +14,8 @@ class OrderController extends Controller
     }
 
     public function terminal2(){
-        return view('shop.terminal');
+        return view('layouts.vue_terminal');
+        //return view('shop.terminal');
     }
     /**
      * Display a listing of the resource.
