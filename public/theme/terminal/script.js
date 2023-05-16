@@ -47,7 +47,7 @@ function initApp() {
             console.log("products loaded", this.products);
         },
         async startWithSampleData() {
-            const response = await fetch("data/sample.json");
+            const response = await fetch("/public/theme/terminal/sample.json");
             const data = await response.json();
             this.products = data.products;
             for (let product of data.products) {
