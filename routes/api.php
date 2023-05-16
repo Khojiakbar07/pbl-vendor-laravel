@@ -19,5 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::any('/product', [ProductApiController::class, 'all']);
-Route::any('/brand', [ProductApiController::class, 'brand']);
+Route::any('/products', [ProductApiController::class, 'all']);
+Route::any('/brands', [ProductApiController::class, 'brand']);

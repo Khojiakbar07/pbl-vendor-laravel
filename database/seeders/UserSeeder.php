@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\UserImageEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -20,6 +21,7 @@ class UserSeeder extends Seeder
             'email' => env('ADMIN_MAIL', 'admin@example.com'),
             'email_verified_at' => now(),
             'password' => Hash::make(env('ADMIN_PASS', 'password')),
+            'avatar' => UserImageEnum::user1,
             'created_at' => now(),
             'updated_at' => now()
         ]);

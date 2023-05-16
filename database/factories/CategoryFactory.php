@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\CategoryImageEnum;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -22,7 +23,8 @@ class CategoryFactory extends Factory
         $date = $this->faker->dateTimeThisMonth();
         return [
             'user_id' => User::all()->random()->id,
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
+            //'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
+            'image' => $this->faker->randomElement(CategoryImageEnum::cases()),
             'icon' => $this->faker->sentence(2),
             'name' => $name,
             'slug' => Str::slug($name),

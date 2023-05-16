@@ -10,7 +10,7 @@
             </a>
             <ul class="flex flex-col space-y-2 mt-12">
                 <li>
-                    <a class="flex items-center" href="#">
+                    <a class="flex items-center" href="/dashboard">
                       <span class="flex items-center justify-center h-12 w-12 rounded-2xl bg-cyan-300 shadow-lg text-white" style="background-color: #fff;
     color: #7367f0;">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"

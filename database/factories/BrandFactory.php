@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\BrandImageEnum;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -24,7 +25,8 @@ class BrandFactory extends Factory
             'user_id' => User::all()->random()->id,
             'name' => $name,
             'slug' => Str::slug($name, '-'),
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Brand', false, 'jpg'),
+            'image' => $this->faker->randomElement(BrandImageEnum::cases()),
+            //'image' => $this->faker->imageUrl(500, 500, null, true, 'Brand', false, 'jpg'),
         ];
     }
 }
