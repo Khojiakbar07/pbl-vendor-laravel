@@ -23,15 +23,15 @@
                         <div class="col-md p-4">
                             <small class="text-light fw-semibold">{{ __('Permissions') }}</small>
                             <div class="form-check mt-3">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="defaultCheck1" value="{{ old('defaultCheck1') }}" required>
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="defaultCheck1" value="{{ $role->defaultCheck1}}" required>
                                 <label class="form-check-label" for="defaultCheck1">{{ __('1-permission') }} </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" checked="" name="defaultCheck2" value="{{ old('defaultCheck2') }}" required>
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" checked="" name="defaultCheck2" value="{{ $role->defaultCheck2 }}" required>
                                 <label class="form-check-label" for="defaultCheck2"> {{ __('2-Permission') }} </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" checked="" name="defaultCheck2" value="{{ old('defaultCheck2') }}" required>
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck3" checked="" name="defaultCheck2" value="{{  $role->defaultCheck2}}" required>
                                 <label class="form-check-label" for="defaultCheck3"> {{ __('3-Permission') }} </label>
                             </div>
                             {{--                            <div class="form-check">--}}

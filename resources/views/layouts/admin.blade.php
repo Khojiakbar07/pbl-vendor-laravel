@@ -128,8 +128,7 @@
 <!-- / Layout wrapper -->
 
 
-<!-- Core JS -->
-<!-- build:js assets/vendor/js/core.js -->
+
 <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
 <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
 <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
@@ -156,6 +155,13 @@
 <script src="{{ asset('assets/vendor/libs/cleavejs/cleave-phone.js') }}"></script>
 
 <script src="{{ asset('assets/vendor/libs/bootstrap-select/bootstrap-select.js') }}"></script>
+
+<script src="{{ asset('assets/vendor/libs/moment/moment.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/flatpickr/flatpickr.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/jquery-timepicker/jquery-timepicker.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/pickr/pickr.js')}}"></script>
 
 <!-- Main JS -->
 <script src="{{ asset('assets/js/main.js') }}"></script>

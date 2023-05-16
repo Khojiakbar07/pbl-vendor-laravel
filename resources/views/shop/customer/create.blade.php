@@ -29,6 +29,10 @@
                         <label class="form-label" for="multicol-birthdate">{{__('Birth Date')}}</label>
                         <input type="text" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="{{old('birth')}}" placeholder="YYYY-MM-DD" readonly="readonly">
                         </div>
+                        <div class="col-md-6 col-12 mb-4">
+                            <label for="bs-datepicker-options" class="form-label">{{__('Birth Date')}}</label>
+                            <input type="text" id="bs-datepicker-options" placeholder="MM/DD/YYYY" class="form-control" name="birth" value="{{old('birth')}}" readonly="readonly" />
+                        </div>
                         <div class="mb-3">
                             <label class="form-label" for="basic-icon-default-phone">{{__('Phone')}}Phone</label>
                             <div class="input-group input-group-merge">

@@ -61,6 +61,7 @@ class CategoryController extends Controller
 
         }
         $category->name = $request->name;
+        $category->slug = Str::slug($category->title);
         $category->save();
 
         return redirect()->route('category.index');
