@@ -34,11 +34,10 @@ class SupplierController extends Controller
     {
         $supplier = new Supplier();
         $supplier->name = $request->name;
+        $supplier->user_id = auth()->id();
         $supplier->phone = $request->phone;
         $supplier->company = $request->company;
         $supplier->note = $request->note;
-
-
         $supplier->save();
 
         return redirect()->route('supplier.index');
@@ -65,6 +64,12 @@ class SupplierController extends Controller
      */
     public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
+
+        $supplier->name = $request->name;
+        $supplier->user_id = auth()->id();
+        $supplier->phone = $request->phone;
+        $supplier->company = $request->company;
+        $supplier->note = $request->note;
         $supplier->update($request->except(['_method', '_token']));
         return redirect()->route('supplier.index')->with('status', 'supplier updated successfully');
     }

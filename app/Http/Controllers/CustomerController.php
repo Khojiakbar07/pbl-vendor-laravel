@@ -35,6 +35,7 @@ class CustomerController extends Controller
         $customer->name = $request->name;
         $customer->fullname =$request->fullname;
         $customer->age =$request->age;
+
         $customer->phone =$request->phone;
         $customer->address =$request->address;
 
