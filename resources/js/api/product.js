@@ -11,10 +11,6 @@ class product {
         return http.post('/product/{data.id}', data);
     }
 
-    sendOrder(data = {}){
-        return http.post('/order/store', data);
-    }
-
 }
 
 export default new product();

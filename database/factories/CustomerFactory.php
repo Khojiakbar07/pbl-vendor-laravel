@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserImageEnum;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -22,7 +23,8 @@ class CustomerFactory extends Factory
         $date = $this->faker->dateTimeThisMonth();
         return [
             'name' => $name,
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
+            //'image' => $this->faker->imageUrl(500, 500, null, true, 'Category', false, 'jpg'),
+            'image' => $this->faker->randomElement(UserImageEnum::cases()),
             'phone' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
             'birthday' => $this->faker->dateTimeInInterval('-30 years', '-16 years'),
