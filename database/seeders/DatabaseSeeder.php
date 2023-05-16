@@ -32,12 +32,12 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class
         ]);
 
-        User::factory(10)->create();
-        Brand::factory(20)->create();
-        Supplier::factory(20)->create();
-        Category::factory(10)->create();
-        Customer::factory(50)->create();
-        Product::factory(100)->create();
+        User::factory(3)->create();
+        Brand::factory(5)->create();
+        Supplier::factory(8)->create();
+        Category::factory(5)->create();
+        Customer::factory(20)->create();
+        Product::factory(50)->create();
         //Order::factory(50)->create();
         //OrderNote::factory(20)->create();
         //OrderItem::factory(100)->create();

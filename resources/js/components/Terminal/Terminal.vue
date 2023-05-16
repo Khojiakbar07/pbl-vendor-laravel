@@ -2,6 +2,7 @@
 import Product from "@/components/Terminal/Part/Product.vue";
 import LeftSidebar from "@/components/Terminal/Part/LeftSidebar.vue";
 import RightSidebar from "@/components/Terminal/Part/RightSidebar.vue";
+import product from "@/api/product";
 
 export default {
     name: "Terminal",
@@ -35,19 +36,19 @@ export default {
                     ]
                 }
             },
-            products: [{},{},{},{},{}]
+            products: []
         }
     },
     created() {
         //
     },
     mounted() {
-        //this.apiGetProducts();
+        this.apiGetProducts();
     },
     methods: {
         apiGetProducts() {
-            apiPos.getProducts().then((response) => {
-                if (response.data.status) {
+            product.getProducts().then((response) => {
+                if (response.data) {
                     //console.log(response.data)
                     this.products = response.data.data
                 } else {
@@ -209,7 +210,17 @@ export default {
                         </div>
                         <div class="grid grid-cols-4 gap-4 pb-3">
 
-                            <Product v-for="product in products"></Product>
+                            <div role="button"
+                                 class="select-none cursor-pointer transition-shadow overflow-hidden rounded-2xl bg-white shadow hover:shadow-lg"
+                                 :title="product.name"
+                                 v-if="products" v-for="(product, index) in products" :key="index" :product="product">
+                                <img :src="'/'+product.image ?? '/theme/terminal/beef-burger.png'" :alt="product.name">
+                                <div class="flex pb-3 px-3 text-sm -mt-3">
+                                    <p class="flex-grow truncate mr-1">{{ product.name }}</p>
+                                    <p class="nowrap font-semibold">{{ number_format(product.price) }} UZS</p>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>

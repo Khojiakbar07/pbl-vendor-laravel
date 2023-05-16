@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\ProductImageEnum;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -36,7 +37,8 @@ class ProductFactory extends Factory
             'description' => $this->faker->text(400),
             'short_description' => $this->faker->text(100),
             'price' => $this->faker->randomFloat(2, 200000, 1500000),
-            'image' => $this->faker->imageUrl(500, 500, null, true, 'Product', false, 'jpg'),
+            //'image' => $this->faker->imageUrl(500, 500, null, true, 'Product', false, 'jpg'),
+            'image' => $this->faker->randomElement(ProductImageEnum::cases()),
             'updated_at' => $date,
             'created_at' => $date,
         ];
