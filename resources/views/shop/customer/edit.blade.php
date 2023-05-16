@@ -13,6 +13,9 @@
                         @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
+                            @if($customer->image)
+                                <img class="img-fluid" style="max-width: 20rem;" src="{{ asset($customer->image) }}" alt="Image"><br>
+                            @endif
                             <label for="formFile" class="form-label">{{ __('Import image') }}</label>
                             <input class="form-control" type="file" id="image" name="image" />
                         </div>

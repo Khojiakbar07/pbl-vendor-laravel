@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                     <th scope="row">{{ __('Age') }}</th>
-                        <td>{{ $customer->age }}</td>
+                        <td>{{ \Carbon\Carbon::make($customer->birthday)->diffInYears(today()) }}</td>
                     </tr>
                     <tr>
                         <th scope="row">{{ __('Phone') }}</th>
@@ -46,11 +46,11 @@
                         <th scope="row">{{__('Address')}}</th>
                         <td>{{ $customer->address }}</td>
                     </tr>
-                    <tr>
+{{--                    <tr>--}}
 
-                        <th scope="row">{{ __('Author') }}</th>
-                        <td>{{ $customer->user->name }}</td>
-                    </tr>
+{{--                        <th scope="row">{{ __('Author') }}</th>--}}
+{{--                        <td>{{ $customer->user->name }}</td>--}}
+{{--                    </tr>--}}
 
                     <tr>
                         <th scope="row">{{ __('created_at') }}</th>

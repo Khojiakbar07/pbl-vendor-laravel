@@ -23,18 +23,14 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label">{{__('Customer Fullname')}}</label>
-                            <input type="text" class="form-control" placeholder="Customer Name" name="fullname" value="{{ old('fullanme') }}">
+                            <input type="text" class="form-control" placeholder="Full name" name="fullname" value="{{ old('fullanme') }}">
                         </div>
                         <div class="col-md-6">
                         <label class="form-label" for="multicol-birthdate">{{__('Birth Date')}}</label>
-                        <input type="text" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="{{old('birth')}}" placeholder="YYYY-MM-DD" readonly="readonly">
-                        </div>
-                        <div class="col-md-6 col-12 mb-4">
-                            <label for="bs-datepicker-options" class="form-label">{{__('Birth Date')}}</label>
-                            <input type="text" id="bs-datepicker-options" placeholder="MM/DD/YYYY" class="form-control" name="birth" value="{{old('birth')}}" readonly="readonly" />
+                        <input type="date" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="{{old('birth')}}" readonly="readonly">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-phone">{{__('Phone')}}Phone</label>
+                            <label class="form-label" for="basic-icon-default-phone">{{__('Phone')}}</label>
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-default-phone2" class="input-group-text"><i class="ti ti-phone"></i></span>
                                 <input type="text" id="basic-icon-default-phone" class="form-control phone-mask" name="phone" placeholder="+998 93 123 45 67" aria-label="+998 93 123 45 67" aria-describedby="basic-icon-default-phone2" value="{{old('phone')}}">

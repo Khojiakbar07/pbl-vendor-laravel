@@ -91,10 +91,7 @@
                     <th>{{ __('Image') }}</th>
                     <th>{{ __('Name') }}</th>
                     <th>{{ __('Phone') }}</th>
-                    <th>{{ __('Address') }}</th>
-                    <th>{{ __('Birthday') }}</th>
                     <th>{{ __('Status') }}</th>
-                    <th>{{ __('Created at') }}</th>
                     <th>{{ __('Actions') }}</th>
                 </tr>
                 </thead>
@@ -114,16 +111,7 @@
                             {{ $customer->phone }}
                         </td>
                         <td>
-                            {{ $customer->address }}
-                        </td>
-                        <td>
-                            {{ $customer->birthday }}
-                        </td>
-                        <td>
                             <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
-                        </td>
-                        <td>
-                            {{ \Carbon\Carbon::make($customer->created_at)->format('d.m.Y H:i') }}
                         </td>
                         <td>
                             <div class="dropdown">
