@@ -51,6 +51,9 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->short_description = $request->short_description;
         $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        $product->supplier_id = $request->supplier_id;
+        $product->brand_id = $request->brand_id;
 
         if($request->has('image')){
             $image = $request->file('image')->storeAs(
@@ -58,18 +61,10 @@ class ProductController extends Controller
             );
 
             $product->image = str_replace('public/', 'storage/', $image);
-
-            //$product->images = $request->file('images')->store('public/products/images');
-
-            //$product->images = Storage::disk('public')->putFile('products', $request->file('images'));
-
-
         }
         $product->save();
 
-
         return redirect()->route('product.index');
-        //return redirect()->route('product.show', $product->id);
     }
 
     /**
@@ -85,7 +80,11 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('shop.product.edit', compact('product'));
+        $brands = Brand::query()->where('deleted', '0')->get();
+        $suppliers = Supplier::query()->where('deleted', '0')->get();
+        $categories = Category::query()->where('deleted', '0')->get();
+
+        return view('shop.product.edit', compact('product', 'brands', 'suppliers', 'categories'));
     }
 
     /**
@@ -93,7 +92,24 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update($request->except(['_method', '_token']));
+        $product->name = $request->name;
+        $product->slug = Str::slug($request->slug);
+        $product->user_id = auth()->id();
+        $product->description = $request->description;
+        $product->short_description = $request->short_description;
+        $product->price = $request->price;
+        $product->category_id = $request->category_id;
+        $product->supplier_id = $request->supplier_id;
+        $product->brand_id = $request->brand_id;
+
+        if($request->has('image')){
+            $image = $request->file('image')->storeAs(
+                'public/products/images', Str::random('32').'.'.$request->file('image')->extension()
+            );
+
+            $product->image = str_replace('public/', 'storage/', $image);
+        }
+        $product->save();
         return redirect()->route('product.index')->with('status', 'Product updated successfully');
     }
 
