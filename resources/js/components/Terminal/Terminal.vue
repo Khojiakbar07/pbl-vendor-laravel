@@ -50,9 +50,14 @@ export default {
         this.apiGetProducts();
         this.CalculateAllSum();
     },
+    
     methods: {
         Clear(){
             this.choseProducts = [];
+        },
+        TurnOnAndTurnOffBill(){
+          let bill = document.querySelector('#bill');
+          bill.style.zIndex  = "30";
         },
         AddChoseProductlist(id){
             let product = this.products[id];
@@ -207,28 +212,58 @@ export default {
 
 <template>
     <div class="contener_main">
-        <div class="bill">
+        <div class="bill" id="bill">
             <div class="bill_item">
                <div class="logo">
                  <img src="../../../../public/images/logo/logo.png" alt="">
                </div>
                <div class="product_list">
-                <table>
+                <table class="table-auto">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Year</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="(item, index) in choseProducts" :key="index">
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.numberOfProducts }}</td>
-                            <td>{{ item.price }}</td>
+                        <tr>
+                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                        <td>Malcolm Lockyer</td>
+                        <td>1961</td>
+                        </tr>
+                        <tr>
+                        <td>Witchy Woman</td>
+                        <td>The Eagles</td>
+                        <td>1972</td>
+                        </tr>
+                        <tr>
+                        <td>Shining Star</td>
+                        <td>Earth, Wind, and Fire</td>
+                        <td>1975</td>
                         </tr>
                     </tbody>
                 </table>
+                            
+                    <!-- <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(item, index) in choseProducts" :key="index">
+                                <td>{{ item.name }}</td>
+                                <td> {{ item.numberofProduct }}</td>
+                                <td>{{ item.price }}</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+               </div>
+               <div class="information_about_Price">
+
                </div>
                <div class="button_for_pay"></div>
             </div>
@@ -294,7 +329,7 @@ export default {
                 <!-- end of store menu -->
 
                 <!-- right sidebar -->
-                <RightSidebar :AllPrice="AllPrice" :CalculateProducts="CalculateProducts" :ImprovNumberOfProduct="ImprovNumberOfProduct" :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
+                <RightSidebar :TurnOnAndTurnOffBill="TurnOnAndTurnOffBill" :AllPrice="AllPrice" :CalculateProducts="CalculateProducts" :ImprovNumberOfProduct="ImprovNumberOfProduct" :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
                 <!-- end of right sidebar -->
             </div>
 
@@ -315,7 +350,7 @@ export default {
     height: 100vh;
     position: absolute;
     background: #ffffff88;
-    z-index: 100;
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;

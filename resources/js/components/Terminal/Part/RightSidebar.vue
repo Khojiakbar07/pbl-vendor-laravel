@@ -26,6 +26,9 @@ export default{
         },
         AllPrice:{
           typeof: Function,
+        },
+        TurnOnAndTurnOffBill:{
+          typeof: Function,
         }
     },
     components: { Product },
@@ -33,6 +36,10 @@ export default{
       WhichOneThePayment(text){
         let text1 = document.querySelector('#kindOfPayment')
         text1.innerText= text;
+      },
+      Payment(){
+        this.TurnOnAndTurnOffBill();
+        console.log(this.choseProducts);
       }
     },
     data() {
