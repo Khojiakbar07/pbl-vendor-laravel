@@ -51,7 +51,7 @@
                     <th>{{ __('ID') }}</th>
                     <th>{{ __('Avatar') }}</th>
                     <th>{{ __('Name') }}</th>
-                    <th>{{ __('Email') }}</th>
+                    <th>{{ __('User type') }}</th>
                     <th>{{ __('Status') }}</th>
                     <th>{{ __('Created at') }}</th>
                     <th>{{ __('Actions') }}</th>
@@ -67,7 +67,7 @@
                         <img src="{{ asset($user->avatar) }}" class="img-fluid" style="width: 5rem;">
                     </td>
                     <td><a href="{{ route('user.show', $user->id) }}">{{ $user->name }}</a></td>
-                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->user_type }}</td>
                     <td><span class="badge bg-label-primary me-1">{{ __('Active') }}</span></td>
                     <td>{{ \Carbon\Carbon::make($user->created_at)->format('d.m.Y H:i') }}</td>
                     <td>

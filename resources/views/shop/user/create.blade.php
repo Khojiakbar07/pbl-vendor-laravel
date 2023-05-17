@@ -22,6 +22,14 @@
                                 <label class="form-label" for="formtabs-username">{{ __('Username')}}</label>
                                 <input type="text" id="formtabs-username" class="form-control" placeholder="john.doe" name="name" value="{{ old('name') }}" required>
                             </div>
+                            <div class="mt-2 mb-3">
+                                <label for="largeSelect" class="form-label">{{ __('User type') }}</label>
+                                <select id="largeSelect" class="form-select" name="user_type">
+                                    <option value="admin">{{ __('Admin') }}</option>
+                                    <option value="staff">{{ __('Staff') }}</option>
+                                    <option value="cashier">{{ __('Cashier') }}</option>
+                                </select>
+                            </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="formtabs-email">{{ __('Email') }}</label>
                                 <div class="input-group input-group-merge">
