@@ -26,13 +26,21 @@ export default{
         },
         AllPrice:{
           typeof: Function,
-        }
+        },
+        TurnOnBill:{
+          typeof: Function,
+        },
     },
     components: { Product },
     methods: {
       WhichOneThePayment(text){
         let text1 = document.querySelector('#kindOfPayment')
         text1.innerText= text;
+        this.$emit('whichone',text);
+      },
+      Payment(){
+        this.TurnOnBill();
+        console.log(this.choseProducts);
       }
     },
     data() {
@@ -189,5 +197,6 @@ export default{
 </template>
 
 <style scoped>
+
 
 </style>
