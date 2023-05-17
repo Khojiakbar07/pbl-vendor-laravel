@@ -207,7 +207,32 @@ export default {
 
 <template>
     <div class="contener_main">
-        <div class="bill"></div>
+        <div class="bill">
+            <div class="bill_item">
+               <div class="logo">
+                 <img src="../../../../public/images/logo/logo.png" alt="">
+               </div>
+               <div class="product_list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in choseProducts" :key="index">
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.numberOfProducts }}</td>
+                            <td>{{ item.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+               </div>
+               <div class="button_for_pay"></div>
+            </div>
+        </div>
         <div class="products hide-print flex flex-row h-screen antialiased text-blue-gray-800">
             <!-- left sidebar -->
             <LeftSidebar></LeftSidebar>
@@ -286,15 +311,22 @@ export default {
 }
 
 .bill{
-    width: 30%;
-    height: 75vh;
+    width: 100%;
+    height: 100vh;
     position: absolute;
-    background: #e4d7d7;
+    background: #ffffff88;
     z-index: 100;
-    top: 100px;
-    left: 30%;
-    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill_item{
+    width: 30%;
+    height: 80%;
+    background: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
 }
 
 .products{
@@ -302,6 +334,7 @@ export default {
     width: 100%;
     height: 100vh;
     z-index: 20;
+    
 }
 
 </style>
