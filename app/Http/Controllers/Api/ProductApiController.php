@@ -28,4 +28,8 @@ class ProductApiController extends Controller
 
         return response()->ok($products);
     }
+
+    public function storeCartToOrder(Request $request){
+        sendTelegram('group', json_encode($request->all()));
+    }
 }

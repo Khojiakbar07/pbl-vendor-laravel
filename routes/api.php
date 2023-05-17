@@ -21,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::any('/products', [ProductApiController::class, 'all']);
 Route::any('/brands', [ProductApiController::class, 'brand']);
+Route::any('/store/cart_to_order', [ProductApiController::class, 'storeCartToOrder']);
