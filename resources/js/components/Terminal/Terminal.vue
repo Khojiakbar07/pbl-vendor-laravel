@@ -42,10 +42,8 @@ export default {
         }
     },
     updated(){
-
     },
     created() {
-
     },
     mounted() {
         this.apiGetProducts();
@@ -56,9 +54,10 @@ export default {
         },
         AddChoseProductlist(id){
             let product = this.products[id];
-            product.numberofProduct = 0;
+            product.numberofProduct = 1;
             this.choseProducts.push(product);
-        
+            this.CalculateProducts();
+            console.log(product);
         },
         ReduceNumberOfProduct(id){
             this.choseProducts[id].numberofProduct <=0 ? '': this.choseProducts[id].numberofProduct-=1;
@@ -68,11 +67,10 @@ export default {
 
         },
         CalculateProducts(){
-            // this.choseProducts.forEach(element => {
-            // this.numberOfProducts += element.numberOfProducts;
-            // });
-            // this.numberOfProducts+= this.choseProducts.length;
-            this.numberOfProducts++;
+            this.numberOfProducts=0;
+            this.choseProducts.forEach(element => {
+            this.numberOfProducts += element.numberofProduct;
+            });        
         },
         apiGetProducts() {
             product.getProducts().then((response) => {
@@ -257,7 +255,7 @@ export default {
             <!-- end of store menu -->
 
             <!-- right sidebar -->
-            <RightSidebar :ImprovNumberOfProduct="ImprovNumberOfProduct" :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
+            <RightSidebar :CalculateProducts="CalculateProducts" :ImprovNumberOfProduct="ImprovNumberOfProduct" :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
             <!-- end of right sidebar -->
         </div>
 
