@@ -28,8 +28,8 @@
                         <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
                             <label class="form-label" for="phone-number-mask">Phone Number</label>
                             <div class="input-group">
-                                <span class="input-group-text">UZ (+99 8)</span>
-                                <input type="text" id="phone-number-mask" class="form-control phone-number-mask" placeholder="90 123 45 67" name="phone" value="{{ old('phone') }}" readonly="readonly">
+                                <span class="input-group-text">UZ (+99 8 )</span>
+                                <input type="text" id="phone-number-mask" class="form-control phone-number-mask" placeholder="90-123-45-67" name="phone" value="{{ old('phone') }}" readonly="readonly">
                             </div>
                         </div>
 
