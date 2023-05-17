@@ -57,7 +57,10 @@ export default {
             product.numberofProduct = 1;
             this.choseProducts.push(product);
             this.CalculateProducts();
-            console.log(product);
+
+            this.choseProducts.forEach(element => {
+                
+            });
         },
         ReduceNumberOfProduct(id){
             this.choseProducts[id].numberofProduct <=0 ? '': this.choseProducts[id].numberofProduct-=1;
