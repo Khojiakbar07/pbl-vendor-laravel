@@ -27,6 +27,7 @@ class OrderNoteController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(StoreOrderNoteRequest $request)
     {
         //

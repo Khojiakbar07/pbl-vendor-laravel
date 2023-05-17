@@ -166,31 +166,6 @@
 <!-- Main JS -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
 
-<script>
-    function changeLocalLanguage(locale) {
-        alert(locale);
-        $.ajax({
-            url: {{ route('language.change') }},
-            method: 'POST',
-            data: {
-                language: locale
-            },
-            dataType: 'JSON',
-            contentType: false,
-            cache: false,
-            processData: false,
-            success:function(response)
-            {
-                //$(form).trigger("reset");
-                console.log(response)
-                alert(response.success)
-            },
-            error: function(response) {
-            }
-        });
-    }
-    </script>
-
 <!-- Page JS -->
 @yield('page_js')
 </body>

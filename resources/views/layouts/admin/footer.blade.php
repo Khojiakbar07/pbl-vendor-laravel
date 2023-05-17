@@ -16,16 +16,16 @@
                 >Github</a
                 >
 
-                <a
-                    href="https://github.com/KIUT-Projects/pbl-vendor-laravel/blob/main/README.md"
-                    target="_blank"
-                    class="footer-link me-4"
-                >Documentation</a
-                >
+                <a href="https://github.com/KIUT-Projects/pbl-vendor-laravel/blob/main/README.md" target="_blank" class="footer-link me-4">
+                    Documentation
+                </a>
 
-                <a href="https://t.me/uzsoftic" target="_blank" class="footer-link d-none d-sm-inline-block"
-                >Support</a
-                >
+                <a href=/html" target="_blank" class="footer-link me-4" class="footer-link d-none d-sm-inline-block">
+                    Template
+                </a>
+                <a href="https://t.me/uzsoftic" target="_blank" class="footer-link d-none d-sm-inline-block">
+                    Support
+                </a>
             </div>
         </div>
     </div>
