@@ -24,7 +24,7 @@ class UpdateUserRequest extends FormRequest
         return [
             'name'=> 'required|string|max:255',
             'email'=> 'required|string|max:255',
-            'password'=> 'required|string|max:255',
+            'newPassword'=> 'nullable|string|max:16',
             'user_type' =>  'required|string|max:255',
             'avatar'=> 'nullable|image'
         ];

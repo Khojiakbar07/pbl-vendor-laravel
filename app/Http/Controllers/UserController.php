@@ -72,7 +72,13 @@ class UserController extends Controller
         //$user->update($request->except(['_method', '_token']));
         $user->name = $request->name;
         $user-> email = $request->email;
-        $user->password = $request->password;
+        if($user->password==$request->newPassword){
+            $user->password = $request->newPassword;
+        }else{
+            print('password error');
+        }
+
+
         $user->user_type = $request->user_type;
 
         if($request->has('image')){
