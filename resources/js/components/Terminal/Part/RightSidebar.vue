@@ -23,6 +23,9 @@ export default{
         },
         CalculateProducts:{
           typeof: Function,
+        },
+        AllPrice:{
+          typeof: Function,
         }
     },
     components: { Product },
@@ -136,7 +139,7 @@ export default{
             <div class="select-none h-auto w-full text-center pt-3 pb-4 px-4">
                 <div class="flex mb-3 text-lg font-semibold text-blue-gray-700">
                     <div>Umumiy</div>
-                    <div class="text-right w-full">0 UZS</div>
+                    <div class="text-right w-full">{{ this.AllPrice }} UZS</div>
                 </div>
                 <div class="mb-3 text-blue-gray-700 px-3 pt-2 pb-3 rounded-lg bg-blue-gray-50">
                     <div class="flex text-lg font-semibold">
