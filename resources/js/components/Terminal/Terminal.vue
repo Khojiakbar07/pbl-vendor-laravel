@@ -287,12 +287,14 @@ export default {
 
 .bill{
     width: 30%;
-    height: 70vh;
+    height: 75vh;
     position: absolute;
     background: #e4d7d7;
     z-index: 100;
     top: 100px;
     left: 30%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .products{
