@@ -36,7 +36,8 @@ export default {
                     ]
                 }
             },
-            products: []
+            products: [],
+            choseProducts:[],
         }
     },
     created() {
@@ -46,6 +47,15 @@ export default {
         this.apiGetProducts();
     },
     methods: {
+        Clear(){
+            this.choseProducts = [];
+        },
+        AddChoseProductlist(id){
+            let product = this.products[id];
+            product.numberofProduct = 0;
+            this.choseProducts.push(product);
+        }
+        ,
         apiGetProducts() {
             product.getProducts().then((response) => {
                 if (response.data) {
@@ -210,7 +220,7 @@ export default {
                         </div>
                         <div class="grid grid-cols-4 gap-4 pb-3">
 
-                            <div role="button"
+                            <div role="button" @click="AddChoseProductlist(index)"
                                  class="select-none cursor-pointer transition-shadow overflow-hidden rounded-2xl bg-white shadow hover:shadow-lg"
                                  :title="product.name"
                                  v-if="products" v-for="(product, index) in products" :key="index" :product="product">
@@ -229,7 +239,7 @@ export default {
             <!-- end of store menu -->
 
             <!-- right sidebar -->
-            <RightSidebar></RightSidebar>
+            <RightSidebar :numberofproduct="this.choseProducts.length" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
             <!-- end of right sidebar -->
         </div>
 
