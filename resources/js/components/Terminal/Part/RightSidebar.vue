@@ -30,18 +30,22 @@ export default{
         TurnOnBill:{
           typeof: Function,
         },
+        whichOneKindOfPeymentname:{
+          typeof: String,
+        },
+        number_format:{
+          typeof: Function,
+        }
     },
     components: { Product },
     methods: {
       WhichOneThePayment(text){
-        let text1 = document.querySelector('#kindOfPayment')
-        text1.innerText= text;
         this.$emit('whichone',text);
       },
       Payment(){
         this.TurnOnBill();
         console.log(this.choseProducts);
-      }
+      },
     },
     data() {
       return {
@@ -120,7 +124,7 @@ export default{
                   <img :src="'/'+item.image" alt="" class="rounded-lg h-10 w-10 bg-white shadow mr-2" src="img/sawarma.png">
                   <div class="flex-grow">
                     <h5 class="text-sm" x-text="item.name">{{ item.name }}</h5>
-                    <p class="text-xs block" x-text="priceFormat(item.price)">{{ item.price }}</p>
+                    <p class="text-xs block" x-text="priceFormat(item.price)">{{number_format(item.price) }}</p>
                   </div>
                   <div class="py-2">
                     <div class="w-28 grid grid-cols-3 gap-1 ml-2">
@@ -147,13 +151,13 @@ export default{
             <div class="select-none h-auto w-full text-center pt-3 pb-4 px-4">
                 <div class="flex mb-3 text-lg font-semibold text-blue-gray-700">
                     <div>Umumiy</div>
-                    <div class="text-right w-full">{{ this.AllPrice }} UZS</div>
+                    <div class="text-right w-full">{{ number_format(this.AllPrice) }} UZS</div>
                 </div>
                 <div class="mb-3 text-blue-gray-700 px-3 pt-2 pb-3 rounded-lg bg-blue-gray-50">
                     <div class="flex text-lg font-semibold">
                         <div class="flex-grow text-left">Tolov turi</div>
                         <div class="flex text-right">
-                            <div class="mr-2" id="kindOfPayment">{{ whichOneKindOfPeyment }}</div>
+                            <div class="mr-2">{{ whichOneKindOfPeymentname }}</div>
                         </div>
                     </div>
                     <hr class="my-2">

@@ -36,11 +36,12 @@ export default {
                     ]
                 }
             },
+            choseProducts:[],
             products: [],
-            choseProducts: [],
             numberOfProducts: 0,
             AllPrice: 0,
-            whichOneKindOfPeyment: "",
+            whichOneKindOfPeymentname: "Naqt pul",
+            senttoapi: [],
         }
     },
     updated() {
@@ -53,8 +54,8 @@ export default {
     },
 
     methods: {
-        whichone(name){
-           this.whichOneKindOfPeyment = name;
+        whichone(name) {
+            this.whichOneKindOfPeymentname = name;
         },
         Clear() {
             this.choseProducts = [];
@@ -71,25 +72,28 @@ export default {
         AddChoseProductlist(id) {
             let yesOrNo = false;
             let counter = 0;
-            let i=0;
+            let i = 0;
             let product;
             this.CalculateProducts();
             console.log(product);
             this.choseProducts.forEach(element => {
-                 if(element.id == this.products[id].id){
-                 yesOrNo = true;
-                 counter = i;
+                if (element.id == this.products[id].id) {
+                    yesOrNo = true;
+                    counter = i;
                 }
                 i++;
             });
 
-            if(yesOrNo == true){
+            if (yesOrNo == true) {
                 this.choseProducts[counter].numberofProduct++;
-            } else{
+            } else {
                 product = this.products[id];
                 product.numberofProduct = 1;
                 this.choseProducts.push(product);
-            }   
+            }
+        },
+        ProductsWhichSentToApi(){
+        
         },
         ReduceNumberOfProduct(id) {
             this.choseProducts[id].numberofProduct <= 0 ? '' : this.choseProducts[id].numberofProduct -= 1;
@@ -259,11 +263,13 @@ export default {
                                 <td></td>
                                 <td>{{ AllPrice }}</td>
                             </tr>
+                            <tr>
+                                <td>Tolov turi</td>
+                                <td></td>
+                                <td>{{ whichOneKindOfPeymentname }}</td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="information_about_Price">
-                   <p>Tolov turi {{ whichOneKindOfPeyment }}</p>
                 </div>
                 <div class="button_for_pay">
                     <button @click="TurnOffBill" style="width: 100%; background-color: #7f75f0;">To` lov</button>
@@ -289,7 +295,7 @@ export default {
                         </div>
                         <input type="text"
                             class="bg-white rounded-3xl shadow text-lg full w-full h-16 py-4 pl-16 transition-shadow focus:shadow-2xl focus:outline-none"
-                            placeholder="Search ..." x-model="keyword">
+                            placeholder="Search ..." v-model="search">
                     </div>
                     <div class="h-full overflow-hidden mt-4">
                         <div class="h-full overflow-y-auto px-2">
@@ -345,9 +351,10 @@ export default {
                 <!-- end of store menu -->
 
                 <!-- right sidebar -->
-                <RightSidebar @whichone="whichone" :TurnOnBill="TurnOnBill" :AllPrice="AllPrice" :CalculateProducts="CalculateProducts"
-                    :ImprovNumberOfProduct="ImprovNumberOfProduct" :ReduceNumberOfProduct="ReduceNumberOfProduct"
-                    :numberofproduct="numberOfProducts" :Clear="Clear" :choseProducts="choseProducts"></RightSidebar>
+                <RightSidebar :number_format="number_format" :whichOneKindOfPeymentname="whichOneKindOfPeymentname" @whichone="whichone" :TurnOnBill="TurnOnBill" :AllPrice="AllPrice"
+                    :CalculateProducts="CalculateProducts" :ImprovNumberOfProduct="ImprovNumberOfProduct"
+                    :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear"
+                    :choseProducts="choseProducts"></RightSidebar>
                 <!-- end of right sidebar -->
             </div>
 
@@ -359,6 +366,7 @@ export default {
 <style scoped>
 .contener_main {
     position: relative;
+   
 }
 
 .bill {
@@ -372,12 +380,45 @@ export default {
     align-items: center;
 }
 
-.bill_item {
+.bill_item{
     width: 30%;
     height: 80%;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bill_item .logo{
+    width: 90%;
+    margin: auto;
+    height: 20%;
+}
+
+.bill_item .product_list{
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    overflow: auto;
+}
+.bill_item .product_list table{
+    width: 100%;
+    height: 100%;
+}
+
+.bill_item .button_for_pay{
+    width: 90%;
+    height: 10%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.bill_item .button_for_pay button{
+    width: 100%;
+    height: 100%;
+    background: #000;
 }
 
 .products {
@@ -388,9 +429,5 @@ export default {
 
 }
 
-.information_about_Price {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+   
 </style>
