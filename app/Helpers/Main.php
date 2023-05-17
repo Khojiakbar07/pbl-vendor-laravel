@@ -28,3 +28,20 @@ if(!function_exists('is_route_active')){
         }
     }
 }
+if(! function_exists('sendTelegram')){
+    function sendTelegram($chat_id = 'me', $message = 'test'): bool
+    {
+        try {
+            if ($chat_id == 'me'){
+                $chat_id = '127622235';
+            }elseif ($chat_id == 'group'){
+                $chat_id = '-1001856768639';
+            }
+            app('App\Service\Telegram\Telegram')->debugSender($message, $chat_id);
+            return true;
+        }catch (Exception $exception){
+            return false;
+        }
+
+    }
+}

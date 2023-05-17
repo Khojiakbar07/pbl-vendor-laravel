@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/debug', [HomeController::class, 'debug']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [ProfileController::class, 'logout'])->name('profile.logout');
