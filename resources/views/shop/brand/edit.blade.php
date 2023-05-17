@@ -9,8 +9,8 @@
                 <form method="POST" action="{{ route('brand.update', $brand->id) }}" enctype="multipart/form-data">
                     <input type="hidden" name="_method" value="PUT">
                     @csrf
-                    <div class="card-body">
 
+                    <div class="card-body">
                         @include('layouts.admin.inc.form_error')
 
                         <div class="mb-3">
