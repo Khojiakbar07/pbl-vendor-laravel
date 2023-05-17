@@ -45,8 +45,34 @@
                             <input type="number" id="price" class="form-control" placeholder="{{ __('Price') }}" name="price" value="{{ old('price') }}">
                         </div>
                         <div class="col-4">
-                            <label for="defaultSelect" class="form-label">{{ __('Currency') }}</label>
-                            <select id="defaultSelect" class="form-select">
+                            <label for="price_currency" class="form-label">{{ __('Currency') }}</label>
+                            <select id="price_currency" class="form-select" name="price_currency">
+                                <option value="uzs">UZS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-8">
+                            <label for="price_additional" class="form-label">{{ __('Additional Price') }}</label>
+                            <input type="number" id="price_additional" class="form-control" placeholder="{{ __('Price') }}" name="price_additional" value="{{ old('price_additional') }}">
+                        </div>
+                        <div class="col-4">
+                            <label for="price_additional_currency" class="form-label">{{ __('Currency') }}</label>
+                            <select id="price_additional_currency" class="form-select" name="price_additional_currency">
+                                <option value="uzs">UZS</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-8">
+                            <label for="price_additional" class="form-label">{{ __('Additional Price') }}</label>
+                            <input type="number" id="price_additional" class="form-control" placeholder="{{ __('Price') }}" name="price_additional" value="{{ old('price_additional') }}">
+                        </div>
+                        <div class="col-4">
+                            <label for="price_additional_currency" class="form-label">{{ __('Currency') }}</label>
+                            <select id="price_additional_currency" class="form-select" name="price_additional_currency">
                                 <option value="uzs">UZS</option>
                             </select>
                         </div>
@@ -61,8 +87,9 @@
                         <div class="col-md-12 mb-4">
                             <label for="brand_label" class="form-label">{{ __('Category') }}</label>
                             <select name="brand_id" id="brand_label" class="selectpicker w-100" data-style="btn-default" data-live-search="true">
-                                @foreach($categories as $brand)
-                                    <option data-tokens="{{ $brand->name }}" value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                <option value="">{{ __('Empty') }}</option>
+                                @foreach($categories as $category)
+                                    <option data-tokens="{{ $category->name }}" value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -72,7 +99,8 @@
                         <div class="col-md-12 mb-4">
                             <label for="brand_label" class="form-label">{{ __('Brand') }}</label>
                             <select name="brand_id" id="brand_label" class="selectpicker w-100" data-style="btn-default" data-live-search="true">
-                                @foreach($suppliers as $brand)
+                                <option value="">{{ __('Empty') }}</option>
+                                @foreach($brands as $brand)
                                     <option data-tokens="{{ $brand->name }}" value="{{ $brand->id }}">{{ $brand->name }}</option>
                                 @endforeach
                             </select>
@@ -83,8 +111,9 @@
                         <div class="col-md-12 mb-4">
                             <label for="brand_label" class="form-label">{{ __('Supplier') }}</label>
                             <select name="brand_id" id="brand_label" class="selectpicker w-100" data-style="btn-default" data-live-search="true">
-                                @foreach($brands as $brand)
-                                    <option data-tokens="{{ $brand->name }}" value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                <option value="">{{ __('Empty') }}</option>
+                                @foreach($suppliers as $supplier)
+                                    <option data-tokens="{{ $supplier->name }}" value="{{ $supplier->id }}">{{ $supplier->name }}</option>
                                 @endforeach
                             </select>
                         </div>
