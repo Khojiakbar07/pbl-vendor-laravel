@@ -60,10 +60,6 @@
                         <th scope="row">{{ __('updated_at') }}</th>
                         <td>{{ $customer->updated_at->format('d.m.Y H:i') }}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">{{ __('updated_at') }}</th>
-                        <td>{{ \Carbon\Carbon::make($customer->updated_at)->diffInMinutes() }} minut oldin ozgardi</td>
-                    </tr>
 
                     </tbody>
                 </table>
