@@ -12,23 +12,26 @@
 
                         @include('layouts.admin.inc.form_error')
 
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">{{ __('Image') }}</label>
-                            <input class="form-control" type="file" id="image" name="image" value="{{ old('image') }}" required />
+                        <div class="d-flex align-items-start align-items-sm-center gap-4">
+                            <img src="link" alt="user-avatar" class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar">
+                            <div class="button-wrapper">
+                                <label for="upload" class="btn btn-primary me-2 mb-3 waves-effect waves-light" tabindex="0">
+                                    <span class="d-none d-sm-block">Upload new photo</span>
+                                    <i class="ti ti-upload d-block d-sm-none"></i>
+                                    <input type="file" id="upload"  name="image" value="{{ old('image') }}" class="account-file-input" hidden="" accept="image/png, image/jpeg">
+                                </label>
+                                <div class="text-muted">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                            </div>
                         </div>
+{{--                        <div class="mb-3">--}}
+{{--                            <label for="formFile" class="form-label">{{ __('Image') }}</label>--}}
+{{--                            <input class="form-control" type="file" id="image" name="image" value="{{ old('image') }}" required />--}}
+{{--                        </div>--}}
 
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label" for="formtabs-username">{{ __('Username')}}</label>
                                 <input type="text" id="formtabs-username" class="form-control" placeholder="john.doe" name="name" value="{{ old('name') }}" required>
-                            </div>
-                            <div class="mt-2 mb-3">
-                                <label for="largeSelect" class="form-label">{{ __('User type') }}</label>
-                                <select id="largeSelect" class="form-select" name="user_type">
-                                    <option value="admin">{{ __('Admin') }}</option>
-                                    <option value="staff">{{ __('Staff') }}</option>
-                                    <option value="cashier">{{ __('Cashier') }}</option>
-                                </select>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label" for="formtabs-email">{{ __('Email') }}</label>
@@ -37,6 +40,15 @@
                                     <span class="input-group-text" id="formtabs-email2">@example.com</span>
                                 </div>
                             </div>
+                            <div class="mt-2 md-6">
+                                <label for="largeSelect" class="form-label">{{ __('User type') }}</label>
+                                <select id="largeSelect" class="form-select" name="user_type">
+                                    <option value="admin">{{ __('Admin') }}</option>
+                                    <option value="staff">{{ __('Staff') }}</option>
+                                    <option value="cashier">{{ __('Cashier') }}</option>
+                                </select>
+                            </div>
+
                             <div class="col-md-6">
                                 <div class="form-password-toggle">
                                     <label class="form-label" for="formtabs-password">{{ __('Password') }}</label>
