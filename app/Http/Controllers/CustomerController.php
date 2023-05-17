@@ -33,7 +33,6 @@ class CustomerController extends Controller
     {
         //dd($request->all());
         $customer = new Customer();
-        $customer->user_id = auth()->id();
         $customer->name = $request->name;
         $customer->birthday = $request->birthday;
         $customer->phone = $request->phone;
@@ -76,7 +75,6 @@ class CustomerController extends Controller
     {
         //$customer->update($request->except(['_method', '_token']));
         $customer = new Customer();
-        $customer->user_id = auth()->id();
         $customer->name = $request->name;
         $customer->birthday=$request->birthday;
         $customer->phone =$request->phone;

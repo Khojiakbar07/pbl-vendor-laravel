@@ -26,20 +26,19 @@
                         </div>
                         <div class="col-md-6">
                             <label class="form-label" for="multicol-birthdate">{{__('Birth Date')}}</label>
-                            <input type="date" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birth" value="th{{$customer->birth}}" placeholder="YYYY-MM-DD" readonly="readonly">
+                            <input type="date" id="multicol-birthdate" class="form-control dob-picker flatpickr-input" name="birthday" value="th{{$customer->birthday}}"  readonly="readonly">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label" for="basic-icon-default-phone">{{__('Phone No')}}</label>
-                            <div class="input-group input-group-merge">
-                                <span id="basic-icon-default-phone2" class="input-group-text"><i class="ti ti-phone"></i></span>
-                                <input type="text" id="basic-icon-default-phone" class="form-control phone-mask" name="phone" placeholder="+998 93 123 45 67" aria-label="+998 93 123 45 67" aria-describedby="basic-icon-default-phone2" value="{{$customer->phone}}">
+                        <div class="col-xl-4 col-md-6 col-sm-12 mb-4">
+                            <label class="form-label" for="phone-number-mask">Phone Number</label>
+                            <div class="input-group">
+                                <span class="input-group-text">UZ (+99 8)</span>
+                                <input type="text" id="phone-number-mask" class="form-control phone-number-mask" placeholder="90-123-45-67" name="phone" value="{{ $customer->phone }}" readonly="readonly">
                             </div>
                         </div>
 
-
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-message">{{__('Address')}}</label>
-                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="Addreass" value="{{$customer->address}}"></textarea>
+                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="Addreass" >{{$customer->address}}</textarea>
                         </div>
 
                         <div>
