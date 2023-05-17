@@ -8,8 +8,7 @@
                 ©
                 <script>
                     document.write(new Date().getFullYear());
-                </script>
-                , made by <a href="#" class="fw-semibold">KIUT Students</a>
+                </script>, made by <a href="https://github.com/KIUT-Projects" class="fw-semibold">KIUT Students</a>
             </div>
             <div>
                 <a href="https://github.com/KIUT-Projects/pbl-vendor-laravel" target="_blank" class="footer-link me-4"
@@ -20,7 +19,7 @@
                     Documentation
                 </a>
 
-                <a href=/html" target="_blank" class="footer-link me-4" class="footer-link d-none d-sm-inline-block">
+                <a href="/html" target="_blank" class="footer-link me-4" class="footer-link d-none d-sm-inline-block">
                     Template
                 </a>
                 <a href="https://t.me/uzsoftic" target="_blank" class="footer-link d-none d-sm-inline-block">
