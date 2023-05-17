@@ -35,11 +35,14 @@
             ['type' => 'route', 'name' => 'All', 'route' => 'user.index'],
             ['type' => 'route', 'name' => 'Create', 'route' => 'user.create'],
         ]],
-        ['type' => 'route', 'name' => 'Roles', 'route' => 'role.index', 'icon' => 'fa-light fa-person-military-rifle'],
+        ['type' => 'route', 'name' => 'Roles', 'route' => ['role.index', 'role.edit', 'role.create', 'role.show'], 'icon' => 'fa-light fa-person-military-rifle', 'child' => [
+            ['type' => 'route', 'name' => 'All', 'route' => 'role.index'],
+            ['type' => 'route', 'name' => 'Create', 'route' => 'role.create'],
+        ]],
 
-        //['type' => 'divider', 'name' => 'Others'],
-        //['type' => 'route', 'name' => 'Support', 'route' => 'dashboard', 'icon' => 'fas fa-life-ring'],
-        //['type' => 'route', 'name' => 'Plans', 'route' => 'dashboard', 'icon' => 'fas fa-gem'],
+        ['type' => 'divider', 'name' => 'Others'],
+        ['type' => 'route', 'name' => 'Support', 'route' => 'dashboard', 'icon' => 'fas fa-life-ring'],
+        ['type' => 'route', 'name' => 'Plans', 'route' => 'dashboard', 'icon' => 'fas fa-gem'],
     ];
 @endphp
 
