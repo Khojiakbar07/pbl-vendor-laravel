@@ -69,14 +69,27 @@ export default {
             this.Clear();
         },
         AddChoseProductlist(id) {
-            let product = this.products[id];
-            product.numberofProduct = 1;
-            this.choseProducts.push(product);
+            let yesOrNo = false;
+            let counter = 0;
+            let i=0;
+            let product;
             this.CalculateProducts();
             console.log(product);
             this.choseProducts.forEach(element => {
-
+                 if(element.id == this.products[id].id){
+                 yesOrNo = true;
+                 counter = i;
+                }
+                i++;
             });
+
+            if(yesOrNo == true){
+                this.choseProducts[counter].numberofProduct++;
+            } else{
+                product = this.products[id];
+                product.numberofProduct = 1;
+                this.choseProducts.push(product);
+            }   
         },
         ReduceNumberOfProduct(id) {
             this.choseProducts[id].numberofProduct <= 0 ? '' : this.choseProducts[id].numberofProduct -= 1;
