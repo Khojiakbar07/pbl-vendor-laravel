@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+gti@extends('layouts.admin')
 
 @section('content')
 
