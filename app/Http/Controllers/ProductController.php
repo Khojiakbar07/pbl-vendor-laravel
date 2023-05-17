@@ -23,11 +23,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$query = DB::query('SELECT * FROM products')->;
-        //$query = DB::select('select * from users');
-        //$query = Product::query()->where('user_id', '1')->first();
-        //dump($query->name);
-        //dd($query);
         $products = Product::query()->orderByDesc('id')->with(['user'])->paginate(20);
         return view('shop.product.index', compact('products'));
     }
