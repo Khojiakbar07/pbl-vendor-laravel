@@ -67,6 +67,7 @@ export default {
         TurnOffBill() {
             let bill = document.querySelector('#bill');
             bill.style.zIndex = "1";
+            this.ProductsWhichSentToApi();
             this.Clear();
         },
         AddChoseProductlist(id) {
@@ -75,7 +76,6 @@ export default {
             let i = 0;
             let product;
             this.CalculateProducts();
-            console.log(product);
             this.choseProducts.forEach(element => {
                 if (element.id == this.products[id].id) {
                     yesOrNo = true;
@@ -91,9 +91,19 @@ export default {
                 product.numberofProduct = 1;
                 this.choseProducts.push(product);
             }
+            this.ProductsWhichSentToApi();
         },
         ProductsWhichSentToApi(){
-        
+            this.senttoapi =[];
+            this.choseProducts.forEach(element => {
+                let updateProduct ={
+                id: element.id,
+                quantity: element.numberofProduct,
+                }
+                this.senttoapi.push(updateProduct);
+            });
+            console.log(this.senttoapi);
+           
         },
         ReduceNumberOfProduct(id) {
             this.choseProducts[id].numberofProduct <= 0 ? '' : this.choseProducts[id].numberofProduct -= 1;
@@ -256,12 +266,12 @@ export default {
                             <tr v-for="(item, index) in choseProducts" :key="index">
                                 <td>{{ item.name }}</td>
                                 <td> {{ item.numberofProduct }}</td>
-                                <td>{{ item.price }}</td>
+                                <td>{{ number_format(item.price) }}</td>
                             </tr>
                             <tr>
                                 <td>Umumiy sum</td>
                                 <td></td>
-                                <td>{{ AllPrice }}</td>
+                                <td>{{ number_format(AllPrice) }}</td>
                             </tr>
                             <tr>
                                 <td>Tolov turi</td>

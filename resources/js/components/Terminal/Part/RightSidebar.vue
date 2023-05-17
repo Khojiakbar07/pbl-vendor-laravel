@@ -35,7 +35,8 @@ export default{
         },
         number_format:{
           typeof: Function,
-        }
+        },
+
     },
     components: { Product },
     methods: {
@@ -44,7 +45,6 @@ export default{
       },
       Payment(){
         this.TurnOnBill();
-        console.log(this.choseProducts);
       },
     },
     data() {
