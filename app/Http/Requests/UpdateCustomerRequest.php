@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
-class UpdateCustomerRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateCustomerRequest  extends FormRequest
 {
     public function authorize(): bool
     {

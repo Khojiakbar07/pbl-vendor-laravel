@@ -71,10 +71,9 @@ class CustomerController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCustomerRequest $request, customer $customer)
+    public function update(UpdateCustomerRequest $request, Customer $customer)
     {
         //$customer->update($request->except(['_method', '_token']));
-        $customer = new Customer();
         $customer->name = $request->name;
         $customer->birthday=$request->birthday;
         $customer->phone =$request->phone;

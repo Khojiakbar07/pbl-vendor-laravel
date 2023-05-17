@@ -29,14 +29,14 @@
                             <label class="form-label" for="phone-number-mask">Phone Number</label>
                             <div class="input-group">
                                 <span class="input-group-text">UZ (+99 8 )</span>
-                                <input type="text" id="phone-number-mask" class="form-control phone-number-mask" placeholder="90-123-45-67" name="phone" value="{{ old('phone') }}" readonly="readonly">
+                                <input type="text" id="phone-number-mask" class="form-control phone-number-mask" placeholder="90-123-45-67" name="phone" value="90-705-75-01" readonly="readonly">
                             </div>
                         </div>
 
 
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-message">{{__('Address')}}</label>
-                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="{{__('Address')}}" value="{{old('address')}}"></textarea>
+                            <textarea id="basic-default-message" class="form-control" name="address" placeholder="{{__('Address')}}">{{old('address')}}</textarea>
                         </div>
 
                             <div>

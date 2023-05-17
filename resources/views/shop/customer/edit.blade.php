@@ -7,6 +7,7 @@
             <div class="card mb-4">
                 <h5 class="card-header">{{__('Edit')}}</h5>
                 <form method="POST" action="{{ route('customer.update', $customer->id) }}" enctype="multipart/form-data">
+                    <input type="hidden" name="_method" value="PUT">
                     @csrf
                     <div class="card-body">
 
