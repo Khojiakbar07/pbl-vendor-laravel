@@ -151,11 +151,13 @@
 					<div class="col-md-9">
 					  <div id="page-1" class= "page bg-light one">
 					  	<h2 class="heading">Dastur haqida</h2>
-					  	<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					  	<p>Savdo jarayonini avtomatlashtirish savdo jarayonidagi turli vazifalar va faoliyatlarni avtomatlashtirish va soddalashtirish uchun texnologiya va dasturiy vositalardan foydalanishni anglatadi. Bu takrorlanadigan, qo'lda bajariladigan vazifalarni avtomatlashtirish va savdo operatsiyalarini optimallashtirish uchun texnologik echimlardan foydalanishni o'z ichiga oladi.avdo jarayonini avtomatlashtirish savdo funktsiyasi doirasida samaradorlik, mahsuldorlik va samaradorlikni oshirishga qaratilgan.</p>
 					  </div>
 					  <div id="page-2" class= "page bg-light two">
 					  	<h2 class="heading">Dastur sizga nima beradi</h2>
-					  	<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+                        <p>Mazkur loyiha Savdo jarayonini soddalashtirish mahsulot yoki xizmatni sotish bilan bog'liq bo'lgan turli bosqichlar va tadbirlarni tartibga solish va murakkabliklarni olib tashlashni anglatadi.Aniq narxlar va shartlar: narxlash tuzilmalari va shartlari shaffof va tushunarli bo'lishini ta'minlang. Mijozlarni chalg'itishi yoki xafa qilishi mumkin bo'lgan yashirin to'lovlar yoki murakkab narxlash modellaridan qoching.
+
+                        Xarid qilish jarayonini soddalashtiring: xaridorlar xaridni yakunlashini iloji boricha osonlashtiring. Bu foydalanuvchilarga qulay onlayn buyurtma tizimini ta'minlash, bir nechta to'lov variantlarini taklif qilish yoki savdoni yakunlash uchun zarur bo'lgan qadamlar sonini kamaytirishni o'z ichiga olishi mumkin.</p>
 					  </div>
 					  <div id="page-3" class= "page bg-light three">
 					  	<h2 class="heading">Boshlash</h2>
@@ -163,23 +165,23 @@
 					  </div>
 					  <div id="page-4" class= "page bg-light four">
 					    <h2 class="heading">1 qadam</h2>
-					    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					    <p>Etakchi boshqaruv: Avtomatlashtirish vositalari veb-saytlar, ijtimoiy media yoki elektron pochta kampaniyalari kabi turli manbalardan bo'lgan mijozlarni qo'lga kiritishi, tartibga solish va kuzatishi mumkin. Etakchilar oldindan belgilangan mezonlar asosida avtomatik ravishda savdo vakillariga tayinlanishi yoki davra tartibida taqsimlanishi mumkin. Bu tezkor kuzatuvni ta'minlaydi va yo'llarning yoriqlar orqali tushishini oldini oladi.</p>
 					  </div>
 					  <div id="page-5" class= "page bg-light five">
 					    <h2 class="heading">2 qadam</h2>
-					    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					    <p>Elektron pochtani avtomatlashtirish: Elektron pochtani avtomatlashtirish vositalari istiqbolli va mijozlarga shaxsiylashtirilgan va maqsadli elektron pochta xabarlarini yuborish jarayonini soddalashtiradi. Avtomatlashtirilgan elektron pochta kampaniyalari etakchilarni tarbiyalash, kuzatuvlarni yuborish yoki tegishli kontentni almashish uchun o'rnatilishi mumkin. Shablonlar va ketma-ketliklar aloqani soddalashtirish va savdo vakillari uchun vaqtni tejash uchun yaratilishi mumkin.</p>
 					  </div>
 					  <div id="page-6" class= "page bg-light six">
 					    <h2 class="heading">3 qadam</h2>
-					    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					    <p>Hisobot va tahlillar: Avtomatlashtirish vositalari real vaqtda hisobotlar va asosiy savdo ko'rsatkichlari, masalan, konversiya stavkalari, quvur liniyasi tezligi yoki daromad prognozlari bo'yicha tahlillarni yaratishi mumkin. Ma'lumotlarga asoslangan ushbu yondashuv savdo menejerlari va rahbarlariga ish faoliyatini tushunishga, qiyinchiliklarni aniqlashga va ma'lumotlarga asoslangan qarorlar qabul qilishga yordam beradi.</p>
 					  </div>
 					  <div id="page-7" class= "page bg-light seven">
 					    <h2 class="heading">Qonun qoidalar</h2>
-					    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					    <p>Boshqa tizimlar bilan integratsiya: Savdoni avtomatlashtirish vositalari ko'pincha marketingni avtomatlashtirish platformalari, mijozlarni qo'llab-quvvatlash dasturlari yoki buxgalteriya tizimlari kabi boshqa tizimlar bilan birlashadi. Ushbu integratsiya ma'lumotlarning uzluksiz oqimini ta'minlaydi, ma'lumotlarni qo'lda kiritish zaruratini yo'q qiladi va turli bo'limlar bo'ylab izchillikni ta'minlaydi.</p>
 					  </div>
 					  <div id="page-8" class= "page bg-light eight">
 					    <h2 class="heading">Tariflar</h2>
-					    <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+					    <p>Savdo jarayonini avtomatlashtirish savdo guruhlari samaradorligini va samaradorligini sezilarli darajada oshirishi mumkin. Takroriy vazifalarni avtomatlashtirish va ma'lumotlarga asoslangan tushunchalarni taqdim etish orqali savdo vakillari ko'proq aloqalarni o'rnatish, bitimlarni yopish va mijozlarning ajoyib tajribasini taqdim etishga e'tibor berishlari mumkin.</p>
 					  </div>
 					</div>
 			  </div>
