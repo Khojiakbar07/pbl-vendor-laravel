@@ -10,8 +10,7 @@
                 <div class="card-body">
                     <div class="user-avatar-section">
                         <div class="d-flex align-items-center flex-column">
-
-                            <img src="{{ asset($user->avatar) }}" class="img-fluid img-thumbnail" alt="null">
+                            <img class="img-fluid rounded mb-3 pt-1 mt-4" src="{{ asset($user->avatar) }}" height="200" width="200" alt="User avatar">
                             <div class="user-info text-center">
                                 <h4 class="mb-2">{{ $user->name }}</h4>
                                 <span class="badge bg-label-secondary mt-1">{{$user->user_type}}</span>
