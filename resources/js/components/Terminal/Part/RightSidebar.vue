@@ -20,6 +20,9 @@ export default{
         },
         ImprovNumberOfProduct:{
           typeof: Function,
+        },
+        CalculateProducts:{
+          typeof: Function,
         }
     },
     components: { Product },
@@ -30,6 +33,9 @@ export default{
       return {
         numberOfProducts: 0,
       }
+    },
+    updated() {
+      this.CalculateProducts();
     },
 }
 
@@ -108,7 +114,7 @@ export default{
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
                         </svg>
                       </button>
-                      <input v-model="item.numberofProduct" type="text" class="bg-white rounded-lg text-center shadow focus:outline-none focus:shadow-lg text-sm">
+                      <input @input="this.CalculateProducts" v-model="item.numberofProduct" type="text" class="bg-white rounded-lg text-center shadow focus:outline-none focus:shadow-lg text-sm">
                       <button @click="this.ImprovNumberOfProduct(index,item.current_stock)" class="rounded-lg text-center py-1 text-white bg-blue-gray-600 hover:bg-blue-gray-700 focus:outline-none">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
