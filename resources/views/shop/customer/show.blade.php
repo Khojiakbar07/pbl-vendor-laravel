@@ -48,7 +48,7 @@
                             </li>
                         </ul>
                         <div class="d-flex justify-content-center">
-                            <a href="javascript:;" class="btn btn-primary me-3 waves-effect waves-light" data-bs-target="#editUser" data-bs-toggle="modal">Edit</a>
+                            <a href="{{ route('customer.edit', $customer->id) }}" class="btn btn-primary me-3 waves-effect waves-light" data-bs-target="#editUser" data-bs-toggle="modal">Edit</a>
                             <a href="javascript:;" class="btn btn-label-danger suspend-user waves-effect">Suspended</a>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                     style="width: 146px;" aria-label="Salary: activate to sort column ascending">Update</th>
                                 <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                    style="width: 141px;" aria-label="Status: activate to sort column ascending">Status</th>
+                                    style=" width: 141px;" aria-label="Status: activate to sort column ascending">Status</th>
                                 <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 151px;" aria-label="Actions">
                                     Actions</th>
                             </tr>

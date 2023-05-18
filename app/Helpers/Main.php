@@ -45,3 +45,12 @@ if(! function_exists('sendTelegram')){
 
     }
 }
+
+if (! function_exists('price')) {
+    function price($price, $currency = 'UZS'){
+        if($currency == 'percent'){
+            $currency = '%';
+        }
+        return number_format($price, 0, ' ', ' ').' '.$currency;
+    }
+}

@@ -45,7 +45,8 @@ class OrderController extends Controller
 
         $request = new Request();
         $request['price'] = $cart->totalPrice;
-        $items = $cart->card;
+        $request['payment'] = $cart->payment;
+        $items = $cart->cart;
 
         //$items = $request->toArray();
 
@@ -53,6 +54,7 @@ class OrderController extends Controller
         $order->user_id = auth()->id() ?? null;
         $order->customer_id = $request->customer_id ?? null;
         $order->coupon_code = $request->coupon_code ?? null;
+        $order->payment_method = $request->payment ?? null;
         $order->price = $request->price ?? '0';
         $order->price_vat = $request->price_vat ?? '0';
         $order->price_delivery = $request->price_delivery ?? '0';
@@ -81,7 +83,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('shop.order.show', compact('order'));
     }
 
     /**

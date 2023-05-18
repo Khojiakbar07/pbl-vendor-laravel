@@ -38,7 +38,7 @@
                             <a href="{{ route('order.show', $order->id) }}">{{ __('Customer') }}</a>
                         </td>
                         <td>
-                            {{ $order->total_price ?? '0' }} UZS
+                            {{ price($order->price ?? '0') }}
                         </td>
                         <td>
                             <span class="badge bg-label-primary me-1">{{ __('Paid') }}</span>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->double('price_delivery')->default('0');
             $table->double('price_discount')->default('0');
             $table->double('total_price')->default('0');
+            $table->string('payment_method')->default('cash');
             $table->boolean('status')->default(1);
             $table->boolean('deleted')->default(0);
             $table->timestamps();
