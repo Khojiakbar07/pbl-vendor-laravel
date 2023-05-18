@@ -289,7 +289,7 @@ export default {
                                 <td> {{ item.numberofProduct }}</td>
                                 <td>{{ number_format(item.price) }}</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #7f75f0; height: 50px; width: 100%;">
                                 <td>Umumiy sum</td>
                                 <td></td>
                                 <td>{{ number_format(AllPrice) }}</td>
