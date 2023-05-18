@@ -39,8 +39,10 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOrderRequest $request)
+    public function store(Request $request) // StoreOrderRequest
     {
+
+        $items = $request->toArray();
 
         $order = new Order();
         $order->user_id = auth()->id();
@@ -56,9 +58,9 @@ class OrderController extends Controller
             foreach($items as $item){
                 $order_item = new OrderItem();
                 $order_item->order_id = $order->id;
-                $order_item->product_id = $item->product_id;
-                $order_item->quantity = $item->quantity ?? '1';
-                $order_item->price = Product::findOrFail($item->product_id)->price ?? '0';
+                $order_item->product_id = $item['product_id'];
+                $order_item->quantity = $item['quantity'] ?? '1';
+                $order_item->price = Product::findOrFail($item['product_id'])->price ?? '0';
             }
         }
 

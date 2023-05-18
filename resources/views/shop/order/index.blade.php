@@ -35,16 +35,13 @@
                             <strong>{{ $order->id }}</strong>
                         </td>
                         <td>
-                            <img src="{{ asset($order->image) }}" class="img-fluid" style="width: 5rem;">
+                            <a href="{{ route('order.show', $order->id) }}">{{ __('Customer') }}</a>
                         </td>
                         <td>
-                            <a href="{{ route('order.show', $order->id) }}">{{ $order->name }}</a>
+                            {{ $order->total_price ?? '0' }} UZS
                         </td>
                         <td>
-                            {{ $order->user?->name ?? __('Empty') }}
-                        </td>
-                        <td>
-                            <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                            <span class="badge bg-label-primary me-1">{{ __('Paid') }}</span>
                         </td>
                         <td>
                             {{ \Carbon\Carbon::make($order->created_at)->format('d.m.Y H:i') }}
