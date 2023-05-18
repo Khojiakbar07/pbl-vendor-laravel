@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Process\Process;
+use App\Service\ShellCommand;
 
 class GlobalUpdateCommand extends Command
 {
@@ -12,7 +12,7 @@ class GlobalUpdateCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'fresh';
+    protected $signature = 'update';
 
     /**
      * The console command description.
@@ -21,12 +21,22 @@ class GlobalUpdateCommand extends Command
      */
     protected $description = 'Command description';
 
+    public $commands = [
+        'composer update',
+        'npm update',
+        'php artisan optimize:clear',
+        'php artisan migrate:fresh --seed',
+    ];
+
     /**
      * Execute the console command.
      */
     public function handle()
     {
-
+        foreach($this->commands as $command){
+            $this->line($command);
+            ShellCommand::execute($command);
+        }
     }
 
 }

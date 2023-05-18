@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Service;
+
 use Symfony\Component\Process\Process;
 
 class ShellCommand

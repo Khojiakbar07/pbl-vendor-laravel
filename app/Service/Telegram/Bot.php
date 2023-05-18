@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Service\Telegram;
+namespace App\Service\Telegram;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;

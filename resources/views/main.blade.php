@@ -23,14 +23,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-    <link rel="stylesheet" href="{{ asset('landing/css/animate.css')}}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/animate.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('landing/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('landing/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/magnific-popup.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('landing/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{ asset('landing/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{ asset('theme/landing/css/style.css')}}">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -84,7 +84,7 @@
             </div>
 
             <div class="d-none d-md-block col-md-7">
-                <img class="mt-6 img-fluid" src="{{ asset('landing/img/pos1.png')}}" alt="">
+                <img class="mt-6 img-fluid" src="{{ asset('theme/landing/img/pos1.png')}}" alt="">
             </div>
 
             <div class="d-block d-md-none col-12">
@@ -92,7 +92,7 @@
                     <h1 style="font-size: 50px;text-align: center;">Biz bilan onlayn savdo qiling</h1>
                     <p>Barcha savdo jarayonini avtomatlashitiring va statistikalarni kuzatib boring.</p>
                 </div>
-                <img class="mt-6 img-fluid" src="{{ asset('landing/img/pos1.png')}}" alt="">
+                <img class="mt-6 img-fluid" src="{{ asset('theme/landing/img/pos1.png')}}" alt="">
             </div>
 
         </div>
@@ -103,27 +103,27 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg ftco-animate">
-                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo1.png')}}"
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('theme/landing/img/logo1.png')}}"
                                                                                class="img-fluid"
                                                                                alt="Colorlib Template"></a>
             </div>
             <div class="col-md-12 col-lg ftco-animate">
-                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo2.png')}}"
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('theme/landing/img/logo2.png')}}"
                                                                                class="img-fluid"
                                                                                alt="Colorlib Template"></a>
             </div>
             <div class="col-md-12 col-lg ftco-animate">
-                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo3.jpg')}}"
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('theme/landing/img/logo3.jpg')}}"
                                                                                class="img-fluid"
                                                                                alt="Colorlib Template"></a>
             </div>
             <div class="col-md-12 col-lg ftco-animate">
-                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo5.svg')}}"
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('theme/landing/img/logo5.svg')}}"
                                                                                class="img-fluid"
                                                                                alt="Colorlib Template"></a>
             </div>
             <div class="col-md-12 col-lg ftco-animate">
-                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('landing/img/logo4.png')}}"
+                <a href="#" class="partner d-flex justify-content-center"><img src="{{ asset('theme/landing/img/logo4.png')}}"
                                                                                class="img-fluid"
                                                                                alt="Colorlib Template"></a>
             </div>
@@ -497,22 +497,21 @@
 </footer>
 
 
-<script src="{{ asset('landing/js/jquery.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery-migrate-3.0.1.min.js')}}"></script>
-<script src="{{ asset('landing/js/popper.min.js')}}"></script>
-<script src="{{ asset('landing/js/bootstrap.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.easing.1.3.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.waypoints.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.stellar.min.js')}}"></script>
-<script src="{{ asset('landing/js/owl.carousel.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.magnific-popup.min.js')}}"></script>
-<script src="{{ asset('landing/js/jquery.animateNumber.min.js')}}"></script>
-<script src="{{ asset('landing/js/scrollax.min.js')}}"></script>
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{ asset('landing/js/google-map.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery-migrate-3.0.1.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/popper.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.easing.1.3.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.stellar.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/jquery.animateNumber.min.js')}}"></script>
+<script src="{{ asset('theme/landing/js/scrollax.min.js')}}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{{ asset('theme/landing/js/google-map.js')}}"></script>
 
-<script src="{{ asset('landing/js/main.js')}}"></script>
+<script src="{{ asset('theme/landing/js/main.js')}}"></script>
 
 </body>
 </html>

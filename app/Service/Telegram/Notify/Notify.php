@@ -6,20 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-use App\Http\Controllers\Service\Telegram\Bot;
-use App\Http\Controllers\Service\Telegram\BotCommands;
-use App\Http\Controllers\Service\Telegram\BotFunctions;
-use App\Http\Controllers\Service\Telegram\Notify\NotifyRender as Render;
-
-use App\Models\Order;
-use App\Models\Seller;
-use App\Models\OrderDetail;
-//use App\Models\TelegramRender;
-use App\Models\TelegramStaff;
-
-use App\Models\Product;
-//use App\Http\Controllers\Parser\ProductsController;
-use App\Http\Controllers\Crawler\CrawlerController;
+//use App\Http\Controllers\Service\Telegram\Bot;
+//use App\Http\Controllers\Service\Telegram\BotCommands;
+//use App\Http\Controllers\Service\Telegram\BotFunctions;
+//use App\Http\Controllers\Service\Telegram\Notify\NotifyRender as Render;
+//
+//use App\Models\Order;
+//use App\Models\Seller;
+//use App\Models\OrderDetail;
+//use App\Models\TelegramStaff;
+//
+//use App\Models\Product;
+//use App\Http\Controllers\Crawler\CrawlerController;
 
 use Illuminate\Support\Str;
 
@@ -31,37 +29,26 @@ class Notify extends Controller{
 
     public $allowed_bot = [
         '127622235',    // Kamoliddin
-        '312038752',    // Sardor
-        '1365271626',   // Operator @WWWOPENSHOPUZ
-        '5467077686',   // Maftuna @m_khodjiyeva
-        '1187875653',   // Gulchexra ofis
     ];
     public $allowed_errors = [
         '127622235',    // Kamoliddin
     ];
     public $allowed_orders = [
-        //'127622235',    // Kamoliddin
-        '312038752',    // Sardor
-        '1365271626',   // Operator @WWWOPENSHOPUZ
-        '1187875653',   // Gulchexra ofis
-        '544423944',    // Baxtiyor
+        '127622235',    // Kamoliddin
     ];
     public $allowed_offers = [
         '127622235',    // Kamoliddin
-        '312038752',    // Sardor
     ];
     public $allowed_invitations = [
         '127622235',    // Kamoliddin
-        '312038752',    // Sardor
     ];
     public $allowed_parser = [
         '127622235',    // Kamoliddin
-        '312038752',    // Sardor
     ];
 
     public function __construct(){
-        $this->bot = new Bot('notify');
-        $this->render = new Render;
+        //$this->bot = new Bot('notify');
+        //$this->render = new Render;
     }
 
     public function index(Request $request){
@@ -177,26 +164,6 @@ class Notify extends Controller{
         return $this->bot->sendMessage($chat_id, $message);
     }
 
-    public function checkSellerReferal($chat_id, $user_id, $code){
-            $decode = substr($code, 14, -6);
-            $seller_id = substr($decode, 8);
-            $seller = Seller::where('user_id', $seller_id)->first();
-                if($seller->notifications == NULL){
-                    $norify = json_encode(['telegram_id' => $user_id]);
-                }else{
-                    $notify = json_decode($seller->notifications);
-                    $notify->telegram_id = $user_id;
-                    $norify = json_encode($notify);
-                }
-            $seller->notifications = $norify;
-
-            if($seller->save()){
-                return $this->bot->sendMessage($chat_id, $this->render->successAddedSeller($user_id, $seller_id));
-            }else{
-                return $this->bot->sendMessage($chat_id, 'Error');
-            }
-    }
-
     public function sendOrderAlert($id){
         // GET ACTIVE STAFFS LIST
         $this->bot->sendMessage(config('telegram.alert.order'), $this->render->notifyOrderToAdmin($id));
@@ -222,22 +189,6 @@ class Notify extends Controller{
         $this->bot->sendMessage('127622235', $this->render->notifyOrderToAdmin($id));
     }
 
-    public function sendOrderAlertForSellers($id, $seller_id, $telegram_id){
-        //$this->bot->sendMessage('127622235', $telegram_id);
-        $this->bot->sendMessage($telegram_id, $this->render->notifyOrderToSellers($id, $seller_id));
-    }
-
-    public function sendInvitationAlert($id){
-        //$users = array('709403391', '312038752', '576772981'); // OPENSHOP, Sardoraka, Uzgur
-        //$users = array('127622235'); // UzSoftic
-        //$reply_markup = json_encode(['inline_keyboard' => [[['text' => 'Показать больше...', 'url' => route('sales.show', encrypt($id))]]]]);
-        $users = $this->allowed_invitations;
-        foreach($users as $user){
-            $this->bot->sendMessage($user, $this->render->notifyInvitationToAdmin($id));
-        }
-            //$this->bot->sendMessage
-    }
-
     public function sendErrorAlert($exp){
         //if($exp['method'] == 'GET')
             // ME, Artem, Uzgur
@@ -254,15 +205,6 @@ class Notify extends Controller{
                     $this->bot->sendMessage($user, $this->render->notifyErrorPageRender($exp));
             }
     }
-
-    public function sendOfferAlert($request){
-        //$users = array('127622235', '165136121', '312038752'); //UzSoftic, Artem, Sardoraka
-
-        $users = $this->allowed_offers;
-        foreach($users as $user)
-            $this->bot->sendMessage($user, $this->render->notifyOffer($request));
-    }
-
     public function test(){
         dump('1');
         return $this->sendOrderAlertTest('14523');
