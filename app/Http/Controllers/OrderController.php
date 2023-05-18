@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\OrderItem;
+use App\Models\Product;
 
 class OrderController extends Controller
 {
@@ -39,7 +41,31 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        //
+
+        $order = new Order();
+        $order->user_id = auth()->id();
+        $order->customer_id = $request->customer_id ?? null;
+        $order->coupon_code = $request->coupon_code ?? null;
+        $order->price = $request->price ?? '0';
+        $order->price_vat = $request->price_vat ?? '0';
+        $order->price_delivery = $request->price_delivery ?? '0';
+        $order->price_discount = $request->price_discount ?? '0';
+        $order->total_price = $request->total_price ?? '0';
+
+        if($order->save()){
+            foreach($items as $item){
+                $order_item = new OrderItem();
+                $order_item->order_id = $order->id;
+                $order_item->product_id = $item->product_id;
+                $order_item->quantity = $item->quantity ?? '1';
+                $order_item->price = Product::findOrFail($item->product_id)->price ?? '0';
+            }
+        }
+
+        sendTelegram('me', json_encode($order));
+
+        return true;
+
     }
 
     /**

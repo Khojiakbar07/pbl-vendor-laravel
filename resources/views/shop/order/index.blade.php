@@ -9,7 +9,7 @@
     <!-- Users List Table -->
     <div class="card">
         <div class="card-header border-bottom">
-            <h5 class="card-title mb-3">Search Filter</h5>
+            <h5 class="card-title mb-3">{{ __('Orders') }}</h5>
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-4 user_role"></div>
                 <div class="col-md-4 user_plan"></div>
