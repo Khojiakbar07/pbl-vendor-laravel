@@ -171,7 +171,7 @@ export default{
 
                         <button @click="WhichOneThePayment('uzum')" class="bg-white rounded-lg shadow hover:shadow-lg focus:outline-none inline-block px-2 py-1 text-sm">+<span>Uzum</span></button>
 
-                        <button @click="WhichOneThePayment('payme')" class="bg-white rounded-lg shadow hover:shadow-lg focus:outline-none inline-block px-2 py-1 text-sm">+<span>Paynet</span></button>
+                        <button @click="WhichOneThePayment('paynet')" class="bg-white rounded-lg shadow hover:shadow-lg focus:outline-none inline-block px-2 py-1 text-sm">+<span>Paynet</span></button>
 
                         <button @click="WhichOneThePayment('Oson')" class="bg-white rounded-lg shadow hover:shadow-lg focus:outline-none inline-block px-2 py-1 text-sm">+<span>Oson</span></button>
 
