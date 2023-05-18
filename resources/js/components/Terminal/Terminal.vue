@@ -4,6 +4,8 @@ import LeftSidebar from "@/components/Terminal/Part/LeftSidebar.vue";
 import RightSidebar from "@/components/Terminal/Part/RightSidebar.vue";
 import product from "@/api/product";
 import moment from 'moment';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf'
 
 export default {
     name: "Terminal",
@@ -75,10 +77,32 @@ export default {
         TurnOffBill() {
             let bill = document.querySelector('#bill');
             bill.style.zIndex = "1";
+            this.generatePDF();
             this.ProductsWhichSentToApi();
             this.apiPutProducts()
             this.Clear();
         },
+        generatePDF() {
+            const element = this.$refs.pdfContent;
+
+            // Convert HTML element to canvas
+            html2canvas(element).then(canvas => {
+                const pdf = new jsPDF();
+
+                // Calculate the ratio of the PDF page to the canvas image
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                const ratio = pdfWidth / canvas.width;
+
+                // Add canvas image to PDF
+                const imgData = canvas.toDataURL('/public/images/logo/logo');
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, canvas.height * ratio);
+
+                // Save the PDF
+                pdf.save('example.pdf');
+            });
+        },
+    
         AddChoseProductlist(id) {
             let yesOrNo = false;
             let counter = 0;
@@ -134,7 +158,7 @@ export default {
             });
         },
         apiPutProducts() {
-            axios.post('/api/store/cart_to_order/', this.senttoapi)
+            axios.post('/api/store/cart_to_order/', {card: this.senttoapi,totalPrice:this.AllPrice})
                 .then(function (response) {
                     console.log(response);
                 })
@@ -265,7 +289,7 @@ export default {
 
 <template>
     <div class="contener_main">
-        <div class="bill" id="bill">
+        <div class="bill" id="bill" ref="pdfContent">
             <div class="bill_item">
                 <div class="logo">
                     <img src="../../../../public/images/logo/logo.png" alt="">
@@ -289,21 +313,26 @@ export default {
                                 <td> {{ item.numberofProduct }}</td>
                                 <td>{{ number_format(item.price) }}</td>
                             </tr>
-                            <tr style="background-color: #7f75f0; height: 50px; width: 100%;">
-                                <td>Umumiy sum</td>
-                                <td></td>
-                                <td>{{ number_format(AllPrice) }}</td>
-                            </tr>
-                            <tr>
-                                <td>Tolov turi</td>
-                                <td></td>
-                                <td>{{ whichOneKindOfPeymentname }}</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
+                <div class="payment_information">
+                    <table>
+                        <tr style="color: #7f75f0; font-size: 20px;font-weight: bold;">
+                            <td style="margin-top: 10%;">Umumiy sum</td>
+                            <td></td>
+                            <td>{{ number_format(AllPrice) }}</td>
+                        </tr>
+                        <tr style="color: #7f75f0; font-size: 20px;font-weight: bold;">
+                            <td>Tolov turi</td>
+                            <td></td>
+                            <td>{{ whichOneKindOfPeymentname }}</td>
+                        </tr>
+                    </table>
+                </div>
                 <div class="button_for_pay">
-                    <button @click="TurnOffBill" style="width: 100%; background-color: #7f75f0;">To` lov</button>
+                    <button @click="TurnOffBill" style="width: 100%;">To` lov</button>
                 </div>
             </div>
         </div>
@@ -316,7 +345,7 @@ export default {
                 <!-- store menu -->
                 <div class="flex flex-col bg-blue-gray-50 h-full w-full py-4">
                     <div class="flex px-2 flex-row relative">
-                        <div class="absolute left-5 top-3 px-2 py-2 rounded-full bg-cyan-500 text-white"
+                        <div class="absolute right-5 top-3 px-2 py-2 rounded-full bg-cyan-500 text-white"
                             style="background-color: #7f75f0;">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -431,7 +460,7 @@ export default {
 
 .bill_item .product_list {
     width: 90%;
-    height: 60%;
+    height: 50%;
     margin: auto;
     overflow: auto;
 }
@@ -446,12 +475,28 @@ export default {
     height: 10%;
     margin: auto;
     margin-bottom: 10px;
+    margin-top: 10px;
+
 }
 
 .bill_item .button_for_pay button {
     width: 100%;
     height: 100%;
-    background: #000;
+    border-radius: 25px;
+    background-color: #0eff06;
+}
+
+.bill_item .payment_information {
+    width: 90%;
+    height: 5%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bill_item .payment_information table {
+    width: 100%;
 }
 
 .products {
@@ -462,8 +507,9 @@ export default {
 
 }
 
-.bill_information{
-    width: 95%;
+.bill_information {
+    width: 90%;
+    height: 2%;
     margin: auto;
     display: flex;
     justify-content: space-between;
