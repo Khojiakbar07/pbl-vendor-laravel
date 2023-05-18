@@ -158,7 +158,7 @@ export default {
             });
         },
         apiPutProducts() {
-            axios.post('/api/store/cart_to_order/', {card: this.senttoapi,totalPrice:this.AllPrice})
+            axios.post('/api/store/cart_to_order/', {cart: this.senttoapi,totalPrice:this.AllPrice,payment: this.whichOneKindOfPeymentname})
                 .then(function (response) {
                     console.log(response);
                 })
