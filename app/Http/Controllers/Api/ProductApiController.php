@@ -30,6 +30,7 @@ class ProductApiController extends Controller
     }
 
     public function storeCartToOrder(Request $request){
-        sendTelegram('977350811', json_encode($request->all()));
+        sendTelegram('group', json_encode($request->all())); //977350811
+        app('App\Http\Controllers\OrderController')->store(json_decode(json_encode($request->all())));
     }
 }

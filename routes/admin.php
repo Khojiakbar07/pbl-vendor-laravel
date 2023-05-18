@@ -20,7 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Ecommerce
     Route::get('order/terminal', [OrderController::class, 'terminal'])->name('order.terminal');
-    Route::get('order/terminal/tailwind', [OrderController::class, 'terminal2'])->name('order.terminal.tailwind');
+    //Route::get('order/terminal/tailwind', [OrderController::class, 'terminal2'])->name('order.terminal.tailwind');
     Route::resource('order', OrderController::class);
     Route::resource('order_note', OrderNoteController::class);
     Route::resource('order_item', OrderItemController::class);

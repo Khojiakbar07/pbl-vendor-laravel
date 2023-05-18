@@ -9,7 +9,7 @@
     <!-- Users List Table -->
     <div class="card">
         <div class="card-header border-bottom">
-            <h5 class="card-title mb-3">Search Filter</h5>
+            <h5 class="card-title mb-3">{{ __('Orders') }}</h5>
             <div class="d-flex justify-content-between align-items-center row pb-2 gap-3 gap-md-0">
                 <div class="col-md-4 user_role"></div>
                 <div class="col-md-4 user_plan"></div>
@@ -35,16 +35,13 @@
                             <strong>{{ $order->id }}</strong>
                         </td>
                         <td>
-                            <img src="{{ asset($order->image) }}" class="img-fluid" style="width: 5rem;">
+                            <a href="{{ route('order.show', $order->id) }}">{{ __('Customer') }}</a>
                         </td>
                         <td>
-                            <a href="{{ route('order.show', $order->id) }}">{{ $order->name }}</a>
+                            {{ $order->total_price ?? '0' }} UZS
                         </td>
                         <td>
-                            {{ $order->user?->name ?? __('Empty') }}
-                        </td>
-                        <td>
-                            <span class="badge bg-label-primary me-1">{{ __('Active') }}</span>
+                            <span class="badge bg-label-primary me-1">{{ __('Paid') }}</span>
                         </td>
                         <td>
                             {{ \Carbon\Carbon::make($order->created_at)->format('d.m.Y H:i') }}
