@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Service\Telegram\Notify;
+namespace App\Service\Telegram\Notify;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;

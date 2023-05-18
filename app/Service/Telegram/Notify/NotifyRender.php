@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Service\Telegram\Notify;
+namespace App\Service\Telegram\Notify;
 
 use App\Http\Controllers\Controller;
-use App\Models\Action;
 use Carbon\Carbon;
+//use App\Models\Action;
 
-use App\Http\Controllers\Service\Telegram\BotCommands;
-use App\Http\Controllers\Service\Telegram\BotFunctions;
+//use App\Http\Controllers\Service\Telegram\BotCommands;
+//use App\Http\Controllers\Service\Telegram\BotFunctions;
 
-use App\Models\Product;
-use App\Models\Order;
-use App\Models\OrderDetail;
+//use App\Models\Product;
+//use App\Models\Order;
+//use App\Models\OrderDetail;
 
-use App\Models\User;
-use App\Models\Shop;
-use App\Models\Invitation;
-use App\Models\UserBlacklist;
+//use App\Models\User;
+//use App\Models\Shop;
+//use App\Models\Invitation;
+//use App\Models\UserBlacklist;
 
 class NotifyRender extends Controller
 {
