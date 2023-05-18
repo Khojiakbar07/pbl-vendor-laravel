@@ -3,6 +3,7 @@ import Product from "@/components/Terminal/Part/Product.vue";
 import LeftSidebar from "@/components/Terminal/Part/LeftSidebar.vue";
 import RightSidebar from "@/components/Terminal/Part/RightSidebar.vue";
 import product from "@/api/product";
+import moment from 'moment';
 
 export default {
     name: "Terminal",
@@ -36,12 +37,19 @@ export default {
                     ]
                 }
             },
-            choseProducts:[],
+            choseProducts: [],
             products: [],
             numberOfProducts: 0,
             AllPrice: 0,
             whichOneKindOfPeymentname: "Naqt pul",
             senttoapi: [],
+            billNumber: 123123,
+            bill_date: Date.now(),
+        }
+    },
+    computed: {
+        formattedDateTime() {
+            return moment(this.bill_date).format('MMMM Do YYYY, h:mm:ss a');
         }
     },
     updated() {
@@ -94,17 +102,16 @@ export default {
             }
             this.ProductsWhichSentToApi();
         },
-        ProductsWhichSentToApi(){
-            this.senttoapi =[];
+        ProductsWhichSentToApi() {
+            this.senttoapi = [];
             this.choseProducts.forEach(element => {
-                let updateProduct ={
-                id: element.id,
-                quantity: element.numberofProduct,
+                let updateProduct = {
+                    id: element.id,
+                    quantity: element.numberofProduct,
                 }
                 this.senttoapi.push(updateProduct);
             });
-            console.log(this.senttoapi);
-           
+
         },
         ReduceNumberOfProduct(id) {
             this.choseProducts[id].numberofProduct <= 0 ? '' : this.choseProducts[id].numberofProduct -= 1;
@@ -126,8 +133,8 @@ export default {
                 this.AllPrice += Number(element.price) * element.numberofProduct;
             });
         },
-        apiPutProducts(){
-            axios.post('/api/store/cart_to_order/',this.senttoapi)
+        apiPutProducts() {
+            axios.post('/api/store/cart_to_order/', this.senttoapi)
                 .then(function (response) {
                     console.log(response);
                 })
@@ -263,6 +270,10 @@ export default {
                 <div class="logo">
                     <img src="../../../../public/images/logo/logo.png" alt="">
                 </div>
+                <div class="bill_information">
+                    <p>#{{ billNumber }}</p>
+                    <p>{{ formattedDateTime }}</p>
+                </div>
                 <div class="product_list">
                     <table>
                         <thead>
@@ -278,7 +289,7 @@ export default {
                                 <td> {{ item.numberofProduct }}</td>
                                 <td>{{ number_format(item.price) }}</td>
                             </tr>
-                            <tr>
+                            <tr style="background-color: #7f75f0; height: 50px; width: 100%;">
                                 <td>Umumiy sum</td>
                                 <td></td>
                                 <td>{{ number_format(AllPrice) }}</td>
@@ -371,7 +382,8 @@ export default {
                 <!-- end of store menu -->
 
                 <!-- right sidebar -->
-                <RightSidebar :number_format="number_format" :whichOneKindOfPeymentname="whichOneKindOfPeymentname" @whichone="whichone" :TurnOnBill="TurnOnBill" :AllPrice="AllPrice"
+                <RightSidebar :number_format="number_format" :whichOneKindOfPeymentname="whichOneKindOfPeymentname"
+                    @whichone="whichone" :TurnOnBill="TurnOnBill" :AllPrice="AllPrice"
                     :CalculateProducts="CalculateProducts" :ImprovNumberOfProduct="ImprovNumberOfProduct"
                     :ReduceNumberOfProduct="ReduceNumberOfProduct" :numberofproduct="numberOfProducts" :Clear="Clear"
                     :choseProducts="choseProducts"></RightSidebar>
@@ -386,7 +398,7 @@ export default {
 <style scoped>
 .contener_main {
     position: relative;
-   
+
 }
 
 .bill {
@@ -400,7 +412,7 @@ export default {
     align-items: center;
 }
 
-.bill_item{
+.bill_item {
     width: 30%;
     height: 80%;
     background: #fff;
@@ -411,31 +423,32 @@ export default {
     justify-content: space-between;
 }
 
-.bill_item .logo{
+.bill_item .logo {
     width: 90%;
     margin: auto;
     height: 20%;
 }
 
-.bill_item .product_list{
+.bill_item .product_list {
     width: 90%;
     height: 60%;
     margin: auto;
     overflow: auto;
 }
-.bill_item .product_list table{
+
+.bill_item .product_list table {
     width: 100%;
     height: 100%;
 }
 
-.bill_item .button_for_pay{
+.bill_item .button_for_pay {
     width: 90%;
     height: 10%;
     margin: auto;
     margin-bottom: 10px;
 }
 
-.bill_item .button_for_pay button{
+.bill_item .button_for_pay button {
     width: 100%;
     height: 100%;
     background: #000;
@@ -449,5 +462,11 @@ export default {
 
 }
 
-   
+.bill_information{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 </style>
