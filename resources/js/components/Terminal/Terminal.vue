@@ -68,6 +68,7 @@ export default {
             let bill = document.querySelector('#bill');
             bill.style.zIndex = "1";
             this.ProductsWhichSentToApi();
+            this.apiPutProducts()
             this.Clear();
         },
         AddChoseProductlist(id) {
@@ -124,6 +125,15 @@ export default {
             this.choseProducts.forEach(element => {
                 this.AllPrice += Number(element.price) * element.numberofProduct;
             });
+        },
+        apiPutProducts(){
+            axios.post('/api/store/cart_to_order/',this.senttoapi)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         },
         apiGetProducts() {
             product.getProducts().then((response) => {
