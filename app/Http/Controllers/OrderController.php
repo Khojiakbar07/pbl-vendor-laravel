@@ -7,18 +7,19 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\OrderItem;
 use App\Models\Product;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
 
     public function terminal(){
-        return view('layouts.vue');
+        return view('layouts.vue_terminal');
     }
 
-    public function terminal2(){
+    /* public function terminal2(){
         return view('layouts.vue_terminal');
         //return view('shop.terminal');
-    }
+    } */
     /**
      * Display a listing of the resource.
      */
@@ -39,13 +40,17 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request) // StoreOrderRequest
+    public function store($cart) // StoreOrderRequest
     {
 
-        $items = $request->toArray();
+        $request = new Request();
+        $request['price'] = $cart->totalPrice;
+        $items = $cart->card;
+
+        //$items = $request->toArray();
 
         $order = new Order();
-        $order->user_id = auth()->id();
+        $order->user_id = auth()->id() ?? null;
         $order->customer_id = $request->customer_id ?? null;
         $order->coupon_code = $request->coupon_code ?? null;
         $order->price = $request->price ?? '0';
@@ -58,13 +63,14 @@ class OrderController extends Controller
             foreach($items as $item){
                 $order_item = new OrderItem();
                 $order_item->order_id = $order->id;
-                $order_item->product_id = $item['product_id'];
-                $order_item->quantity = $item['quantity'] ?? '1';
-                $order_item->price = Product::findOrFail($item['product_id'])->price ?? '0';
+                $order_item->product_id = $item->id;
+                $order_item->quantity = $item->quantity ?? '1';
+                $order_item->price = Product::findOrFail($item->id)->price ?? '0';
+                $order_item->save();
             }
         }
 
-        sendTelegram('me', json_encode($order));
+        sendTelegram('group', json_encode($order));
 
         return true;
 

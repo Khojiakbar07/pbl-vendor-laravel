@@ -5,7 +5,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/admin/order/terminal/tailwind',
+      path: '/admin/order/terminal',
       name: 'terminal',
       component: Terminal
     }
