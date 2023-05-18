@@ -242,9 +242,8 @@
 								<i class="flaticon-user-experience"></i>
 							</span>
                     <div class="desc">
-                        <h3 class="mb-5">Do`koni aftamatlashr</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                        <h3 class="mb-5">Do`konni automatlashtirish</h3>
+                        <p>Do'konlarda avtomatlashtirish do'kon faoliyatining turli jihatlarini tartibga solish va yaxshilash uchun texnologiyalar va tizimlarni joriy etishni anglatadi.</p>
                     </div>
                 </div>
             </div>
@@ -254,9 +253,8 @@
 								<i class="flaticon-network"></i>
 							</span>
                     <div class="desc">
-                        <h3 class="mb-5">Mijozlarga indiyuduval xizmat</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                        <h3 class="mb-5">Mijozlarga individual xizmat</h3>
+                        <p>Individual mijozlarga xizmat ko'rsatish har bir mijozga ularning o'ziga xos ehtiyojlari, afzalliklari va talablaridan kelib chiqqan holda yordam ko'rsatishni anglatadi.</p>
                     </div>
                 </div>
             </div>
@@ -266,9 +264,8 @@
 								<i class="flaticon-innovation"></i>
 							</span>
                     <div class="desc">
-                        <h3 class="mb-5">Statistik malumotlar</h3>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia.</p>
+                        <h3 class="mb-5">Statistik ma'lumotlar</h3>
+                        <p> Savdo siklining davomiyligi - bu istiqbol bilan dastlabki aloqadan to bitimni yopishgacha ketadigan vaqt. </p>
                     </div>
                 </div>
             </div>
@@ -294,13 +291,13 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-quote-left"></div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4">Ular bilan ishlash juda oson.
+                                 Har doim mijozni birinchi o'ringa qo'yadi va har qanday vaziyatga moslashadi.Boshqalar o'rtasidagi nizolarni hal qilish orqali jamoaviy muhitni yaxshilaydi.Hamma menga siz bilan ishlashni yoqtirishini aytadi.</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                    <p class="name">Nigina Muratova</p>
+                                        <span class="position">Manager at FinTech</span>
                                     </div>
                                 </div>
                             </div>
@@ -311,13 +308,13 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-quote-left"></div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4">Ular bilan ishlash juda oson.
+                                 Har doim mijozni birinchi o'ringa qo'yadi va har qanday vaziyatga moslashadi.Boshqalar o'rtasidagi nizolarni hal qilish orqali jamoaviy muhitni yaxshilaydi.Hamma menga siz bilan ishlashni yoqtirishini aytadi.</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                    <p class="name">Nigina Muratova</p>
+                                        <span class="position">Manager at FinTech</span>
                                     </div>
                                 </div>
                             </div>
@@ -328,13 +325,13 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-quote-left"></div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4">Ular bilan ishlash juda oson .
+                                 Har doim mijozni birinchi o'ringa qo'yadi va har qanday vaziyatga moslashadi.Boshqalar o'rtasidagi nizolarni hal qilish orqali jamoaviy muhitni yaxshilaydi.Hamma menga siz bilan ishlashni yoqtirishini aytadi.</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                    <p class="name">Nigina Muratova</p>
+                                        <span class="position">Manager at FinTech</span>
                                     </div>
                                 </div>
                             </div>
@@ -345,13 +342,13 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-quote-left"></div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4">Ular bilan ishlash juda oson.
+                                 Har doim mijozni birinchi o'ringa qo'yadi va har qanday vaziyatga moslashadi.Boshqalar o'rtasidagi nizolarni hal qilish orqali jamoaviy muhitni yaxshilaydi.Hamma menga siz bilan ishlashni yoqtirishini aytadi.</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                        <p class="name">Nigina Muratova</p>
+                                        <span class="position">Manager at FinTech</span>
                                     </div>
                                 </div>
                             </div>
@@ -362,13 +359,13 @@
                             <div class="icon d-flex align-items-center justify-content-center"><span
                                     class="fa fa-quote-left"></div>
                             <div class="text">
-                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia
-                                    and Consonantia, there live the blind texts.</p>
+                                <p class="mb-4">Ular bilan ishlash juda oson.
+                                 Har doim mijozni birinchi o'ringa qo'yadi va har qanday vaziyatga moslashadi.Boshqalar o'rtasidagi nizolarni hal qilish orqali jamoaviy muhitni yaxshilaydi.Hamma menga siz bilan ishlashni yoqtirishini aytadi.</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
                                     <div class="pl-3">
-                                        <p class="name">Roger Scott</p>
-                                        <span class="position">Marketing Manager</span>
+                                        <p class="name">Nigina Muratova</p>
+                                        <span class="position">Manager at FinTech</span>
                                     </div>
                                 </div>
                             </div>
@@ -398,7 +395,7 @@
                     </div>
                     <div>
                         <h3 class="mb-4">Manzil</h3>
-                        <p>O'zbekiston, Toshkent shahri, Mizo Ulug'bek tumi, Buz-2, 21</p>
+                        <p>O'zbekiston, Toshkent shahri, Mizo Ulug'bek tumani, Buz-2, 21</p>
                     </div>
                 </div>
             </div>
@@ -457,21 +454,21 @@
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">Links</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"></span>Home</a></li>
-                        <li><a href="#"></span>About</a></li>
-                        <li><a href="#"></span>Chapter</a></li>
-                        <li><a href="#"></span>Reviews</a></li>
-                        <li><a href="#"></span>Contact</a></li>
+                    <li><a href="#"></span>Bosh sahifa</a></li>
+                        <li><a href="#"></span>Dastur haqida</a></li>
+                        <li><a href="#"></span>Bo'limlar</a></li>
+                        <li><a href="#"></span>Izohlar</a></li>
+                        <li><a href="#"></span>Kontakt</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Services</h2>
+                    <h2 class="ftco-heading-2">Hizmatlar</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#"></span>Experience</a></li>
-                        <li><a href="#"></span>Marketing Goals</a></li>
-                        <li><a href="#"></span>Targetting Vission</a></li>
+                        <li><a href="#"></span>Qo'llanma</a></li>
+                        <li><a href="#"></span>Marketing</a></li>
+                        <li><a href="#"></span>Admin panel</a></li>
                     </ul>
                 </div>
             </div>
@@ -480,7 +477,7 @@
                     <h2 class="ftco-heading-2">Savolingiz bormi?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon fa fa-map-marker"></span><span class="text">O'zbekiston, Toshkent shahri, Mizo Ulug'bek tumi, Buz-2, 21</span>
+                            <li><span class="icon fa fa-map-marker"></span><span class="text">O'zbekiston, Toshkent shahri, Mizo Ulug'bek tumani, Buz-2, 21</span>
                             </li>
                             <li><a href="#"><span class="icon fa fa-phone"></span><span
                                         class="text">+998 (95) 000 04 09</span></a>
